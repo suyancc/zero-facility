@@ -1,0 +1,457 @@
+{
+  "checks": [
+    "Seven actual READY screens show distinct current variant, steps, prerequisite guidance and exit location",
+    "Model cards remain clickable after dynamic brief layout change",
+    "Out-of-range E and pause do not start a phantom work loop",
+    "Retry retains objective and clears operation channel",
+    "Real walking to card then held E starts card work audio before collection; releasing cancels it",
+    "Second sustained E completes collection and stops work loop"
+  ],
+  "errors": [],
+  "briefs": {
+    "1": {
+      "heading": "本局目标 · 多路突破",
+      "brief": "主目标位于仓储区 · 本局出口在东侧\n取得门禁卡或操作解封台，再开门撤离。\n可选：装备撬锁可直破出口；控制器打开维修捷径。\n撤离：完成任务 → 长按 E 开门 → 穿过出口。",
+      "tracking": "门禁卡方案"
+    },
+    "4": {
+      "heading": "本局目标 · 警戒封锁",
+      "brief": "主目标位于仓储区 · 本局出口在北侧\n刷卡前须关闭监控；也可用解封台强行突破。\n强解需 8 秒且更响；先用控制器可缩短至 4 秒。\n撤离：完成任务 → 长按 E 开门 → 穿过出口。",
+      "tracking": "门禁卡方案"
+    },
+    "5": {
+      "heading": "本局目标 · 分段取证",
+      "brief": "主目标位于仓储区 · 本局出口在东侧\n分别启动甲、乙终端，各下载 5 秒后取回分片。\n两端可同时下载，移动更快但要规划往返路线。\n撤离：完成任务 → 长按 E 开门 → 穿过出口。",
+      "tracking": "数据分片甲 · 启动下载"
+    },
+    "6": {
+      "heading": "本局目标 · 先稳后运",
+      "brief": "主目标位于仓储区 · 本局出口在北侧\n先操作稳定控制台，再搬起核心到出口交付。\n稳定永久有效；监控离线仅 45 秒，搬运须规划。\n撤离：完成任务 → 长按 E 开门 → 穿过出口。",
+      "tracking": "核心稳定控制台"
+    },
+    "7": {
+      "heading": "本局目标 · 双重授权",
+      "brief": "主目标位于能源舱 · 本局出口在西侧\n收集门禁卡并操作解封台，集齐两重授权。\n可选：携带撬锁直接破门；无装备也能完成授权。\n撤离：完成任务 → 长按 E 开门 → 穿过出口。",
+      "tracking": "门禁卡方案"
+    },
+    "8": {
+      "heading": "本局目标 · 双端校验",
+      "brief": "主目标位于数据机房 · 本局出口在西侧\n先操作校验控制台，再到数据终端下载 10 秒。\n校验同时关闭监控 45 秒，利用窗口取回数据。\n撤离：完成任务 → 长按 E 开门 → 穿过出口。",
+      "tracking": "校验控制台"
+    },
+    "9": {
+      "heading": "本局目标 · 分流交付",
+      "brief": "主目标位于能源舱 · 本局出口在北侧\n搬起核心后选择接口：出口快接或远端静默交付。\n快接 1 秒但引来调查；静默接口 4 秒，交付后仍须撤离。\n撤离：完成任务 → 长按 E 开门 → 穿过出口。",
+      "tracking": "搬起能源核心"
+    }
+  },
+  "during_card": {
+    "aim_valid": true,
+    "alerts": 1,
+    "arc_points": 0,
+    "attempt": 2,
+    "blocked": [
+      [
+        9,
+        0
+      ],
+      [
+        9,
+        1
+      ],
+      [
+        9,
+        2
+      ],
+      [
+        9,
+        4
+      ],
+      [
+        9,
+        5
+      ],
+      [
+        9,
+        6
+      ],
+      [
+        9,
+        7
+      ],
+      [
+        9,
+        8
+      ],
+      [
+        9,
+        9
+      ],
+      [
+        9,
+        10
+      ],
+      [
+        9,
+        12
+      ],
+      [
+        9,
+        13
+      ],
+      [
+        9,
+        14
+      ],
+      [
+        0,
+        7
+      ],
+      [
+        1,
+        7
+      ],
+      [
+        2,
+        7
+      ],
+      [
+        3,
+        7
+      ],
+      [
+        5,
+        7
+      ],
+      [
+        6,
+        7
+      ],
+      [
+        7,
+        7
+      ],
+      [
+        8,
+        7
+      ],
+      [
+        10,
+        7
+      ],
+      [
+        11,
+        7
+      ],
+      [
+        12,
+        7
+      ],
+      [
+        13,
+        7
+      ],
+      [
+        15,
+        7
+      ],
+      [
+        16,
+        7
+      ],
+      [
+        17,
+        7
+      ],
+      [
+        18,
+        7
+      ],
+      [
+        9,
+        11
+      ],
+      [
+        16,
+        13
+      ],
+      [
+        4,
+        13
+      ],
+      [
+        12,
+        14
+      ],
+      [
+        13,
+        0
+      ],
+      [
+        4,
+        0
+      ],
+      [
+        6,
+        14
+      ],
+      [
+        18,
+        11
+      ],
+      [
+        17,
+        13
+      ],
+      [
+        17,
+        12
+      ],
+      [
+        13,
+        1
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        11,
+        1
+      ],
+      [
+        12,
+        1
+      ],
+      [
+        17,
+        11
+      ],
+      [
+        6,
+        1
+      ],
+      [
+        4,
+        14
+      ],
+      [
+        12,
+        0
+      ],
+      [
+        7,
+        4
+      ],
+      [
+        16,
+        10
+      ],
+      [
+        2,
+        9
+      ],
+      [
+        2,
+        12
+      ],
+      [
+        7,
+        9
+      ],
+      [
+        16,
+        9
+      ],
+      [
+        14,
+        10
+      ],
+      [
+        13,
+        10
+      ],
+      [
+        4,
+        10
+      ],
+      [
+        16,
+        4
+      ],
+      [
+        3,
+        12
+      ],
+      [
+        6,
+        10
+      ],
+      [
+        15,
+        12
+      ],
+      [
+        13,
+        5
+      ],
+      [
+        11,
+        5
+      ]
+    ],
+    "brief": "主目标位于仓储区 · 本局出口在东侧\n取得门禁卡或操作解封台，再开门撤离。\n可选：装备撬锁可直破出口；控制器打开维修捷径。\n撤离：完成任务 → 长按 E 开门 → 穿过出口。",
+    "carrying": false,
+    "catalog_centers": [
+      [
+        411,
+        594
+      ],
+      [
+        531,
+        594
+      ],
+      [
+        651,
+        594
+      ],
+      [
+        771,
+        594
+      ]
+    ],
+    "charges": {
+      "jammer": 1,
+      "pick": 2
+    },
+    "control_used": false,
+    "decoys": 0,
+    "download": 0,
+    "download_audio": false,
+    "download_taken": false,
+    "escapes": 1,
+    "exit_open": false,
+    "forward_axis": [
+      -0.485642910003662,
+      -0.874157309532166
+    ],
+    "found": {
+      "card": 0,
+      "power": 0,
+      "terminal": 0
+    },
+    "fps": 35,
+    "goal": [
+      11.6999998092651,
+      -2.59999990463257
+    ],
+    "guards": [
+      {
+        "cone_alpha": 0.159999996423721,
+        "confidence": 0,
+        "forward": [
+          -0.736138999462128,
+          -0.676830410957336
+        ],
+        "mode": "搜索",
+        "position": [
+          -5.33838415145874,
+          -1.29906523227692
+        ],
+        "range": 3.7
+      },
+      {
+        "cone_alpha": 0.159999996423721,
+        "confidence": 0,
+        "forward": [
+          -1,
+          -1.17145535401953e-15
+        ],
+        "mode": "调查",
+        "position": [
+          -0.506249010562897,
+          -5.19999980926514
+        ],
+        "range": 3.7
+      }
+    ],
+    "intel": 0,
+    "interaction_progress": 0.0666666666666667,
+    "items": [
+      {
+        "at": [
+          -3.90000009536743,
+          7.80000019073486
+        ],
+        "kind": "card"
+      },
+      {
+        "at": [
+          2.59999990463257,
+          2.59999990463257
+        ],
+        "kind": "override"
+      },
+      {
+        "at": [
+          3.90000009536743,
+          -6.5
+        ],
+        "kind": "control"
+      }
+    ],
+    "jam_hits": 0,
+    "loadout": [
+      "jammer",
+      "pick"
+    ],
+    "maintenance_open": false,
+    "mission": "突破封锁",
+    "music_playing": true,
+    "muted": false,
+    "needed": {
+      "card": 1
+    },
+    "objective": "突破封锁 · 门禁卡 / 手动解封 / 撬锁任选",
+    "operation_audio": "card",
+    "operation_playing": true,
+    "pose": "idle",
+    "position": [
+      -4.14887428283691,
+      8.10421943664551
+    ],
+    "preview_kind": "jammer",
+    "preview_slot": 0,
+    "preview_visible": false,
+    "projectiles": 0,
+    "ready_heading": "本局目标 · 多路突破",
+    "right_axis": [
+      0.874157309532166,
+      -0.485642910003662
+    ],
+    "risk": 0.528888888888889,
+    "selected_slot": 0,
+    "smoke_count": 0,
+    "stage": 1,
+    "stamina": 100,
+    "state": 1,
+    "task_audio": "",
+    "task_paused": false,
+    "task_playing": false,
+    "task_queue": [],
+    "time": 12.6000000000002,
+    "tracking": "card",
+    "tracking_name": "门禁卡方案",
+    "tracking_point": [
+      -3.90000009536743,
+      7.80000019073486
+    ],
+    "variant": 0,
+    "variant_title": "多路突破",
+    "velocity": [
+      0,
+      0
+    ]
+  },
+  "success": true
+}

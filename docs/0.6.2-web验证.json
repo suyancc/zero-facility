@@ -1,0 +1,290 @@
+{
+  "checks": [
+    "Keyboard T and left tracking button select distinct solutions",
+    "Real hotkey launches finite-charge airborne canister; pause freezes clock",
+    "Projectile lands and smoke becomes active",
+    "Actual icon cards equip jammer and smoke into separate inventory slots",
+    "Actual movement approaches a guard; EMP reports a real hit and consumes the charge"
+  ],
+  "errors": [],
+  "airborne": {
+    "aim_valid": true,
+    "alerts": 0,
+    "arc_points": 25,
+    "attempt": 1,
+    "carrying": false,
+    "charges": {
+      "pick": 2,
+      "smoke": 1
+    },
+    "control_used": false,
+    "decoys": 0,
+    "download": 0,
+    "download_taken": false,
+    "escapes": 0,
+    "exit_open": false,
+    "found": {
+      "card": 0,
+      "power": 0,
+      "terminal": 0
+    },
+    "fps": 36,
+    "goal": [
+      11.6999998092651,
+      -2.59999990463257
+    ],
+    "guards": [
+      {
+        "cone_alpha": 0.159999996423721,
+        "confidence": 0,
+        "forward": [
+          0.429705560207367,
+          0.902969062328339
+        ],
+        "mode": "巡逻",
+        "position": [
+          -1.29999995231628,
+          -5.19999980926514
+        ],
+        "range": 3.7
+      },
+      {
+        "cone_alpha": 0.159999996423721,
+        "confidence": 0,
+        "forward": [
+          0.902969062328339,
+          -0.429705560207367
+        ],
+        "mode": "巡逻",
+        "position": [
+          2.59999990463257,
+          -5.19999980926514
+        ],
+        "range": 3.7
+      }
+    ],
+    "intel": 0,
+    "jam_hits": 0,
+    "loadout": [
+      "smoke",
+      "pick"
+    ],
+    "maintenance_open": false,
+    "mission": "突破封锁",
+    "music_playing": true,
+    "muted": false,
+    "needed": {
+      "card": 1
+    },
+    "pose": "idle",
+    "position": [
+      -10.3999996185303,
+      -7.80000019073486
+    ],
+    "projectiles": 1,
+    "risk": 0,
+    "selected_slot": 0,
+    "smoke_count": 0,
+    "stage": 1,
+    "stamina": 100,
+    "state": 1,
+    "time": 0.683333333333334,
+    "tracking": "exit_pick",
+    "tracking_name": "撬锁直达出口",
+    "tracking_point": [
+      11.6999998092651,
+      -2.59999990463257
+    ],
+    "velocity": [
+      0,
+      0
+    ]
+  },
+  "landed": {
+    "aim_valid": true,
+    "alerts": 0,
+    "arc_points": 25,
+    "attempt": 1,
+    "carrying": false,
+    "charges": {
+      "pick": 2,
+      "smoke": 1
+    },
+    "control_used": false,
+    "decoys": 0,
+    "download": 0,
+    "download_taken": false,
+    "escapes": 0,
+    "exit_open": false,
+    "found": {
+      "card": 0,
+      "power": 0,
+      "terminal": 0
+    },
+    "fps": 26,
+    "goal": [
+      11.6999998092651,
+      -2.59999990463257
+    ],
+    "guards": [
+      {
+        "cone_alpha": 0.159999996423721,
+        "confidence": 0,
+        "forward": [
+          0.00259562581777573,
+          0.999996602535248
+        ],
+        "mode": "巡逻",
+        "position": [
+          -1.29999995231628,
+          -4.27250385284424
+        ],
+        "range": 3.7
+      },
+      {
+        "cone_alpha": 0.159999996423721,
+        "confidence": 0,
+        "forward": [
+          0.999996602535248,
+          -0.00259562581777573
+        ],
+        "mode": "巡逻",
+        "position": [
+          3.52749586105347,
+          -5.19999980926514
+        ],
+        "range": 3.7
+      }
+    ],
+    "intel": 0,
+    "jam_hits": 0,
+    "loadout": [
+      "smoke",
+      "pick"
+    ],
+    "maintenance_open": false,
+    "mission": "突破封锁",
+    "music_playing": true,
+    "muted": false,
+    "needed": {
+      "card": 1
+    },
+    "pose": "idle",
+    "position": [
+      -10.3999996185303,
+      -7.80000019073486
+    ],
+    "projectiles": 0,
+    "risk": 0,
+    "selected_slot": 0,
+    "smoke_count": 1,
+    "stage": 1,
+    "stamina": 100,
+    "state": 1,
+    "time": 1.68333333333333,
+    "tracking": "exit_pick",
+    "tracking_name": "撬锁直达出口",
+    "tracking_point": [
+      11.6999998092651,
+      -2.59999990463257
+    ],
+    "velocity": [
+      0,
+      0
+    ]
+  },
+  "jammed": {
+    "aim_valid": true,
+    "alerts": 0,
+    "arc_points": 25,
+    "attempt": 1,
+    "carrying": false,
+    "charges": {
+      "jammer": 0,
+      "smoke": 2
+    },
+    "control_used": false,
+    "decoys": 0,
+    "download": 0,
+    "download_taken": false,
+    "escapes": 0,
+    "exit_open": false,
+    "found": {
+      "card": 0,
+      "power": 0,
+      "terminal": 0
+    },
+    "fps": 36,
+    "goal": [
+      11.6999998092651,
+      -2.59999990463257
+    ],
+    "guards": [
+      {
+        "cone_alpha": 0.159999996423721,
+        "confidence": 0,
+        "forward": [
+          0.97890317440033,
+          0.20432460308075
+        ],
+        "mode": "调查",
+        "position": [
+          -1.29999995231628,
+          -5.29624938964844
+        ],
+        "range": 3.7
+      },
+      {
+        "cone_alpha": 0.159999996423721,
+        "confidence": 0,
+        "forward": [
+          1,
+          -3.18674174195621e-05
+        ],
+        "mode": "巡逻",
+        "position": [
+          4.29749250411987,
+          -5.19999980926514
+        ],
+        "range": 3.7
+      }
+    ],
+    "intel": 0,
+    "jam_hits": 1,
+    "loadout": [
+      "jammer",
+      "smoke"
+    ],
+    "maintenance_open": false,
+    "mission": "突破封锁",
+    "music_playing": true,
+    "muted": false,
+    "needed": {
+      "card": 1
+    },
+    "pose": "idle",
+    "position": [
+      -2.55395913124084,
+      -5.66398429870605
+    ],
+    "projectiles": 0,
+    "risk": 0,
+    "selected_slot": 0,
+    "smoke_count": 0,
+    "stage": 1,
+    "stamina": 69.1833333333329,
+    "state": 1,
+    "time": 2.41666666666666,
+    "tracking": "card",
+    "tracking_name": "门禁卡方案",
+    "tracking_point": [
+      -3.90000009536743,
+      7.80000019073486
+    ],
+    "velocity": [
+      0,
+      0
+    ]
+  },
+  "success": true
+}

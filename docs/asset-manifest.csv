@@ -1,0 +1,90 @@
+asset_id,path,author,license,source_url,sha256
+click_001,assets/audio/click_001.ogg,Kenney,CC0,https://kenney.nl/assets/interface-sounds,ccfb7fa0cccdd9faec0eb16033c732b1e308d139d80f799161495d58f7adcdb9
+confirmation_002,assets/audio/confirmation_002.ogg,Kenney,CC0,https://kenney.nl/assets/interface-sounds,33b17a9a9a2397c62b285c52c33a907fdffb476909c99e42dde603f6a7a8b12c
+error_004,assets/audio/error_004.ogg,Kenney,CC0,https://kenney.nl/assets/interface-sounds,0b574cea597d96507e782ae9764f88482ce49f46e931e57054bf7150047f2d69
+footstep_concrete_000,assets/audio/footstep_concrete_000.ogg,Kenney,CC0,https://kenney.nl/assets/impact-sounds,d7267e183067757c92c169de2a379abea592cfca6b39bb2e8feea15221ad79fe
+impactMetal_light_000,assets/audio/impactMetal_light_000.ogg,Kenney,CC0,https://kenney.nl/assets/impact-sounds,33b5e6e37c6e9d54e07bf5a89b12c76e879f40c1ea83cdd82714df1d6f9fec6d
+impactWood_light_000,assets/audio/impactWood_light_000.ogg,Kenney,CC0,https://kenney.nl/assets/impact-sounds,eb45e35b4bed784d3f120de4afec4b0d6ac09d9e143cce8cfcb7d739e1b1f3c3
+impactWood_light_001,assets/audio/impactWood_light_001.ogg,Kenney,CC0,https://kenney.nl/assets/impact-sounds,4b76bf3ccc8e60d19188f3165b778a7817786faa6887c55d9049bcbeef3b425f
+select_001,assets/audio/select_001.ogg,Kenney,CC0,https://kenney.nl/assets/interface-sounds,aec0c31ea934a35936ae0d2ab8fac8123c93aa5647f935853a58dbaf90278b7a
+GravitySansSC,assets/fonts/GravitySansSC.ttf,Noto / Adobe / Google Fonts; subset by project,OFL-1.1,https://github.com/google/fonts/tree/main/ofl/notosanssc,83128bb9696ef3f3c1cdb33d208990f9d72000e33faa4504fb9f520adc7405b4
+colormap,assets/models/factory/Textures/colormap.png,Kenney,CC0,https://kenney.nl/assets/factory-kit,35d7bd6900dde0208429eeaec87fa17fbf024ed59f3f4eab54bc92802eba9dd7
+box-large,assets/models/factory/box-large.glb,Kenney,CC0,https://kenney.nl/assets/factory-kit,f5c7a7b4d7ec48c2695dc5241d62a38dbb54b487e6be0f089548582c91bacdfd
+box-small,assets/models/factory/box-small.glb,Kenney,CC0,https://kenney.nl/assets/factory-kit,fd2ea1ac4f24a9515dc9c53a4a589a8897c824fa5865771799f965a252f684f0
+conveyor-long,assets/models/factory/conveyor-long.glb,Kenney,CC0,https://kenney.nl/assets/factory-kit,9087ec11d9dcc85ada9d14a66910244bfbb5df57c64b2647956a32525935dee3
+machine-window,assets/models/factory/machine-window.glb,Kenney,CC0,https://kenney.nl/assets/factory-kit,1387bd337354fca7c7cb4163e6bd4bef8711373bbe23dae01ba9d42cd35681b7
+machine,assets/models/factory/machine.glb,Kenney,CC0,https://kenney.nl/assets/factory-kit,a39e3042bcb7789274428357383317d70e1c31906e5301c99e7d9e90ac584863
+pipe-large-bend,assets/models/factory/pipe-large-bend.glb,Kenney,CC0,https://kenney.nl/assets/factory-kit,e234cba2e29bd825b9acdab56c0ff36504a6ceea4c74b21dafbbd98e84bb793b
+robot-arm-a,assets/models/factory/robot-arm-a.glb,Kenney,CC0,https://kenney.nl/assets/factory-kit,ad3f766791adadd1cfb5ccc27d2b2ac8787848282f2a15b3c407f350dc281b68
+structure-wall,assets/models/factory/structure-wall.glb,Kenney,CC0,https://kenney.nl/assets/factory-kit,3bdcb31d693b4e97a9fa198e9de1a47bfd14e829520da08ceaacadbdb258582c
+parcel-mark,assets/ui/parcel-mark.svg,Project original,project-original,,ba829d92d5b520df421fb07f772f41737dfa5fae898539a802ed7f3d95f471bf
+escape-character,scenes/characters/maintenance_worker.scn,Project original,project-original,,ff1b4c1bcebf0949165e72638612fafd3f985c3095b33358b048fffebe67c3f9
+escape-music,assets/audio/escape-pulse.ogg,Project original,project-original,,3aa1426786bc1d0b18a21ad2e247740cdd54060f8663f15c38e9e83ce14401b7
+escape-font,assets/fonts/EscapeSansSC.ttf,Noto derivative,OFL-1.1 derivative,,8ef03e0022c31d3fbefe78edce716ffcaa37c60f8ef97da3951872b579aa7386
+escape-icon,assets/ui/escape-mark.svg,Project original,project-original,,775fc0ce518ee5abf6e9b79cc65af2d17ba68bc7d70dabc8c1580843b66c3248
+tactical-font,assets/fonts/TacticalSansSC.ttf,Noto derivative,OFL-1.1 derivative,https://github.com/google/fonts/tree/main/ofl/notosanssc,1ad31c04192d4cc1157d6d9049a164b07b3439cd9aacc67e428c461ba1ebb0e5
+polish-font,assets/fonts/PolishSansSC.ttf,Noto derivative,OFL-1.1 derivative,https://github.com/google/fonts/tree/main/ofl/notosanssc,c242b1757f2660472f54c117dbab27dc4439a3f07cae77e8eae29625c913e571
+guide-font,assets/fonts/GuideSansSC.ttf,Noto derivative,OFL-1.1 derivative,https://github.com/google/fonts/tree/main/ofl/notosanssc,ab87d05489024ef8e8a18fc34eb197a601119817028b762a638c7b4df3fe4bd4
+item-card,scenes/items/card.scn,Project original,project-original,,8dd1bd8dc1fce2e01cecbaf262bd669947ed1a978bc3f2d5139617e1698f6a1c
+item-control,scenes/items/control.scn,Project original,project-original,,80e2f177a7848ea3ffa40418a1b8df34ecb003970dacbb2fdb8c8ba8832b8d6b
+item-core,scenes/items/core.scn,Project original,project-original,,fd9d502a71b66adbf7ce9363509c0e6f8064db7a459d89eff54f7711669a9e25
+item-decoy,scenes/items/decoy.scn,Project original,project-original,,d8d3c708010bb81c07fb0f4c86ad28cecafb0ef84ae8f18266196f3c60d3a27f
+item-download,scenes/items/download.scn,Project original,project-original,,5d9b69d6a585ef12116aadd3dcd9ee326e553d4546bf5859b5df9626426fe096
+item-intel,scenes/items/intel.scn,Project original,project-original,,9bbaac3c0c2092c516287fe4dbaea057d6b7177d480f2b27b66b9ebabf023b75
+item-jammer,scenes/items/jammer.scn,Project original,project-original,,1a923ee31a6a115bf6d4a9b801b645bdcf12a6a8481ca5a145c141aa34a12eb5
+item-override,scenes/items/override.scn,Project original,project-original,,12c263e3ff3243cad57f163e14ba10f7a344bf48d20784dee1cf190a4bb40ca9
+item-pick,scenes/items/pick.scn,Project original,project-original,,7f2c48af0173c21572dc9e4deb938f3599c3b41cad70612e6aed4efc99474894
+item-power,scenes/items/power.scn,Project original,project-original,,7042dd7390f48012e5d3402e66a6e2b6a3228301db5a41fc30637d1bd1b49bb1
+item-smoke,scenes/items/smoke.scn,Project original,project-original,,873f6105b8f394387508f4adf35d2f5c8bfa1332206f0f82046214442945eba0
+task-breach,assets/audio/tasks/breach.wav,Project original,project-original,,12ba0690d5d39ba7558a8d52097f4af6eda13ba84a268e00defeff23cdc605a1
+task-captured,assets/audio/tasks/captured.wav,Project original,project-original,,c8ba83f3279b8fe088252ea443e0d7d95b1f838cfd438e4df8e206ea9a316cd4
+task-card,assets/audio/tasks/card.wav,Project original,project-original,,9bacd1cec7aafa97fba1648c9fdca59e06b0607147696dbcb820a597177ce8ed
+task-control,assets/audio/tasks/control.wav,Project original,project-original,,deeafc472ec972ab79072eb598f7e689c24c920a08e75e5e54a73b5ac9767ec8
+task-core,assets/audio/tasks/core.wav,Project original,project-original,,2191e4535251d870cbc19c783a0c4d6d936a9d0ce647f5cd67aad1a9df205c5f
+task-core_drop,assets/audio/tasks/core_drop.wav,Project original,project-original,,0c65bcfdc9dee06bbef511c14d572c3ec19337e2b68af541f5e74262f74663e7
+task-deliver,assets/audio/tasks/deliver.wav,Project original,project-original,,ce6975fc849ddd371df48622bdd3678c605f6d03920feec6b6b2c09613991b0c
+task-door,assets/audio/tasks/door.wav,Project original,project-original,,f73e12b9e5f5c1d3a96a3cdefd74f68bb33ae39e871265085ec4dbadea29a953
+task-download_collect,assets/audio/tasks/download_collect.wav,Project original,project-original,,a2c85c3a9f079ea84c094913a42af47146e2c35cddb752304a4487d3dab22768
+task-download_loop,assets/audio/tasks/download_loop.wav,Project original,project-original,,8e1819cb9755b9ebd489c670dd245b91885d9f5e6dae0027cc80b1342be6ae6f
+task-download_ready,assets/audio/tasks/download_ready.wav,Project original,project-original,,b11eac4d0ce1f66b469212bb8fc2a4a0c8780baa031c50ab4bff30ab0f00841c
+task-download_start,assets/audio/tasks/download_start.wav,Project original,project-original,,184be65fb320859f4e8043dec92d16ab7f6122c0fff27c83f5dee59c58e31656
+task-escape,assets/audio/tasks/escape.wav,Project original,project-original,,de3bc25ab972ec98fa787ad53c1ab0d3ad0de318cceffdb3f12985d2b80a4295
+task-intel,assets/audio/tasks/intel.wav,Project original,project-original,,7503a77bcfc7e3cb61342364e0bea7311f45b8d22efeb21bb92f16e53bf61ce8
+task-mission,assets/audio/tasks/mission.wav,Project original,project-original,,7e41e1df84d1f854e93d69a6a7a032103c1c5c0c12437b7670f6d79040e0f929
+task-override,assets/audio/tasks/override.wav,Project original,project-original,,b02e679bca8e794e5a5b427ed38bebd609174d294c4d45a75e21d92b711c8b3e
+task-pick,assets/audio/tasks/pick.wav,Project original,project-original,,33f4c7f13660b08bcd82084ecfe3535fc119fd3104b7aabd68e8279c11e76a5f
+task-power,assets/audio/tasks/power.wav,Project original,project-original,,54cd3dcf18e594d6056e5ef6930e4e0046ef0faedbaa978f9b66a7b08d765966
+item-font,assets/fonts/ItemSansSC.ttf,Noto derivative,OFL-1.1 derivative,https://github.com/google/fonts/tree/main/ofl/notosanssc,1660b3ed4bb638a969c905671681fe72d94dfc0bc4537026f17bad4587e6e49a
+equipment-thumbnail-decoy-model,assets/ui/items/decoy-model.png,Project original,project-original,,c98b1dd069f5ec174ec2dc270896239009f9d8a2484a2d2588e03d99d987478c
+equipment-thumbnail-decoy,assets/ui/items/decoy.png,Project original,project-original,,e9991b654cd20daeba27660f0e58f9dcaf2de0ccb8fd5dbc9d8840e9234db800
+equipment-thumbnail-jammer-model,assets/ui/items/jammer-model.png,Project original,project-original,,6d3731b04a6c976e2cc2441ac0434b58f3a662214f2258389ac8c24bae40e9de
+equipment-thumbnail-jammer,assets/ui/items/jammer.png,Project original,project-original,,926156d4a76c99038b890907b003bb76994a88ab1f26910f0dbbf0ab5372ef9e
+equipment-thumbnail-pick-model,assets/ui/items/pick-model.png,Project original,project-original,,c3859df4d9f77a2fa94c0d0f6384d1030e059b5ff3dfed26ef8ec94be96dda9e
+equipment-thumbnail-pick,assets/ui/items/pick.png,Project original,project-original,,5093ab9e3c9d1dc73c68d33fc1ad8bec21b147cc0a25d17a2a0aa65fe1be3d94
+equipment-thumbnail-smoke-model,assets/ui/items/smoke-model.png,Project original,project-original,,0164e4c70e7018caba452bdd7e5608701fc42ea4ce209f582794fb47ef02bf0f
+equipment-thumbnail-smoke,assets/ui/items/smoke.png,Project original,project-original,,f457a9c834382dffd75d1b6735cf937089bbe94dc6572c446db3dcfc21320f33
+operation-card,assets/audio/operations/card.wav,Project original,project-original,,a589cdfb2337198ba95cf045fa2f9f272bbfe1fddb461615927596e73bb7df35
+operation-control,assets/audio/operations/control.wav,Project original,project-original,,af78ba7666ac1f967c1839400805db8b4ba7271a235b3181bddedc77ad89168c
+operation-core,assets/audio/operations/core.wav,Project original,project-original,,aed4a5766d932505970faf5280893f8d1b48f56777aa48f2e32ffd89a7c4492f
+operation-deliver,assets/audio/operations/deliver.wav,Project original,project-original,,dd444e06d206d511e03ff5d67982d38cd3f38dceef33dd5bdb2022a96f827626
+operation-download,assets/audio/operations/download.wav,Project original,project-original,,4f07b0d0d599591d9a2caf968964d5b26a7ef120806799d5a6566355620f5913
+operation-intel,assets/audio/operations/intel.wav,Project original,project-original,,e0df585b6268c007b16ccbdf9798cc4631d251dde93137d0cce50bd89f390d23
+operation-override,assets/audio/operations/override.wav,Project original,project-original,,f37e653d56ba7309ec2f2f5464ed4d6e34ccae5f1fa1294cfb39c2b5e03e7850
+operation-pick,assets/audio/operations/pick.wav,Project original,project-original,,117a9acd1d383dc2703e7cd5db8c4522890f2a8730d1ae0bb82ea4a454065ce0
+operation-MissionSansSC,assets/fonts/MissionSansSC.ttf,Noto derivative,OFL-1.1 derivative,https://github.com/google/fonts/tree/main/ofl/notosanssc,16e8e114730bf844721ec42abb0e23b7e29960c31da6c7400e6cff44bab2529b
+operation-MissionTaskSansSC,assets/fonts/MissionTaskSansSC.ttf,Noto derivative,OFL-1.1 derivative,https://github.com/google/fonts/tree/main/ofl/notosanssc,78ed204f5f8bb386bdff9b6f517d42fa2c1641085aa95ab8b6a4b06f35d17979
+tension-calm,assets/audio/tension/calm.ogg,Project original,project-original,,4cd312d2e6399c2feefa62be3aeed2e8d784b76adc2a4524628db79f90442f95
+tension-chase,assets/audio/tension/chase.ogg,Project original,project-original,,48eee4591382c92dd97b982febc2dc93742a105d8d38dbce8ce8580eaf58559f
+tension-exposed,assets/audio/tension/exposed.wav,Project original,project-original,,3d52c680f59197c4e6df66d62c8836e8cd7ce95367f3eafd4a3302fff9d3db12
+tension-heartbeat,assets/audio/tension/heartbeat.wav,Project original,project-original,,86e3cac9001413433edf513767b1db90d8ee0732d70971a9827ecfdc33be864b
+tension-recovery,assets/audio/tension/recovery.ogg,Project original,project-original,,1c558f7f37be0945b9080d708d63d43db0380b0720cf44994146fb42b764093d
+tension-suspicion,assets/audio/tension/suspicion.ogg,Project original,project-original,,0ed4f3877df4bcaca372fe0b7067fb03c7b54fc7bea3074dff38d4bb92e6b4e6
+tension-TensionSansSC,assets/fonts/TensionSansSC.ttf,Noto derivative,OFL-1.1 derivative,https://github.com/google/fonts/tree/main/ofl/notosanssc,0f58a823e814ba686c17eb4aea94a8d9ef76de8cd23ddd3365fc94ec1af3163f
+tension-mix-calm,assets/audio/tension_mix/calm.ogg,Project original,project-original,,7b52a69bb68a84d1386367193b1be5db704d1169e8d4cd3ee792af4da11563ef
+tension-mix-chase,assets/audio/tension_mix/chase.ogg,Project original,project-original,,e636d3dc27842bfe4bd85bbdea3178f3ed205f762c0404a0d1e299ea7e26a6bb
+tension-mix-detected,assets/audio/tension_mix/detected.wav,Project original,project-original,,2d88ec77e04b93dd8281fe007e87a9453984f2876bd775dd4d534d336e935400
+tension-mix-exposed,assets/audio/tension_mix/exposed.wav,Project original,project-original,,17a8f5ac7d6243d0b51555973975e6656d182fd00951b0bfdefe4f3ae3e38cef
+tension-mix-heartbeat,assets/audio/tension_mix/heartbeat.wav,Project original,project-original,,e746ed2ef4366f8c893acba5bc16ab6dc17dfbc30a403c5cd4ded14607360c9b
+tension-mix-recovery,assets/audio/tension_mix/recovery.ogg,Project original,project-original,,fdfbcba686d8f183dfdc40c86ee5b983ae6cbe336e7859f301e1e07a91014d0c
+tension-mix-suspicion,assets/audio/tension_mix/suspicion.ogg,Project original,project-original,,27a79894144242fef6345214e625e7aa6d7dadacbf09dc66208d6d97b65a7cf6
+

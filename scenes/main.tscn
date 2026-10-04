@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://br6vy6ra55v17"]
+
+[ext_resource type="Script" uid="uid://cs2bf64ky0iul" path="res://scripts/game_flow.gd" id="1"]
+[ext_resource type="Script" uid="uid://dlwij7ovjogx5" path="res://scripts/hud.gd" id="2"]
+[ext_resource type="Script" uid="uid://fq7ge0ma2p5c" path="res://scripts/audio_feedback.gd" id="3"]
+
+[sub_resource type="Environment" id="Env"]
+background_mode = 1
+background_color = Color(0.025, 0.045, 0.07, 1)
+ambient_light_source = 3
+ambient_light_color = Color(0.65, 0.78, 0.86, 1)
+ambient_light_energy = 0.45
+reflected_light_source = 2
+
+[node name="GravityCourier" type="Node3D" unique_id=1978718484]
+script = ExtResource("1")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=239074422]
+environment = SubResource("Env")
+
+[node name="KeyLight" type="DirectionalLight3D" parent="." unique_id=2029801527]
+transform = Transform3D(0.90630776, 0.3584006, -0.22395356, 0, 0.52991927, 0.8480481, 0.42261827, -0.76859254, 0.48026994, 0, 0, 0)
+light_color = Color(0.68, 0.82, 1, 1)
+light_energy = 0.82
+shadow_enabled = true
+
+[node name="FillLight" type="DirectionalLight3D" parent="." unique_id=1120191825]
+transform = Transform3D(-0.81915206, -0.28678823, 0.49673176, 0, 0.8660254, 0.5, -0.57357645, 0.40957603, -0.7094065, 0, 0, 0)
+light_color = Color(0.4, 0.76, 0.9, 1)
+light_energy = 0.25
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1686961390]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 15, 18)
+projection = 1
+current = true
+size = 16.5
+near = 0.1
+far = 100.0
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=1099989295]
+script = ExtResource("2")
+
+[node name="Audio" type="Node" parent="." unique_id=1390472732]
+script = ExtResource("3")

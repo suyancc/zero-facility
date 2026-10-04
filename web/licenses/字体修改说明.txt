@@ -1,0 +1,2 @@
+Gravity Sans SC：基于 Noto Sans SC（Google Fonts，OFL 1.1）制作的500字重静态实例，按当前游戏和文档字符集裁剪，并更名。许可证见 NotoSansSC-OFL.txt。
+增加中文文案时必须重新检查字形覆盖。

@@ -1,0 +1,72 @@
+{
+  "checks": [
+    "READY remains calm and retains current mission information",
+    "Model cards remain clickable after dynamic brief layout change",
+    "Out-of-range E and pause do not start a phantom work loop",
+    "Retry retains objective and clears operation channel",
+    "Actual recognition, chase and EMP escape drive suspicion/chase/recovery music and heartbeat",
+    "Real pause freezes shared heartbeat phase and audio trigger count",
+    "Actual settings sliders and edge toggle independently silence music/heartbeat and remove edge effect"
+  ],
+  "errors": [],
+  "briefs": {
+    "1": {
+      "heading": "本局目标 · 多路突破",
+      "brief": "主目标位于仓储区 · 本局出口在东侧\n取得门禁卡或操作解封台，再开门撤离。\n可选：装备撬锁可直破出口；控制器打开维修捷径。\n撤离：完成任务 → 长按 E 开门 → 穿过出口。",
+      "tracking": "门禁卡方案"
+    }
+  },
+  "moods": {
+    "calm": {
+      "intensity": 0,
+      "bpm": 78,
+      "weights": {
+        "chase": 0,
+        "recovery": 0,
+        "suspicion": 0
+      },
+      "beats": 0
+    },
+    "suspect": {
+      "intensity": 0.143628140839438,
+      "bpm": 87.4794572954029,
+      "weights": {
+        "chase": 0,
+        "recovery": 0,
+        "suspicion": 0.034173447253258
+      },
+      "beats": 0
+    },
+    "chase": {
+      "intensity": 0.751228028835834,
+      "bpm": 127.581049903165,
+      "weights": {
+        "chase": 0.384969447368106,
+        "recovery": 0,
+        "suspicion": 0.424210335759929
+      },
+      "beats": 1
+    },
+    "recovery": {
+      "intensity": 0.937117881591407,
+      "bpm": 139.849780185033,
+      "weights": {
+        "chase": 0.875943876800756,
+        "recovery": 0.316846362813319,
+        "suspicion": 0.873649216305089
+      },
+      "beats": 6
+    }
+  },
+  "peak": {
+    "intensity": 0.96604894149872,
+    "bpm": 141.759230138916,
+    "weights": {
+      "chase": 0.851722041203546,
+      "recovery": 0,
+      "suspicion": 0.80187494867989
+    }
+  },
+  "countermeasure": "Actual EMP hotkey during chase",
+  "success": true
+}

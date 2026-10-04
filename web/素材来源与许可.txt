@@ -1,0 +1,98 @@
+# 零号设施 · 潜行逃生：素材与许可
+
+更新：2026-10-04。旧版本使用说明保留在下文，当前版本以末尾 0.5 条目为准。本游戏的网页发布目录同时附带 licenses/，请保留该目录再分发。
+
+## Kenney Factory Kit 3.0
+- 作者：Kenney。
+- 官方页面：https://kenney.nl/assets/factory-kit
+- 下载：https://kenney.nl/media/pages/assets/factory-kit/edaac9d4f6-1777639602/kenney_factory-kit_3.0.zip
+- 许可：CC0，附原包 License.txt（assets/licenses/Kenney-Factory.txt）。
+- 选取：box-large、box-small、machine、machine-window、robot-arm-a、pipe-large-bend、conveyor-long、structure-wall，以及原包GLB外部贴图Textures/colormap.png。
+- 实际场景使用其中6种；其余2种为小型备用模型。模型未改拓扑，运行时统一缩放与位置。
+
+## Kenney Impact Sounds
+- 作者：Kenney。
+- 官方页面：https://kenney.nl/assets/impact-sounds
+- 下载：https://kenney.nl/media/pages/assets/impact-sounds/87b4ddecda-1677589768/kenney_impact-sounds.zip
+- 许可：CC0，附 assets/licenses/Kenney-impact.txt。
+- 使用木质轻碰撞两种、金属轻碰撞一种；脚步音已下载作为备用，当前悬浮管理员未使用脚步音。
+
+## Kenney Interface Sounds
+- 作者：Kenney。
+- 官方页面：https://kenney.nl/assets/interface-sounds
+- 下载：https://kenney.nl/media/pages/assets/interface-sounds/fa43c1dd4d-1677589452/kenney_interface-sounds.zip
+- 许可：CC0，附 assets/licenses/Kenney-interface.txt。
+- 使用 click_001、confirmation_002、error_004；select_001为备用。
+
+## 中文字体
+- 原字体：Noto Sans SC（Google Fonts / Adobe / Noto项目）。
+- 来源：https://github.com/google/fonts/tree/main/ofl/notosanssc
+- 下载：https://raw.githubusercontent.com/google/fonts/main/ofl/notosanssc/NotoSansSC%5Bwght%5D.ttf
+- 许可：SIL Open Font License 1.1，完整内容见 assets/licenses/NotoSansSC-OFL.txt。
+- 修改：固定500字重，裁剪当前文案字形，改名 Gravity Sans SC。
+- 从原始约17.8MB减少到214,876字节；当前游戏文案中文字符缺字检查为0。
+- 继续增加中文文案时，需要重新检查字形覆盖；不要随意删除许可证。
+
+## 项目原创内容
+- 管理员悬浮机器人、运输平台、货柜、目标区、包裹表情、UI图标与界面布局。
+- 预警短音为项目合成，不含第三方音乐。
+- 视野与遮挡效果为实时生成，不是素材预渲染图。
+
+不使用来源不明的商业游戏音乐、角色或音效；不声称现成GLB和Kenney音效由AI从零制作。
+
+## 0.3 玩具工厂新增素材
+
+- `assets/audio/toy-shift.ogg`：原创合成 20 秒循环配乐；`assets/audio/factory-room.ogg`：原创合成 20 秒机器环境声。无第三方录音采样。生成源码 `tools/compose_audio.py`；工具依赖 numpy、scipy、soundfile。
+- 新巡检机器人、圆角包裹和厂房结构：项目内程序建模，源码见 guard.gd、level_builder.gd、visual_factory.gd。
+- `assets/fonts/ToySansSC.ttf`：Noto Sans SC 的中等字重子集，已重命名 Toy Sans SC，继续遵守随附 OFL。更新字体需先另行下载原始 Noto Sans SC 变量字体，再于项目根目录执行 `python tools/subset_toy_font.py 原始字体路径.ttf`，依赖 fonttools；原始字体不随游戏重复打包。
+
+
+## 0.5 潜行逃生：当前使用情况
+- 维护员人体、独立手掌/手指/鞋及关节层级、五种功能障碍与出口结构：项目原创程序建模。角色源构造器在 scripts/visual_factory.gd；可编辑打包场景为 scenes/characters/maintenance_worker.scn；tools/bake_character.gd 可重新烘焙（会覆盖该生成场景，手工编辑前请另存副本）。
+- 步行、奔跑、潜行动作由 scripts/escape_player.gd 驱动，不是下载的人物动作包。
+- assets/audio/escape-pulse.ogg：原创合成 24 秒循环氛围音乐；生成脚本 tools/compose_escape_audio.py。原有环境声与 Kenney CC0 接口音继续使用。
+- Kenney Impact Sounds 的混凝土脚步音现已连接人物步态，不再仅作备用。原有工业 GLB 保留供场景使用；不能将这些第三方资产宣称为原创。
+- assets/fonts/EscapeSansSC.ttf：从 Noto Sans SC 固定字重并子集化，重命名 Escape Sans SC，91,292 字节；沿用随附 OFL 1.1。再生成脚本 tools/subset_escape_font.py，需要原始字体与 fonttools。增改中文文案后需重建字形子集。
+- assets/ui/escape-mark.svg：项目原创头盔图标。
+- 人物动作 GIF 是 Godot 原生模型程序动画的定点展示，不是实际通关录像。
+
+
+## 0.6 战术任务新增
+- 房间隔墙、维修门、摄像头、终端、核心外观与烟雾几何：原创程序建模，代码 scripts/tactical_art.gd、tactical_camera.gd、tactical_controller.gd。
+- 人物搬运姿势为项目程序动画，不是新购买/下载的动作片段。
+- assets/fonts/TacticalSansSC.ttf：Noto Sans SC 500字重子集，改名 Tactical Sans SC，116,060字节，继续遵守随附OFL。生成器 tools/subset_tactical_font.py；这是当前UI及3D文字使用的字体，旧子集留作历史兼容。
+- 继续使用原有Kenney CC0素材和原创合成音频，本轮没有新增来源不明的外部素材。
+
+
+## 0.6.1 反馈更新
+- 四种道具SVG图标：项目原创矢量路径，位于scripts/gear_tile.gd，不使用外部图标库。
+- 柔边烟雾着色器、范围线和脉冲网格：原创，位于scripts/gadget_fx.gd。
+- 四种道具及开锁短音：原创程序合成，scripts/audio_feedback.gd，不含第三方录音采样。
+- assets/fonts/PolishSansSC.ttf：当前Noto Sans SC字重500子集，改名Polish Sans SC，继续遵守随附OFL；旧字体留作兼容。
+
+
+## 0.6.2 目标与投掷反馈
+- 投掷罐体、轨迹线、目标指引、设备离线SVG和电路线：项目原创程序几何/矢量路径，见gadget_fx.gd、interference_feedback.gd。
+- 投掷短音为新增原创合成；沿用已有原创烟雾起雾声及各项授权音频。
+- assets/fonts/GuideSansSC.ttf：0.6.2版本Noto Sans SC字重500子集，改名Guide Sans SC，117,224字节，保留原OFL许可证；tools/subset_guide_font.py可重建。
+
+## 0.6.3 模型与任务音效
+- scenes/items/*.scn：11个项目原创组合几何模型，item_models.gd与bake_items.gd可重建，未使用外部模型或纹理。
+- assets/audio/tasks/*.wav：17条原创事件提示与1条下载循环，由make_task_audio.py确定性合成，无第三方音频采样。
+- assets/fonts/ItemSansSC.ttf：当前Noto Sans SC字重500子集，改名Item Sans SC，继续遵守assets/licenses/NotoSansSC-OFL.txt。旧字体保留兼容。
+
+## 0.6.4 装备缩略图
+assets/ui/items/*.png为项目原创模型在Godot中的透明渲染及等比规范化缩略图，无新增第三方素材。来源模型与0.6.3完全一致，bake_item_thumbnails.py与normalize_item_thumbnails.py可重建。
+
+## 0.6.5 过程声音与任务字体
+- assets/audio/operations/*.wav：8条项目原创确定性合成循环，无第三方录音；make_operation_audio.py可重建。
+- assets/fonts/MissionTaskSansSC.ttf：当前Noto Sans SC字重500子集，改名Mission Task Sans SC，保留assets/licenses/NotoSansSC-OFL.txt。MissionSansSC.ttf为本轮中间子集，未作为运行字体，亦遵守OFL。
+
+## 0.6.6 电影式氛围
+- assets/audio/tension/：4条原创分层配乐、双搏心跳、暴露短音，compose_tension_audio.py确定性合成，无第三方录音。
+- tension_overlay.gd：原创CanvasItem边缘着色器。
+- TensionSansSC.ttf：当前Noto Sans SC字重500中文子集，改名Tension Sans SC，继续遵守随附OFL。
+
+## 0.6.7 可闻性修复
+assets/audio/tension_mix：基于本项目原创0.6.6源音频重混，补充原创合成谐波及探测提示，无新增第三方录音；remix_tension_audio.py可重建。
+

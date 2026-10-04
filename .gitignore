@@ -1,0 +1,14 @@
+.godot/
+exports/
+/android/
+*.log
+__pycache__/
+.venv/
+.env
+.env.*
+!.env.example
+*.har
+.mcp.json
+.mcp/
+addons/godot_mcp/
+.DS_Store

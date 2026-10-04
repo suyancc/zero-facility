@@ -1,0 +1,113 @@
+{
+  "checks": [
+    "Initial READY selects and renders equipped smoke model without autoplay task sound",
+    "Actual clicks select all four corresponding 3D models, preserving unique equipped slots",
+    "Editing slot two updates model, slot badge and unique loadout",
+    "Preview is hidden and disabled in gameplay",
+    "Real pause and resume include dedicated task audio channel",
+    "Mute toggle and retry leave no stale task cue"
+  ],
+  "errors": [],
+  "snapshot": {
+    "aim_valid": true,
+    "alerts": 0,
+    "arc_points": 0,
+    "attempt": 2,
+    "carrying": false,
+    "charges": {
+      "jammer": 1,
+      "smoke": 2
+    },
+    "control_used": false,
+    "decoys": 0,
+    "download": 0,
+    "download_audio": false,
+    "download_taken": false,
+    "escapes": 0,
+    "exit_open": false,
+    "found": {
+      "card": 0,
+      "power": 0,
+      "terminal": 0
+    },
+    "fps": 47,
+    "goal": [
+      11.6999998092651,
+      -2.59999990463257
+    ],
+    "guards": [
+      {
+        "cone_alpha": 0.159999996423721,
+        "confidence": 0,
+        "forward": [
+          0,
+          1
+        ],
+        "mode": "巡逻",
+        "position": [
+          -1.29999995231628,
+          -5.19999980926514
+        ],
+        "range": 3.7
+      },
+      {
+        "cone_alpha": 0.159999996423721,
+        "confidence": 0,
+        "forward": [
+          1,
+          0
+        ],
+        "mode": "巡逻",
+        "position": [
+          2.59999990463257,
+          -5.19999980926514
+        ],
+        "range": 3.7
+      }
+    ],
+    "intel": 0,
+    "jam_hits": 0,
+    "loadout": [
+      "smoke",
+      "jammer"
+    ],
+    "maintenance_open": false,
+    "mission": "突破封锁",
+    "music_playing": true,
+    "muted": false,
+    "needed": {
+      "card": 1
+    },
+    "pose": "idle",
+    "position": [
+      -10.3999996185303,
+      -7.80000019073486
+    ],
+    "preview_kind": "jammer",
+    "preview_slot": 1,
+    "preview_visible": true,
+    "projectiles": 0,
+    "risk": 0,
+    "selected_slot": 0,
+    "smoke_count": 0,
+    "stage": 1,
+    "stamina": 100,
+    "state": 0,
+    "task_audio": "",
+    "task_paused": false,
+    "task_playing": false,
+    "task_queue": [],
+    "time": 0,
+    "tracking": "card",
+    "tracking_name": "门禁卡方案",
+    "tracking_point": [
+      -3.90000009536743,
+      7.80000019073486
+    ],
+    "velocity": [
+      0,
+      0
+    ]
+  },
+  "success": true
+}
