@@ -18,7 +18,7 @@ pipe-large-bend,assets/models/factory/pipe-large-bend.glb,Kenney,CC0,https://ken
 robot-arm-a,assets/models/factory/robot-arm-a.glb,Kenney,CC0,https://kenney.nl/assets/factory-kit,ad3f766791adadd1cfb5ccc27d2b2ac8787848282f2a15b3c407f350dc281b68
 structure-wall,assets/models/factory/structure-wall.glb,Kenney,CC0,https://kenney.nl/assets/factory-kit,3bdcb31d693b4e97a9fa198e9de1a47bfd14e829520da08ceaacadbdb258582c
 parcel-mark,assets/ui/parcel-mark.svg,Project original,project-original,,ba829d92d5b520df421fb07f772f41737dfa5fae898539a802ed7f3d95f471bf
-escape-character,scenes/characters/maintenance_worker.scn,Project original,project-original,,ff1b4c1bcebf0949165e72638612fafd3f985c3095b33358b048fffebe67c3f9
+escape-character,scenes/characters/maintenance_worker.scn,Project original,project-original,,f4940ca52b9b9fe9d053ac598ff776ba6f05b82b3ec3aa0b979e8fe77154ab8d
 escape-music,assets/audio/escape-pulse.ogg,Project original,project-original,,3aa1426786bc1d0b18a21ad2e247740cdd54060f8663f15c38e9e83ce14401b7
 escape-font,assets/fonts/EscapeSansSC.ttf,Noto derivative,OFL-1.1 derivative,,8ef03e0022c31d3fbefe78edce716ffcaa37c60f8ef97da3951872b579aa7386
 escape-icon,assets/ui/escape-mark.svg,Project original,project-original,,775fc0ce518ee5abf6e9b79cc65af2d17ba68bc7d70dabc8c1580843b66c3248
@@ -79,7 +79,7 @@ tension-exposed,assets/audio/tension/exposed.wav,Project original,project-origin
 tension-heartbeat,assets/audio/tension/heartbeat.wav,Project original,project-original,,86e3cac9001413433edf513767b1db90d8ee0732d70971a9827ecfdc33be864b
 tension-recovery,assets/audio/tension/recovery.ogg,Project original,project-original,,1c558f7f37be0945b9080d708d63d43db0380b0720cf44994146fb42b764093d
 tension-suspicion,assets/audio/tension/suspicion.ogg,Project original,project-original,,0ed4f3877df4bcaca372fe0b7067fb03c7b54fc7bea3074dff38d4bb92e6b4e6
-tension-TensionSansSC,assets/fonts/TensionSansSC.ttf,Noto derivative,OFL-1.1 derivative,https://github.com/google/fonts/tree/main/ofl/notosanssc,0f58a823e814ba686c17eb4aea94a8d9ef76de8cd23ddd3365fc94ec1af3163f
+tension-TensionSansSC,assets/fonts/TensionSansSC.ttf,Noto derivative,OFL-1.1 derivative,https://github.com/google/fonts/tree/main/ofl/notosanssc,12002eeecd8d8fcdc710e6a0e95efacbc6d951e6ef2d592f42c60b1cabea66cd
 tension-mix-calm,assets/audio/tension_mix/calm.ogg,Project original,project-original,,7b52a69bb68a84d1386367193b1be5db704d1169e8d4cd3ee792af4da11563ef
 tension-mix-chase,assets/audio/tension_mix/chase.ogg,Project original,project-original,,e636d3dc27842bfe4bd85bbdea3178f3ed205f762c0404a0d1e299ea7e26a6bb
 tension-mix-detected,assets/audio/tension_mix/detected.wav,Project original,project-original,,2d88ec77e04b93dd8281fe007e87a9453984f2876bd775dd4d534d336e935400

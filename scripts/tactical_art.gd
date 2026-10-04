@@ -23,3 +23,5 @@ static func build(root:Node3D,d:Dictionary)->void:
 	for spec in d.cameras:
 		var camera:=Node3D.new();camera.set_script(Cam);camera.setup(spec);cameras.add_child(camera);root.security_cameras.append(camera)
 
+	preload("res://scripts/industrial_sector.gd").build(root,d)
+

@@ -1,5 +1,6 @@
 """New independent Chrome context; never attaches to existing tabs or saves."""
-import asyncio,functools,json,sys,threading
+import asyncio,functools,json,sys,threading,io
+from PIL import Image
 from http.server import ThreadingHTTPServer,SimpleHTTPRequestHandler
 from pathlib import Path
 from playwright.async_api import async_playwright
@@ -27,7 +28,13 @@ async def main():
                 assert response.status==200
                 await page.wait_for_function('window.__gravityCourierQA?.state===0',timeout=120000)
                 result['checks'].append('HTTPS/HTTP entry and WebGL/Wasm/PCK reached READY')
-                await page.screenshot(path=str(output/'pages-ready.jpg'),type='jpeg',quality=88)
+                await page.set_viewport_size({'width':1400,'height':900});await page.wait_for_timeout(250)
+                await page.set_viewport_size({'width':1280,'height':800});await page.wait_for_timeout(600)
+                assert await page.evaluate('window.__gravityCourierQA.showcase_enabled')
+                shot=await page.screenshot(path=str(output/'pages-ready.jpg'),type='jpeg',quality=88)
+                portrait=Image.open(io.BytesIO(shot)).convert('RGB').crop((740,200,960,650))
+                assert sum(1 for r,g,b in portrait.getdata() if r>90 and g>90 and b>80)>1200,'Worker portrait disappeared after resizing'
+                result['checks'].append('Actual worker portrait remains rendered after live window resize')
                 await page.keyboard.press('Space')
                 await page.wait_for_function('window.__gravityCourierQA?.state===1',timeout=20000)
                 before=await page.evaluate('window.__gravityCourierQA.position')

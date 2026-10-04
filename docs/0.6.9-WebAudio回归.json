@@ -1,0 +1,42 @@
+{
+  "checks": [
+    "Steady music does not repeatedly restart WebAudio sources",
+    "Stationary READY has actual audible-range background PCM at default levels",
+    "Master mute silences actual WebAudio output",
+    "Real guard detection starts distinct warning with measured non-silent, non-clipped output",
+    "Pause removes music/heartbeat from audible output while ambience remains quiet"
+  ],
+  "errors": [],
+  "calm_output": {
+    "rms_dbfs": -30.444966431906785,
+    "peak_dbfs": -21.89924139985412,
+    "context": "running",
+    "samples": 290816
+  },
+  "calm_source_starts": 0,
+  "muted_output": {
+    "rms_dbfs": -240,
+    "peak_dbfs": -240,
+    "context": "running",
+    "samples": 45056
+  },
+  "detection_state": {
+    "detection_count": 1,
+    "tension_mode": "suspect",
+    "tension_intensity": 0.150223542074383,
+    "heartbeat_count": 0
+  },
+  "detected_output": {
+    "rms_dbfs": -29.389414495939373,
+    "peak_dbfs": -17.003263530669283,
+    "context": "running",
+    "samples": 32768
+  },
+  "paused_output": {
+    "rms_dbfs": -58.920665707186515,
+    "peak_dbfs": -50.28788023729359,
+    "context": "running",
+    "samples": 40960
+  },
+  "success": true
+}

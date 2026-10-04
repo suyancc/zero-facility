@@ -1,0 +1,47 @@
+{
+  "checks": [
+    "Ready character, four gear cards and second slot work at three desktop sizes",
+    "Starting disables character showcase; pause and retry restore expected layouts",
+    "Paired calm gameplay frame timings collected with music enabled"
+  ],
+  "errors": [],
+  "performance": [
+    {
+      "n": 295,
+      "median_ms": 16.799999999999272,
+      "p95_ms": 25.299999999999272,
+      "max_ms": 42.10000000000218,
+      "version": "0.6.8",
+      "alerts": 0,
+      "risk": 0,
+      "fps": 45,
+      "draw_calls": null
+    },
+    {
+      "n": 292,
+      "median_ms": 24.80000000000109,
+      "p95_ms": 25.100000000000364,
+      "max_ms": 33.400000000000546,
+      "version": "0.6.9",
+      "alerts": 0,
+      "risk": 0,
+      "fps": 56,
+      "draw_calls": 1220
+    }
+  ],
+  "sizes": [
+    [
+      1280,
+      800
+    ],
+    [
+      1600,
+      900
+    ],
+    [
+      1024,
+      768
+    ]
+  ],
+  "success": true
+}

@@ -43,7 +43,7 @@ static func _cover(root:Node3D,at:Vector3,kind:int)->void:
 	var h:float=heights[kind]
 	var dark:=V.material(Color("1b2b36"),0.3)
 	var steel:=V.material(Color("506772"),0.4)
-	var amber:=V.material(Color("94704c"))
+	var amber:=V.material(Color("656d70"))
 	var cyan:=V.material(Color("3daaba"),0,true)
 	var body:=V.box(root,Vector3(1.12,h,1.12),at+Vector3.UP*h*0.5,dark,true,4)
 	body.get_child(0).hide()

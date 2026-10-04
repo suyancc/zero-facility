@@ -256,6 +256,18 @@ func snapshot()->Dictionary:
 		for tile in hud.catalog_tiles:
 			var point:Vector2=tile.get_global_rect().get_center();centers.append([point.x,point.y])
 		result["catalog_centers"]=centers
+		var inventory_centers:Array=[]
+		for tile in hud.inventory_tiles:
+			var point:Vector2=tile.get_global_rect().get_center();inventory_centers.append([point.x,point.y])
+		result["inventory_centers"]=inventory_centers
+		result["viewport_size"]=[get_viewport().get_visible_rect().size.x,get_viewport().get_visible_rect().size.y]
+		result["showcase_enabled"]=hud.chrome.showcase.active
+		var settings_at:Vector2=hud.settings_button.get_global_rect().get_center()
+		var close_at:Vector2=hud.settings_close.get_global_rect().get_center()
+		result["settings_button_center"]=[settings_at.x,settings_at.y]
+		result["settings_close_center"]=[close_at.x,close_at.y]
+		result["settings_visible"]=hud.settings.visible
+		result["draw_calls"]=Performance.get_monitor(Performance.RENDER_TOTAL_DRAW_CALLS_IN_FRAME)
 		var cells:Array=[]
 		for cell in level.data.blocked:cells.append([cell.x,cell.y])
 		result["blocked"]=cells

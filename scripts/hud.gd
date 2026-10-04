@@ -26,6 +26,9 @@ signal music_changed(value:float)
 signal heartbeat_changed(value:float)
 signal edge_changed(value:bool)
 signal motion_changed(value: bool)
+var chrome:Control
+var readout_block:Control
+var endurance_block:Control
 var root: Control
 var timer_label: Label
 var stage_label: Label
@@ -37,6 +40,8 @@ var body: Label
 var primary: Button
 var secondary: Button
 var mute_button: Button
+var settings_button:Button
+var settings_close:Button
 var progress: ProgressBar
 var ticket_meta: Label
 var risk_label: Label
@@ -72,13 +77,13 @@ func _ready() -> void:
 	root.mouse_filter=Control.MOUSE_FILTER_IGNORE
 	add_child(root)
 	tension_edge=ColorRect.new();tension_edge.set_script(preload("res://scripts/tension_overlay.gd"));root.add_child(tension_edge)
-	var left:=VBoxContainer.new()
+	var left:=VBoxContainer.new();readout_block=left
 	left.position=Vector2(30,24)
 	left.mouse_filter=Control.MOUSE_FILTER_IGNORE
 	root.add_child(left)
-	stage_label=UI.text("零号设施 / 区域 001",24)
+	stage_label=UI.text("零号设施 / 区域 001",19)
 	left.add_child(stage_label)
-	status_label=UI.text("送达绿色接收台",17,UI.MINT)
+	status_label=UI.text("送达绿色接收台",14,UI.MINT)
 	left.add_child(status_label)
 	badge=UI.text("",14,UI.ORANGE)
 	left.add_child(badge)
@@ -101,7 +106,7 @@ func _ready() -> void:
 	timer_label.custom_minimum_size.x=105
 	right.add_child(timer_label)
 	right.add_child(UI.button("暂停",func():pause_pressed.emit()))
-	right.add_child(UI.button("设置",func():settings_opened.emit();settings.visible=true))
+	settings_button=UI.button("设置",func():settings_opened.emit();settings.visible=true);right.add_child(settings_button)
 	mute_button=UI.button("声音开",func():mute_pressed.emit())
 	right.add_child(mute_button)
 	hints=UI.text("WASD 移动   Shift 奔跑   Ctrl 潜行   E 交互   1 / 2 装备   T 切换目标   F 放下核心   Tab 地图",14,UI.INK)
@@ -125,7 +130,7 @@ func _ready() -> void:
 	interact_text.offset_top=-122
 	interact_text.horizontal_alignment=HORIZONTAL_ALIGNMENT_CENTER
 	root.add_child(interact_text)
-	var endurance:=VBoxContainer.new()
+	var endurance:=VBoxContainer.new();endurance_block=endurance
 	endurance.set_anchors_and_offsets_preset(Control.PRESET_BOTTOM_LEFT)
 	endurance.offset_left=28;endurance.offset_top=-100;endurance.offset_right=170;endurance.offset_bottom=-55
 	root.add_child(endurance)
@@ -140,7 +145,7 @@ func _ready() -> void:
 	root.add_child(equipment_label)
 	shade=ColorRect.new()
 	shade.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
-	shade.color=Color(0.035,0.07,0.10,0.30)
+	shade.color=Color(0.015,0.028,0.042,0.72)
 	shade.mouse_filter=Control.MOUSE_FILTER_IGNORE
 	root.add_child(shade)
 	_build_ticket()
@@ -170,30 +175,32 @@ func _ready() -> void:
 	toast.set_anchors_and_offsets_preset(Control.PRESET_TOP_WIDE)
 	toast.offset_top=105
 	root.add_child(toast)
+	chrome=Control.new();chrome.set_script(preload("res://scripts/industrial_hud.gd"));root.add_child(chrome);root.move_child(chrome,1);chrome.attach(self)
+	chrome.set_ready(false)
 
 func _build_ticket() -> void:
 	overlay=PanelContainer.new()
-	overlay.set_anchors_and_offsets_preset(Control.PRESET_CENTER_BOTTOM)
-	overlay.offset_left=-305
-	overlay.offset_right=305
-	overlay.offset_top=-505
-	overlay.offset_bottom=-68
-	overlay.add_theme_stylebox_override("panel",UI.panel(Color(0.05,0.13,0.18,0.94),22,18,Color("668e94")))
+	overlay.set_anchors_and_offsets_preset(Control.PRESET_TOP_LEFT)
+	overlay.offset_left=40
+	overlay.offset_right=596
+	overlay.offset_top=192
+	overlay.offset_bottom=642
+	overlay.add_theme_stylebox_override("panel",UI.panel(Color("0c1b25"),24,3,Color("365463")))
 	root.add_child(overlay)
 	var stack:=VBoxContainer.new()
 	stack.add_theme_constant_override("separation",9)
 	overlay.add_child(stack)
 	ticket_meta=UI.text("封锁区域",12,UI.MUTED)
 	stack.add_child(ticket_meta)
-	heading=UI.text("开工啦！",30,UI.INK)
+	heading=UI.text("行动准备",28,UI.INK)
 	stack.add_child(heading)
-	body=UI.text("",16,UI.INK)
+	body=UI.text("",15,UI.INK)
 	body.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART
 	body.custom_minimum_size=Vector2(440,42)
 	stack.add_child(body)
 	risk_label=UI.text("",13,UI.ORANGE)
 	stack.add_child(risk_label)
-	gear_row=HBoxContainer.new();gear_row.add_theme_constant_override("separation",12);stack.add_child(gear_row)
+	gear_row=HBoxContainer.new();gear_row.add_theme_constant_override("separation",10);stack.add_child(gear_row)
 	for kind in GEAR_KEYS:
 		var tile:=Button.new();tile.set_script(Tile);tile.catalog=true;gear_row.add_child(tile)
 		tile.configure(kind,1 if kind=="jammer" else 2,"",false)
@@ -208,7 +215,7 @@ func _build_ticket() -> void:
 	row.add_child(secondary)
 
 func _build_settings() -> void:
-	settings=PanelContainer.new()
+	settings=PanelContainer.new();settings.z_index=20
 	settings.set_anchors_and_offsets_preset(Control.PRESET_CENTER)
 	settings.offset_left=-250
 	settings.offset_right=250
@@ -241,7 +248,7 @@ func _build_settings() -> void:
 	stack.add_child(motion_toggle)
 	stack.add_child(UI.text("Shift 奔跑消耗体力，Ctrl 潜行降低脚步声。\n高掩体挡视线，矮箱不保证安全。红色闪烁代表目标确认或追捕。",15,UI.MUTED))
 	stack.add_child(UI.text("场景素材 Kenney / 字体 Noto / 原创合成配乐",12,UI.MUTED))
-	stack.add_child(UI.button("返回游戏",func():settings.hide();pause_pressed.emit(),true))
+	settings_close=UI.button("返回游戏",func():settings.hide();pause_pressed.emit(),true);stack.add_child(settings_close)
 	settings.hide()
 
 func set_stage(value:int,title:String,count:int) -> void:
@@ -256,6 +263,14 @@ func set_mission(text:String) -> void:
 
 func show_message(title:String,message:String,action:String,kind:String="ready") -> void:
 	modal_kind=kind
+	chrome.set_ready(kind=="ready")
+	readout_block.visible=kind!="ready";endurance_block.visible=kind!="ready"
+	backpack.position=Vector2(614,192) if kind=="ready" else Vector2(24,170)
+	tracking_button.visible=equipment_enabled and kind!="ready"
+	if kind=="ready":
+		overlay.position=Vector2(40,192);overlay.size=Vector2(556,450)
+	else:
+		overlay.position=(root.size-Vector2(556,360))*0.5;overlay.size=Vector2(556,360)
 	if gear_row!=null:gear_row.visible=kind=="ready"
 	if model_preview!=null:model_preview.set_enabled(kind=="ready" and equipment_enabled)
 	heading.text=title
@@ -275,6 +290,7 @@ func show_message(title:String,message:String,action:String,kind:String="ready")
 	else:overlay.modulate.a=1
 
 func hide_message() -> void:
+	chrome.set_ready(false);readout_block.show();endurance_block.show();backpack.position=Vector2(24,170);tracking_button.visible=equipment_enabled
 	model_preview.set_enabled(false)
 	overlay.hide()
 	shade.hide()
@@ -286,7 +302,7 @@ func feedback(color:Color) -> void:
 	create_tween().tween_property(flash,"color:a",0.0,0.28)
 
 func update_readout(seconds:float,delivery:float,risk:float,protection:float,state:int) -> void:
-	timer_label.text="%02d:%04.1f"%[int(seconds/60.0),fmod(seconds,60.0)]
+	timer_label.text="准备中" if state==0 else "%02d:%04.1f"%[int(seconds/60.0),fmod(seconds,60.0)]
 	progress.value=delivery
 	progress.visible=delivery>0 and state==1
 	hints.modulate.a=0.48 if seconds>7 and state==1 else 0.95
@@ -322,7 +338,7 @@ func _secondary_action()->void:
 	if modal_kind=="ready":practice_pressed.emit()
 	else:retry_pressed.emit()
 func show_equipment(enabled:bool,values:Array[String])->void:
-	equipment_enabled=enabled;tracking_button.visible=enabled;gear_row.visible=enabled;backpack.visible=enabled;equipment_label.hide();chosen=values.duplicate();model_preview.set_enabled(enabled and overlay.visible and modal_kind=="ready");_refresh_gear()
+	equipment_enabled=enabled;tracking_button.visible=enabled and not overlay.visible;gear_row.visible=enabled;backpack.visible=enabled;equipment_label.hide();chosen=values.duplicate();model_preview.set_enabled(enabled and overlay.visible and modal_kind=="ready");_refresh_gear()
 func _refresh_gear()->void:
 	for i in range(2):inventory_tiles[i].configure(chosen[i],1 if chosen[i]=="jammer" else 2,str(i+1),i==editing_slot)
 	for tile in catalog_tiles:
@@ -345,3 +361,4 @@ func update_tracking(title:String,distance:float,enabled:bool)->void:
 	tracking_button.text="T · %s  %dm"%[title,roundi(distance)]
 	tracking_button.disabled=not enabled
 	target_label.text=title
+

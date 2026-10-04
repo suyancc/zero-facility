@@ -23,6 +23,7 @@ func _ready()->void:
 	add_theme_stylebox_override("pressed",UI.panel(Color("205369"),4,9,Color("b1edee")))
 	mouse_entered.connect(queue_redraw);mouse_exited.connect(queue_redraw)
 func configure(value:String,amount:int,shortcut:String,active:bool,lock:float=0)->void:
+	if kind==value and count==amount and keycap==shortcut and highlighted==active and is_equal_approx(cooldown,lock):return
 	if (active and not highlighted) or kind!=value:selection_flash=0 if reduced else 1
 	kind=value;count=amount;keycap=shortcut;highlighted=active;cooldown=lock
 	tooltip_text=NAMES[kind]+" · "+("已用完" if count==0 else "按 "+shortcut+" 使用" if shortcut!="" else "点击装入选中格子")

@@ -2,8 +2,8 @@ extends RefCounted
 const FONT := preload("res://assets/fonts/TensionSansSC.ttf")
 const INK := Color("e5edf0")
 const MUTED := Color("99b1bd")
-const MINT := Color("6ee3c1")
-const ORANGE := Color("ffad59")
+const MINT := Color("83c8d5")
+const ORANGE := Color("ef984d")
 const PAPER := Color("e9efeb")
 const DARK := Color("162c39")
 
@@ -16,12 +16,12 @@ static func theme() -> Theme:
 static func panel(color: Color, padding: int = 20, radius: int = 12, border: Color = Color.TRANSPARENT) -> StyleBoxFlat:
 	var s := StyleBoxFlat.new()
 	s.bg_color = color
-	s.set_corner_radius_all(radius)
+	s.set_corner_radius_all(mini(radius,4))
 	s.set_content_margin_all(padding)
 	s.set_border_width_all(1)
 	s.border_color = border
 	s.shadow_color = Color(0,0.015,0.025,0.25)
-	s.shadow_size = 12
+	s.shadow_size = 0
 	s.shadow_offset = Vector2(0,5)
 	return s
 
@@ -37,7 +37,7 @@ static func text(value: String, size: int, color: Color = INK) -> Label:
 static func button(value: String, callback: Callable, accent: bool = false) -> Button:
 	var b := Button.new()
 	b.text = value
-	b.custom_minimum_size.y = 36
+	b.custom_minimum_size.y = 40
 	b.focus_mode = Control.FOCUS_NONE
 	var base := ORANGE if accent else Color("213e4e")
 	b.add_theme_stylebox_override("normal",panel(base,9,12))

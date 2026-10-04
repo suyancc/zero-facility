@@ -45,23 +45,45 @@ func pivot(parent:Node3D,node_name:String,at:Vector3)->Node3D:
 	var p:=Node3D.new();p.name=node_name;parent.add_child(p);p.position=at;return p
 func _build_model()->void:
 	rig=pivot(self,"CharacterRig",Vector3.ZERO)
-	var suit:=V.material(Color("bf8359"),0.08)
+	var suit:=V.material(Color("b9bcb7"),0.08)
 	var dark:=V.material(Color("182632"),0.15)
-	var armor:=V.material(Color("526b79"),0.25)
-	var trim:=V.material(Color("e6c58c"))
+	var armor:=V.material(Color("3c4850"),0.25)
+	var trim:=V.material(Color("e59143"))
 	var visor:=V.material(Color("64d8ef"),0.2,true)
-	torso=pivot(rig,"TorsoPivot",Vector3(0,0.76,0))
+	torso=pivot(rig,"TorsoPivot",Vector3(0,0.90,0));torso.scale.x=0.80
 	V.rounded(torso,Vector3(0.49,0.48,0.29),Vector3(0,0.24,0),suit,0.08)
-	V.rounded(torso,Vector3(0.43,0.23,0.09),Vector3(0,0.30,-0.16),armor,0.035)
-	V.box(torso,Vector3(0.07,0.07,0.012),Vector3(-0.11,0.32,-0.214),visor)
+	V.rounded(torso,Vector3(0.14,0.11,0.035),Vector3(-0.08,0.30,-0.16),armor,0.012)
+	V.box(torso,Vector3(0.07,0.07,0.012),Vector3(-0.11,0.32,-0.187),trim)
 	V.rounded(torso,Vector3(0.37,0.40,0.19),Vector3(0,0.21,0.20),dark,0.055)
 	V.box(torso,Vector3(0.045,0.29,0.02),Vector3(0,0.22,0.303),visor)
-	V.rounded(rig,Vector3(0.40,0.20,0.29),Vector3(0,0.72,0),dark,0.05)
+	V.rounded(rig,Vector3(0.40,0.20,0.29),Vector3(0,0.86,0),dark,0.05)
 	head=pivot(torso,"Head",Vector3(0,0.62,-0.015))
-	V.rounded(head,Vector3(0.38,0.40,0.34),Vector3.ZERO,armor,0.11)
-	V.rounded(head,Vector3(0.32,0.18,0.085),Vector3(0,0.015,-0.175),dark,0.035)
-	V.rounded(head,Vector3(0.28,0.10,0.035),Vector3(0,0.028,-0.227),visor,0.015)
-	V.rounded(head,Vector3(0.18,0.075,0.06),Vector3(0,-0.13,-0.20),dark,0.015)
+	var skin:=V.material(Color("bf967c"))
+	var hair:=V.material(Color("151b21"))
+	var face:=MeshInstance3D.new();var oval:=SphereMesh.new();oval.radius=1;oval.height=2;oval.radial_segments=20;oval.rings=12;face.mesh=oval;face.material_override=skin;head.add_child(face);face.scale=Vector3(0.143,0.185,0.135);face.position.y=-0.015
+	V.rounded(head,Vector3(0.305,0.135,0.29),Vector3(0,0.12,0.015),hair,0.045)
+	for x in [-0.105,0.0,0.10]:
+		var lock:=V.rounded(head,Vector3(0.1,0.115,0.05),Vector3(x,0.115,-0.135),hair,0.015);lock.rotation.z=-0.25
+	V.box(head,Vector3(0.042,0.055,0.047),Vector3(0,-0.035,-0.151),skin)
+	for x in [-0.068,0.068]:
+		V.box(head,Vector3(0.045,0.014,0.009),Vector3(x,-0.026,-0.129),hair)
+		V.box(head,Vector3(0.055,0.017,0.012),Vector3(x,0.007,-0.129),hair)
+	V.box(head,Vector3(0.055,0.009,0.01),Vector3(0,-0.10,-0.139),dark)
+	V.cylinder(torso,0.075,0.12,Vector3(0,0.48,0),skin)
+	# Work harness, terminal, waist pouches, backpack shell and orange handles.
+	for side in [-1,1]:
+		V.box(torso,Vector3(0.046,0.42,0.035),Vector3(side*0.17,0.26,-0.165),dark)
+		V.box(torso,Vector3(0.022,0.36,0.013),Vector3(side*0.17,0.27,-0.187),trim)
+		V.box(torso,Vector3(0.075,0.045,0.04),Vector3(side*0.17,0.38,-0.19),armor)
+		V.box(rig,Vector3(0.12,0.16,0.12),Vector3(side*0.215,0.84,0),dark)
+		V.box(torso,Vector3(0.045,0.33,0.025),Vector3(side*0.14,0.24,0.311),trim)
+	V.box(torso,Vector3(0.1,0.145,0.05),Vector3(0.10,0.28,-0.222),dark)
+	V.box(torso,Vector3(0.066,0.095,0.012),Vector3(0.10,0.29,-0.254),visor)
+	V.box(rig,Vector3(0.43,0.057,0.315),Vector3(0,0.90,0),dark)
+	V.box(rig,Vector3(0.08,0.054,0.04),Vector3(0,0.90,-0.174),armor)
+	for x in [-0.16,-0.11]:
+		V.cylinder(rig,0.014,0.19,Vector3(x,0.72,-0.19),armor)
+		V.box(rig,Vector3(0.037,0.075,0.04),Vector3(x,0.79,-0.19),trim)
 	for side in [-1,1]:
 		var prefix:String="Left" if side<0 else "Right"
 		var arm:=pivot(torso,prefix+"UpperArm",Vector3(side*0.295,0.40,0))
@@ -71,21 +93,25 @@ func _build_model()->void:
 		var elbow:=pivot(arm,prefix+"Forearm",Vector3(0,-0.27,0))
 		forearms.append(elbow)
 		V.rounded(elbow,Vector3(0.15,0.25,0.16),Vector3(0,-0.115,0),suit,0.04)
+		V.box(elbow,Vector3(0.16,0.065,0.18),Vector3(0,-0.18,0),dark)
+		V.box(elbow,Vector3(0.09,0.05,0.024),Vector3(0,-0.18,-0.10),trim)
 		var hand:=pivot(elbow,prefix+"Hand",Vector3(0,-0.255,-0.015))
 		V.rounded(hand,Vector3(0.13,0.10,0.075),Vector3.ZERO,dark,0.025)
 		for finger in range(4):
-			V.rounded(hand,Vector3(0.024,0.07,0.045),Vector3((finger-1.5)*0.03,-0.065,-0.005),trim,0.009)
+			V.rounded(hand,Vector3(0.024,0.07,0.045),Vector3((finger-1.5)*0.03,-0.065,-0.005),dark,0.009)
 		V.rounded(hand,Vector3(0.045,0.075,0.05),Vector3(-side*0.079,-0.013,0),dark,0.014)
-		var hip:=pivot(rig,prefix+"Thigh",Vector3(side*0.125,0.66,0))
+		var hip:=pivot(rig,prefix+"Thigh",Vector3(side*0.125,0.80,0))
 		thighs.append(hip)
-		V.rounded(hip,Vector3(0.20,0.29,0.23),Vector3(0,-0.14,0),suit,0.05)
-		var knee:=pivot(hip,prefix+"Shin",Vector3(0,-0.29,0))
+		V.rounded(hip,Vector3(0.18,0.36,0.21),Vector3(0,-0.18,0),suit,0.05)
+		var knee:=pivot(hip,prefix+"Shin",Vector3(0,-0.36,0))
 		shins.append(knee)
-		V.rounded(knee,Vector3(0.17,0.26,0.18),Vector3(0,-0.12,0),dark,0.04)
+		V.rounded(knee,Vector3(0.16,0.34,0.17),Vector3(0,-0.16,0),dark,0.04)
 		V.rounded(knee,Vector3(0.19,0.13,0.08),Vector3(0,0,-0.09),armor,0.035)
-		var foot:=pivot(knee,prefix+"Foot",Vector3(0,-0.27,-0.055))
+		var foot:=pivot(knee,prefix+"Foot",Vector3(0,-0.35,-0.055))
 		feet.append(foot)
 		V.rounded(foot,Vector3(0.21,0.13,0.34),Vector3(0,-0.025,-0.035),dark,0.04)
+		V.box(foot,Vector3(0.215,0.028,0.35),Vector3(0,-0.092,-0.035),armor)
+		for y in [0.035,0.067]:V.box(foot,Vector3(0.135,0.017,0.025),Vector3(0,y,-0.09),trim)
 		V.rounded(foot,Vector3(0.205,0.055,0.16),Vector3(0,0.005,-0.13),armor,0.02)
 
 func _accessories()->void:
@@ -144,7 +170,7 @@ func _process(delta:float)->void:
 		forearms[i].rotation.x=0.85 if carrying else 1.1 if running else 0.25
 		var total:float=thighs[i].rotation.x+shins[i].rotation.x
 		feet[i].rotation.x=-total
-		var sole:float=0.66-0.29*cos(thighs[i].rotation.x)-0.27*cos(total)+0.055*sin(total)-0.09
+		var sole:float=0.80-0.36*cos(thighs[i].rotation.x)-0.35*cos(total)+0.055*sin(total)-0.09
 		minimum_sole=minf(minimum_sole,sole)
 	rig.position.y=-minimum_sole+(absf(sin(gait*2))*0.035 if running and moving else 0.0)
 	if outcome=="caught":
