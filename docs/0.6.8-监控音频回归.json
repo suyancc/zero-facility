@@ -1,0 +1,161 @@
+{
+  "errors": [],
+  "viewport": [
+    1280,
+    800
+  ],
+  "dpr": 1,
+  "scope": "One real surveillance camera, actual line of sight alternated three times; native game tension/audio functions; independent Chrome and no access to user tab.",
+  "detection_count": 2,
+  "done": true,
+  "pause_frozen": true,
+  "results": [
+    {
+      "alerts": 1,
+      "confidence": 1,
+      "cycle": 0,
+      "detection_count": 1,
+      "heartbeats": 3,
+      "mode": "chase",
+      "pcm": {
+        "context": "running",
+        "ops": {
+          "gain_set": 22,
+          "loop_start": 0,
+          "loop_stop": 0,
+          "start": 11,
+          "stop": 6
+        },
+        "peak_dbfs": -12.8690270743044,
+        "rms_dbfs": -21.2814291176953
+      },
+      "sees": true,
+      "watching": true
+    },
+    {
+      "alerts": 1,
+      "confidence": 0,
+      "cycle": 0,
+      "detection_count": 1,
+      "heartbeats": 8,
+      "mode": "recovery",
+      "pcm": {
+        "context": "running",
+        "ops": {
+          "gain_set": 32,
+          "loop_start": 0,
+          "loop_stop": 0,
+          "start": 16,
+          "stop": 10
+        },
+        "peak_dbfs": -18.4164637173696,
+        "rms_dbfs": -26.8950943932631
+      },
+      "sees": false,
+      "watching": false
+    },
+    {
+      "alerts": 1,
+      "confidence": 1,
+      "cycle": 1,
+      "detection_count": 1,
+      "heartbeats": 12,
+      "mode": "suspect",
+      "pcm": {
+        "context": "running",
+        "ops": {
+          "gain_set": 40,
+          "loop_start": 0,
+          "loop_stop": 0,
+          "start": 20,
+          "stop": 15
+        },
+        "peak_dbfs": -22.1699512008813,
+        "rms_dbfs": -30.8160086333831
+      },
+      "sees": true,
+      "watching": true
+    },
+    {
+      "alerts": 1,
+      "confidence": 0,
+      "cycle": 1,
+      "detection_count": 1,
+      "heartbeats": 16,
+      "mode": "recovery",
+      "pcm": {
+        "context": "running",
+        "ops": {
+          "gain_set": 48,
+          "loop_start": 0,
+          "loop_stop": 0,
+          "start": 24,
+          "stop": 19
+        },
+        "peak_dbfs": -19.5887404162983,
+        "rms_dbfs": -27.6608756053521
+      },
+      "sees": false,
+      "watching": false
+    },
+    {
+      "alerts": 2,
+      "confidence": 1,
+      "cycle": 2,
+      "detection_count": 2,
+      "heartbeats": 20,
+      "mode": "chase",
+      "pcm": {
+        "context": "running",
+        "ops": {
+          "gain_set": 60,
+          "loop_start": 0,
+          "loop_stop": 0,
+          "start": 30,
+          "stop": 25
+        },
+        "peak_dbfs": -25.6037760036554,
+        "rms_dbfs": -32.6329517191251
+      },
+      "sees": true,
+      "watching": true
+    },
+    {
+      "alerts": 2,
+      "confidence": 0,
+      "cycle": 2,
+      "detection_count": 2,
+      "heartbeats": 25,
+      "mode": "recovery",
+      "pcm": {
+        "context": "running",
+        "ops": {
+          "gain_set": 70,
+          "loop_start": 0,
+          "loop_stop": 0,
+          "start": 39,
+          "stop": 29
+        },
+        "peak_dbfs": -24.0764448158016,
+        "rms_dbfs": -31.9536052976071
+      },
+      "sees": false,
+      "watching": false
+    }
+  ],
+  "resume_playing": true,
+  "retry_cleared": true,
+  "success": true,
+  "audio_ops": {
+    "start": 46,
+    "stop": 36,
+    "loop_start": 0,
+    "loop_stop": 0,
+    "gain_set": 74
+  },
+  "renderers": [
+    "ANGLE (Intel, Intel(R) Arc(TM) Graphics (0x00007D55) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+    "ANGLE (Intel, Intel(R) Arc(TM) Graphics (0x00007D55) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+    "ANGLE (Intel, Intel(R) Arc(TM) Graphics (0x00007D55) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+  ]
+}

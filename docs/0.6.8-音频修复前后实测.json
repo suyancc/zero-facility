@@ -1,0 +1,819 @@
+{
+  "scope": "Same fixed-frame workload, independent browser contexts, genuine WebAudio output; source-start counts are underlying node calls, not simultaneous voices.",
+  "before": {
+    "errors": [],
+    "viewport": [
+      1280,
+      800
+    ],
+    "dpr": 1,
+    "scope": "Controlled real LOS, four guards in stage 17; frozen locomotion and radio; no production changes",
+    "done": true,
+    "results": [
+      {
+        "ai_cpu": {
+          "max_ms": 2.8,
+          "median_ms": 0.5,
+          "n": 80,
+          "p95_ms": 1.9
+        },
+        "audio_pcm": {
+          "context": "running",
+          "ops": {
+            "gain_set": 12,
+            "loop_start": 0,
+            "loop_stop": 0,
+            "start": 10,
+            "stop": 6
+          },
+          "peak_dbfs": -240,
+          "rms_dbfs": -240
+        },
+        "config": {
+          "count": 4,
+          "full": true,
+          "sound": "off"
+        },
+        "draw_calls": 1167,
+        "frame": {
+          "max_ms": 29.4,
+          "median_ms": 23.5,
+          "n": 80,
+          "p95_ms": 27.4
+        },
+        "objects": 1513,
+        "playing_audio": 0,
+        "process_cpu": {
+          "max_ms": 1.7,
+          "median_ms": 0.8,
+          "n": 80,
+          "p95_ms": 1.4
+        },
+        "transition": {
+          "max_ms": 47.5,
+          "median_ms": 25.6,
+          "n": 40,
+          "p95_ms": 33.3
+        },
+        "verified_scanners": 4,
+        "visible_alert_lights": 4
+      },
+      {
+        "ai_cpu": {
+          "max_ms": 3.5,
+          "median_ms": 0.4,
+          "n": 80,
+          "p95_ms": 2.1
+        },
+        "audio_pcm": {
+          "context": "running",
+          "ops": {
+            "gain_set": 32,
+            "loop_start": 0,
+            "loop_stop": 0,
+            "start": 549,
+            "stop": 11
+          },
+          "peak_dbfs": -12.3165208902195,
+          "rms_dbfs": -20.4404974190929
+        },
+        "config": {
+          "count": 4,
+          "full": true,
+          "sound": "all"
+        },
+        "draw_calls": 1165,
+        "frame": {
+          "max_ms": 74.5,
+          "median_ms": 41.8,
+          "n": 80,
+          "p95_ms": 59.8
+        },
+        "objects": 1511,
+        "playing_audio": 5,
+        "process_cpu": {
+          "max_ms": 50,
+          "median_ms": 14.7,
+          "n": 80,
+          "p95_ms": 29.5
+        },
+        "transition": {
+          "max_ms": 73.8,
+          "median_ms": 46.2,
+          "n": 40,
+          "p95_ms": 65.8
+        },
+        "verified_scanners": 4,
+        "visible_alert_lights": 4
+      },
+      {
+        "ai_cpu": {
+          "max_ms": 2.3,
+          "median_ms": 0.5,
+          "n": 80,
+          "p95_ms": 1.9
+        },
+        "audio_pcm": {
+          "context": "running",
+          "ops": {
+            "gain_set": 32,
+            "loop_start": 0,
+            "loop_stop": 0,
+            "start": 553,
+            "stop": 16
+          },
+          "peak_dbfs": -240,
+          "rms_dbfs": -240
+        },
+        "config": {
+          "count": 4,
+          "full": true,
+          "sound": "off"
+        },
+        "draw_calls": 1165,
+        "frame": {
+          "max_ms": 31.7,
+          "median_ms": 25.6,
+          "n": 80,
+          "p95_ms": 29.9
+        },
+        "objects": 1511,
+        "playing_audio": 0,
+        "process_cpu": {
+          "max_ms": 1.4,
+          "median_ms": 0.7,
+          "n": 80,
+          "p95_ms": 1.3
+        },
+        "transition": {
+          "max_ms": 39.3,
+          "median_ms": 28.4,
+          "n": 40,
+          "p95_ms": 34.6
+        },
+        "verified_scanners": 4,
+        "visible_alert_lights": 4
+      },
+      {
+        "ai_cpu": {
+          "max_ms": 2.7,
+          "median_ms": 0.4,
+          "n": 80,
+          "p95_ms": 1.9
+        },
+        "audio_pcm": {
+          "context": "running",
+          "ops": {
+            "gain_set": 42,
+            "loop_start": 0,
+            "loop_stop": 0,
+            "start": 1042,
+            "stop": 16
+          },
+          "peak_dbfs": -11.6782562106957,
+          "rms_dbfs": -21.0503713484136
+        },
+        "config": {
+          "count": 4,
+          "full": true,
+          "sound": "music"
+        },
+        "draw_calls": 1165,
+        "frame": {
+          "max_ms": 68,
+          "median_ms": 43.2,
+          "n": 80,
+          "p95_ms": 61.9
+        },
+        "objects": 1511,
+        "playing_audio": 5,
+        "process_cpu": {
+          "max_ms": 35.5,
+          "median_ms": 16.7,
+          "n": 80,
+          "p95_ms": 26.4
+        },
+        "transition": {
+          "max_ms": 69.9,
+          "median_ms": 43.6,
+          "n": 40,
+          "p95_ms": 62.4
+        },
+        "verified_scanners": 4,
+        "visible_alert_lights": 4
+      },
+      {
+        "ai_cpu": {
+          "max_ms": 2,
+          "median_ms": 0.4,
+          "n": 80,
+          "p95_ms": 1.8
+        },
+        "audio_pcm": {
+          "context": "running",
+          "ops": {
+            "gain_set": 42,
+            "loop_start": 0,
+            "loop_stop": 0,
+            "start": 1370,
+            "stop": 21
+          },
+          "peak_dbfs": -240,
+          "rms_dbfs": -240
+        },
+        "config": {
+          "count": 4,
+          "full": true,
+          "sound": "off"
+        },
+        "draw_calls": 1165,
+        "frame": {
+          "max_ms": 92.3,
+          "median_ms": 37.7,
+          "n": 80,
+          "p95_ms": 67.1
+        },
+        "objects": 1511,
+        "playing_audio": 0,
+        "process_cpu": {
+          "max_ms": 1.2,
+          "median_ms": 0.7,
+          "n": 80,
+          "p95_ms": 1
+        },
+        "transition": {
+          "max_ms": 63.2,
+          "median_ms": 32.4,
+          "n": 40,
+          "p95_ms": 52.6
+        },
+        "verified_scanners": 4,
+        "visible_alert_lights": 4
+      },
+      {
+        "ai_cpu": {
+          "max_ms": 2.7,
+          "median_ms": 0.5,
+          "n": 80,
+          "p95_ms": 1.8
+        },
+        "audio_pcm": {
+          "context": "running",
+          "ops": {
+            "gain_set": 52,
+            "loop_start": 0,
+            "loop_stop": 0,
+            "start": 1612,
+            "stop": 26
+          },
+          "peak_dbfs": -240,
+          "rms_dbfs": -240
+        },
+        "config": {
+          "count": 4,
+          "full": true,
+          "sound": "cues"
+        },
+        "draw_calls": 1165,
+        "frame": {
+          "max_ms": 72.9,
+          "median_ms": 24.6,
+          "n": 80,
+          "p95_ms": 29.6
+        },
+        "objects": 1511,
+        "playing_audio": 0,
+        "process_cpu": {
+          "max_ms": 8.9,
+          "median_ms": 1.3,
+          "n": 80,
+          "p95_ms": 1.9
+        },
+        "transition": {
+          "max_ms": 101.1,
+          "median_ms": 41.6,
+          "n": 40,
+          "p95_ms": 84.2
+        },
+        "verified_scanners": 4,
+        "visible_alert_lights": 4
+      },
+      {
+        "ai_cpu": {
+          "max_ms": 3,
+          "median_ms": 0.4,
+          "n": 80,
+          "p95_ms": 1.4
+        },
+        "audio_pcm": {
+          "context": "running",
+          "ops": {
+            "gain_set": 52,
+            "loop_start": 0,
+            "loop_stop": 0,
+            "start": 1924,
+            "stop": 26
+          },
+          "peak_dbfs": -240,
+          "rms_dbfs": -240
+        },
+        "config": {
+          "count": 4,
+          "full": true,
+          "sound": "off"
+        },
+        "draw_calls": 1165,
+        "frame": {
+          "max_ms": 113.2,
+          "median_ms": 33.7,
+          "n": 80,
+          "p95_ms": 67.3
+        },
+        "objects": 1511,
+        "playing_audio": 0,
+        "process_cpu": {
+          "max_ms": 1.3,
+          "median_ms": 0.6,
+          "n": 80,
+          "p95_ms": 1.1
+        },
+        "transition": {
+          "max_ms": 56.2,
+          "median_ms": 30.2,
+          "n": 40,
+          "p95_ms": 46.9
+        },
+        "verified_scanners": 4,
+        "visible_alert_lights": 4
+      },
+      {
+        "ai_cpu": {
+          "max_ms": 2.6,
+          "median_ms": 0.4,
+          "n": 80,
+          "p95_ms": 1.9
+        },
+        "audio_pcm": {
+          "context": "running",
+          "ops": {
+            "gain_set": 72,
+            "loop_start": 0,
+            "loop_stop": 0,
+            "start": 3108,
+            "stop": 31
+          },
+          "peak_dbfs": -9.95243397622842,
+          "rms_dbfs": -20.5547446091018
+        },
+        "config": {
+          "count": 4,
+          "full": true,
+          "sound": "all"
+        },
+        "draw_calls": 1165,
+        "frame": {
+          "max_ms": 153.3,
+          "median_ms": 80,
+          "n": 80,
+          "p95_ms": 123.8
+        },
+        "objects": 1511,
+        "playing_audio": 5,
+        "process_cpu": {
+          "max_ms": 60.4,
+          "median_ms": 17.7,
+          "n": 80,
+          "p95_ms": 41.3
+        },
+        "transition": {
+          "max_ms": 150.5,
+          "median_ms": 63.3,
+          "n": 40,
+          "p95_ms": 111.7
+        },
+        "verified_scanners": 4,
+        "visible_alert_lights": 4
+      }
+    ],
+    "audio_ops": {
+      "start": 3108,
+      "stop": 31,
+      "loop_start": 0,
+      "loop_stop": 0,
+      "gain_set": 72
+    },
+    "renderers": [
+      "ANGLE (Intel, Intel(R) Arc(TM) Graphics (0x00007D55) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "ANGLE (Intel, Intel(R) Arc(TM) Graphics (0x00007D55) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "ANGLE (Intel, Intel(R) Arc(TM) Graphics (0x00007D55) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+    ]
+  },
+  "after": {
+    "errors": [],
+    "viewport": [
+      1280,
+      800
+    ],
+    "dpr": 1,
+    "scope": "Controlled real LOS, four guards in stage 17; frozen locomotion and radio; no production changes",
+    "done": true,
+    "results": [
+      {
+        "ai_cpu": {
+          "max_ms": 3.2,
+          "median_ms": 0.5,
+          "n": 80,
+          "p95_ms": 2.3
+        },
+        "audio_pcm": {
+          "context": "running",
+          "ops": {
+            "gain_set": 12,
+            "loop_start": 0,
+            "loop_stop": 0,
+            "start": 6,
+            "stop": 6
+          },
+          "peak_dbfs": -240,
+          "rms_dbfs": -240
+        },
+        "config": {
+          "count": 4,
+          "full": true,
+          "sound": "off"
+        },
+        "draw_calls": 1167,
+        "frame": {
+          "max_ms": 29.2,
+          "median_ms": 23.4,
+          "n": 80,
+          "p95_ms": 27.7
+        },
+        "objects": 1513,
+        "playing_audio": 0,
+        "process_cpu": {
+          "max_ms": 1.8,
+          "median_ms": 0.8,
+          "n": 80,
+          "p95_ms": 1.4
+        },
+        "transition": {
+          "max_ms": 51.2,
+          "median_ms": 27.8,
+          "n": 40,
+          "p95_ms": 34
+        },
+        "verified_scanners": 4,
+        "visible_alert_lights": 4
+      },
+      {
+        "ai_cpu": {
+          "max_ms": 3.4,
+          "median_ms": 0.5,
+          "n": 80,
+          "p95_ms": 2.1
+        },
+        "audio_pcm": {
+          "context": "running",
+          "ops": {
+            "gain_set": 32,
+            "loop_start": 0,
+            "loop_stop": 0,
+            "start": 16,
+            "stop": 11
+          },
+          "peak_dbfs": -22.1051897849861,
+          "rms_dbfs": -29.3258839143452
+        },
+        "config": {
+          "count": 4,
+          "full": true,
+          "sound": "all"
+        },
+        "draw_calls": 1165,
+        "frame": {
+          "max_ms": 33.5,
+          "median_ms": 25.9,
+          "n": 80,
+          "p95_ms": 30
+        },
+        "objects": 1511,
+        "playing_audio": 5,
+        "process_cpu": {
+          "max_ms": 5,
+          "median_ms": 0.9,
+          "n": 80,
+          "p95_ms": 1.8
+        },
+        "transition": {
+          "max_ms": 44.4,
+          "median_ms": 29.6,
+          "n": 40,
+          "p95_ms": 38
+        },
+        "verified_scanners": 4,
+        "visible_alert_lights": 4
+      },
+      {
+        "ai_cpu": {
+          "max_ms": 2.3,
+          "median_ms": 0.5,
+          "n": 80,
+          "p95_ms": 1.8
+        },
+        "audio_pcm": {
+          "context": "running",
+          "ops": {
+            "gain_set": 32,
+            "loop_start": 0,
+            "loop_stop": 0,
+            "start": 16,
+            "stop": 16
+          },
+          "peak_dbfs": -240,
+          "rms_dbfs": -240
+        },
+        "config": {
+          "count": 4,
+          "full": true,
+          "sound": "off"
+        },
+        "draw_calls": 1165,
+        "frame": {
+          "max_ms": 33.8,
+          "median_ms": 25.2,
+          "n": 80,
+          "p95_ms": 28.9
+        },
+        "objects": 1511,
+        "playing_audio": 0,
+        "process_cpu": {
+          "max_ms": 1.7,
+          "median_ms": 0.7,
+          "n": 80,
+          "p95_ms": 1.2
+        },
+        "transition": {
+          "max_ms": 33.4,
+          "median_ms": 27.4,
+          "n": 40,
+          "p95_ms": 33
+        },
+        "verified_scanners": 4,
+        "visible_alert_lights": 4
+      },
+      {
+        "ai_cpu": {
+          "max_ms": 2.6,
+          "median_ms": 0.5,
+          "n": 80,
+          "p95_ms": 2.1
+        },
+        "audio_pcm": {
+          "context": "running",
+          "ops": {
+            "gain_set": 42,
+            "loop_start": 0,
+            "loop_stop": 0,
+            "start": 21,
+            "stop": 16
+          },
+          "peak_dbfs": -17.9992006132711,
+          "rms_dbfs": -26.5438811172822
+        },
+        "config": {
+          "count": 4,
+          "full": true,
+          "sound": "music"
+        },
+        "draw_calls": 1165,
+        "frame": {
+          "max_ms": 31.4,
+          "median_ms": 24.9,
+          "n": 80,
+          "p95_ms": 30.1
+        },
+        "objects": 1511,
+        "playing_audio": 5,
+        "process_cpu": {
+          "max_ms": 1.8,
+          "median_ms": 0.8,
+          "n": 80,
+          "p95_ms": 1.4
+        },
+        "transition": {
+          "max_ms": 36.9,
+          "median_ms": 26.9,
+          "n": 40,
+          "p95_ms": 32.2
+        },
+        "verified_scanners": 4,
+        "visible_alert_lights": 4
+      },
+      {
+        "ai_cpu": {
+          "max_ms": 2.6,
+          "median_ms": 0.4,
+          "n": 80,
+          "p95_ms": 2.1
+        },
+        "audio_pcm": {
+          "context": "running",
+          "ops": {
+            "gain_set": 42,
+            "loop_start": 0,
+            "loop_stop": 0,
+            "start": 21,
+            "stop": 21
+          },
+          "peak_dbfs": -240,
+          "rms_dbfs": -240
+        },
+        "config": {
+          "count": 4,
+          "full": true,
+          "sound": "off"
+        },
+        "draw_calls": 1167,
+        "frame": {
+          "max_ms": 29.7,
+          "median_ms": 24,
+          "n": 80,
+          "p95_ms": 27.8
+        },
+        "objects": 1513,
+        "playing_audio": 0,
+        "process_cpu": {
+          "max_ms": 1.3,
+          "median_ms": 0.7,
+          "n": 80,
+          "p95_ms": 1.2
+        },
+        "transition": {
+          "max_ms": 37.8,
+          "median_ms": 27.6,
+          "n": 40,
+          "p95_ms": 32.9
+        },
+        "verified_scanners": 4,
+        "visible_alert_lights": 4
+      },
+      {
+        "ai_cpu": {
+          "max_ms": 2.8,
+          "median_ms": 0.4,
+          "n": 80,
+          "p95_ms": 1.7
+        },
+        "audio_pcm": {
+          "context": "running",
+          "ops": {
+            "gain_set": 52,
+            "loop_start": 0,
+            "loop_stop": 0,
+            "start": 26,
+            "stop": 26
+          },
+          "peak_dbfs": -240,
+          "rms_dbfs": -240
+        },
+        "config": {
+          "count": 4,
+          "full": true,
+          "sound": "cues"
+        },
+        "draw_calls": 1165,
+        "frame": {
+          "max_ms": 34,
+          "median_ms": 25.3,
+          "n": 80,
+          "p95_ms": 30
+        },
+        "objects": 1511,
+        "playing_audio": 0,
+        "process_cpu": {
+          "max_ms": 2.6,
+          "median_ms": 0.7,
+          "n": 80,
+          "p95_ms": 1.7
+        },
+        "transition": {
+          "max_ms": 35.6,
+          "median_ms": 25.7,
+          "n": 40,
+          "p95_ms": 34.7
+        },
+        "verified_scanners": 4,
+        "visible_alert_lights": 4
+      },
+      {
+        "ai_cpu": {
+          "max_ms": 2.9,
+          "median_ms": 0.4,
+          "n": 80,
+          "p95_ms": 1.7
+        },
+        "audio_pcm": {
+          "context": "running",
+          "ops": {
+            "gain_set": 52,
+            "loop_start": 0,
+            "loop_stop": 0,
+            "start": 26,
+            "stop": 26
+          },
+          "peak_dbfs": -240,
+          "rms_dbfs": -240
+        },
+        "config": {
+          "count": 4,
+          "full": true,
+          "sound": "off"
+        },
+        "draw_calls": 1165,
+        "frame": {
+          "max_ms": 31.2,
+          "median_ms": 23,
+          "n": 80,
+          "p95_ms": 28.8
+        },
+        "objects": 1511,
+        "playing_audio": 0,
+        "process_cpu": {
+          "max_ms": 1.8,
+          "median_ms": 0.7,
+          "n": 80,
+          "p95_ms": 1.4
+        },
+        "transition": {
+          "max_ms": 33.3,
+          "median_ms": 28.5,
+          "n": 40,
+          "p95_ms": 32.6
+        },
+        "verified_scanners": 4,
+        "visible_alert_lights": 4
+      },
+      {
+        "ai_cpu": {
+          "max_ms": 3.1,
+          "median_ms": 0.4,
+          "n": 80,
+          "p95_ms": 2.2
+        },
+        "audio_pcm": {
+          "context": "running",
+          "ops": {
+            "gain_set": 72,
+            "loop_start": 0,
+            "loop_stop": 0,
+            "start": 36,
+            "stop": 31
+          },
+          "peak_dbfs": -15.1537681701199,
+          "rms_dbfs": -23.4076765795293
+        },
+        "config": {
+          "count": 4,
+          "full": true,
+          "sound": "all"
+        },
+        "draw_calls": 1165,
+        "frame": {
+          "max_ms": 35.9,
+          "median_ms": 24.5,
+          "n": 80,
+          "p95_ms": 30
+        },
+        "objects": 1511,
+        "playing_audio": 5,
+        "process_cpu": {
+          "max_ms": 2.1,
+          "median_ms": 0.8,
+          "n": 80,
+          "p95_ms": 1.7
+        },
+        "transition": {
+          "max_ms": 32.4,
+          "median_ms": 27.1,
+          "n": 40,
+          "p95_ms": 32.1
+        },
+        "verified_scanners": 4,
+        "visible_alert_lights": 4
+      }
+    ],
+    "audio_ops": {
+      "start": 36,
+      "stop": 31,
+      "loop_start": 0,
+      "loop_stop": 0,
+      "gain_set": 72
+    },
+    "renderers": [
+      "ANGLE (Intel, Intel(R) Arc(TM) Graphics (0x00007D55) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "ANGLE (Intel, Intel(R) Arc(TM) Graphics (0x00007D55) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "ANGLE (Intel, Intel(R) Arc(TM) Graphics (0x00007D55) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+    ]
+  }
+}

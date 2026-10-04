@@ -12,7 +12,7 @@ config_version=5
 
 config/name="重力快递 · 夜班潜行"
 run/main_scene="res://scenes/main.tscn"
-config/version="0.6.7"
+config/version="0.6.8"
 boot_splash/show_image=false
 boot_splash/bg_color=Color(0.025, 0.048, 0.07, 1)
 config/features=PackedStringArray("4.7", "GL Compatibility")

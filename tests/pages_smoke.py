@@ -42,7 +42,10 @@ async def main():
                 await page.keyboard.up('Tab');await page.keyboard.press('Escape')
                 await page.wait_for_function('window.__gravityCourierQA?.state===2',timeout=20000)
                 result['checks'].append('Pause responds')
-                result['snapshot']=await page.evaluate('({state:window.__gravityCourierQA.state,fps:window.__gravityCourierQA.fps,stage:window.__gravityCourierQA.stage})')
+                result['snapshot']=await page.evaluate('({version:window.__gravityCourierQA.version,state:window.__gravityCourierQA.state,fps:window.__gravityCourierQA.fps,stage:window.__gravityCourierQA.stage})')
+                expected=json.loads((ROOT/'web/release-manifest.json').read_text(encoding='utf-8'))['game_version']
+                assert result['snapshot']['version']==expected,result['snapshot']
+                result['checks'].append('Loaded game version matches release manifest: '+expected)
                 assert not result['errors'],result['errors']
                 result['success']=True
             finally:await browser.close()
@@ -53,3 +56,4 @@ async def main():
     print(json.dumps(result,ensure_ascii=True),flush=True)
     if not result.get('success'):raise SystemExit(1)
 asyncio.run(main())
+

@@ -91,12 +91,24 @@ func _exit_tree() -> void:
 		if child is AudioStreamPlayer:child.stop();child.stream=null
 	task_cache.clear();operation_cache.clear();gadget_samples.clear();tension_layers.clear()
 
+# Avoid forwarding unchanged controls to the WebAudio backend every rendered frame.
+var audio_pause_writes:int=0
+var audio_gain_writes:int=0
+func _set_paused(player:AudioStreamPlayer,value:bool)->void:
+	if player.stream_paused==value:return
+	player.stream_paused=value;audio_pause_writes+=1
+func _set_gain(player:AudioStreamPlayer,value:float)->void:
+	# 0.05 dB is below a perceptible step, while retaining smooth music/duck fades.
+	if absf(player.volume_db-value)<0.05:return
+	player.volume_db=value;audio_gain_writes+=1
+func _stop_active(player:AudioStreamPlayer)->void:
+	if player.playing:player.stop()
 func mix_state(delta:float,state:int,risk:float) -> void:
 	var gain:=linear_to_db(maxf(master,0.00001))
-	if operation_player!=null:operation_player.volume_db=-17+gain
-	if task_player!=null:task_player.volume_db=-7+gain
-	if download_player!=null:download_player.volume_db=-17+gain
-	ambient.volume_db=(-40.0 if state==2 else -31.0)+gain
+	if operation_player!=null:_set_gain(operation_player,-17+gain)
+	if task_player!=null:_set_gain(task_player,-7+gain)
+	if download_player!=null:_set_gain(download_player,-17+gain)
+	_set_gain(ambient,(-40.0 if state==2 else -31.0)+gain)
 func step_sound(loudness:float)->void:
 	play_sample(FOOT,-28.0 if loudness<1 else -17.0 if loudness>4 else -22.0,randf_range(0.93,1.08))
 
@@ -227,19 +239,19 @@ func reset_tension_audio()->void:
 	if heartbeat_player==null:return
 	heartbeat_player.stop();exposure_player.stop();detection_player.stop();detection_cooldown=0;detection_count=0;previous_tension_mode="calm";heartbeat_count=0;exposure_cooldown=0;tension_duck=0
 	for name in tension_weights:tension_weights[name]=0.0
-	music.stream_paused=false
-	for layer in tension_layers.values():layer.stream_paused=false;layer.volume_db=-80
+	_set_paused(music,false)
+	for layer in tension_layers.values():_set_paused(layer,false);_set_gain(layer,-80)
 func mix_tension(delta:float,data:Dictionary,state:int)->void:
 	var paused:bool=state==2
-	music.stream_paused=paused
-	for layer in tension_layers.values():layer.stream_paused=paused
-	heartbeat_player.stream_paused=paused;exposure_player.stream_paused=paused;detection_player.stream_paused=paused
+	_set_paused(music,paused)
+	for layer in tension_layers.values():_set_paused(layer,paused)
+	_set_paused(heartbeat_player,paused);_set_paused(exposure_player,paused);_set_paused(detection_player,paused)
 	if paused:return
 	var gain:float=linear_to_db(maxf(master,0.00001))
 	var busy:bool=(operation_player!=null and operation_player.playing) or (task_player!=null and task_player.playing)
 	tension_duck=lerpf(tension_duck,7.0 if busy else 0.0,1-exp(-delta*(12 if busy else 1.8)))
 	var mgain:float=linear_to_db(maxf(music_level,0.00001))+gain-tension_duck
-	music.volume_db=-9+mgain
+	_set_gain(music,-9+mgain)
 	for name in tension_layers:
 		var target:float=0.0
 		if state==1:
@@ -247,19 +259,20 @@ func mix_tension(delta:float,data:Dictionary,state:int)->void:
 			if name=="chase" and data.mode=="chase":target=1.0
 			if name=="recovery" and data.mode=="recovery":target=float(data.intensity)
 		tension_weights[name]=lerpf(float(tension_weights[name]),target,1-exp(-delta*(2.5 if target>float(tension_weights[name]) else 0.8)))
-		tension_layers[name].volume_db=(-1 if name=="chase" else -7)+mgain+linear_to_db(maxf(float(tension_weights[name]),0.00001))
-	exposure_player.volume_db=-5+mgain
+		_set_gain(tension_layers[name],(-1 if name=="chase" else -7)+mgain+linear_to_db(maxf(float(tension_weights[name]),0.00001)))
+	_set_gain(exposure_player,-5+mgain)
 	exposure_cooldown=maxf(0,exposure_cooldown-delta)
-	if state!=1:heartbeat_player.stop();exposure_player.stop();detection_player.stop();previous_tension_mode="calm";detection_cooldown=0;return
+	if state!=1:_stop_active(heartbeat_player);_stop_active(exposure_player);_stop_active(detection_player);previous_tension_mode="calm";detection_cooldown=0;return
 	detection_cooldown=maxf(0,detection_cooldown-delta)
 	var detected_now:bool=data.mode in ["suspect","chase"] and previous_tension_mode in ["calm","recovery"]
 	previous_tension_mode=data.mode
-	if not unlocked or AudioServer.is_bus_mute(0):heartbeat_player.stop();exposure_player.stop();detection_player.stop();return
-	detection_player.volume_db=-8+gain
+	if not unlocked or AudioServer.is_bus_mute(0):_stop_active(heartbeat_player);_stop_active(exposure_player);_stop_active(detection_player);return
+	_set_gain(detection_player,-8+gain)
 	if detected_now and detection_cooldown<=0 and master>0:
 		detection_player.play();detection_count+=1;detection_cooldown=4.0
-	heartbeat_player.volume_db=-10+8*float(data.intensity)+gain+linear_to_db(maxf(heartbeat_level,0.00001))+linear_to_db(maxf(sqrt(float(data.intensity)),0.00001))-tension_duck*0.7
+	_set_gain(heartbeat_player,-10+8*float(data.intensity)+gain+linear_to_db(maxf(heartbeat_level,0.00001))+linear_to_db(maxf(sqrt(float(data.intensity)),0.00001))-tension_duck*0.7)
 	if data.beat and heartbeat_level>0 and master>0:
 		heartbeat_player.play();heartbeat_count+=1
 	if data.entered and exposure_cooldown<=0 and music_level>0:
-		exposure_player.volume_db=-5+mgain;exposure_player.play();exposure_cooldown=6
+		_set_gain(exposure_player,-5+mgain);exposure_player.play();exposure_cooldown=6
+
