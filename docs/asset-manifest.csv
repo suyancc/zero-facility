@@ -18,24 +18,24 @@ pipe-large-bend,assets/models/factory/pipe-large-bend.glb,Kenney,CC0,https://ken
 robot-arm-a,assets/models/factory/robot-arm-a.glb,Kenney,CC0,https://kenney.nl/assets/factory-kit,ad3f766791adadd1cfb5ccc27d2b2ac8787848282f2a15b3c407f350dc281b68
 structure-wall,assets/models/factory/structure-wall.glb,Kenney,CC0,https://kenney.nl/assets/factory-kit,3bdcb31d693b4e97a9fa198e9de1a47bfd14e829520da08ceaacadbdb258582c
 parcel-mark,assets/ui/parcel-mark.svg,Project original,project-original,,ba829d92d5b520df421fb07f772f41737dfa5fae898539a802ed7f3d95f471bf
-escape-character,scenes/characters/maintenance_worker.scn,Project original,project-original,,f4940ca52b9b9fe9d053ac598ff776ba6f05b82b3ec3aa0b979e8fe77154ab8d
+escape-character,scenes/characters/maintenance_worker.scn,Project original,project-original,,c62f5bf3e14605845884ff1d71d63bfeaac3c88b0084e4ce6908b9918259bcd5
 escape-music,assets/audio/escape-pulse.ogg,Project original,project-original,,3aa1426786bc1d0b18a21ad2e247740cdd54060f8663f15c38e9e83ce14401b7
 escape-font,assets/fonts/EscapeSansSC.ttf,Noto derivative,OFL-1.1 derivative,,8ef03e0022c31d3fbefe78edce716ffcaa37c60f8ef97da3951872b579aa7386
 escape-icon,assets/ui/escape-mark.svg,Project original,project-original,,775fc0ce518ee5abf6e9b79cc65af2d17ba68bc7d70dabc8c1580843b66c3248
 tactical-font,assets/fonts/TacticalSansSC.ttf,Noto derivative,OFL-1.1 derivative,https://github.com/google/fonts/tree/main/ofl/notosanssc,1ad31c04192d4cc1157d6d9049a164b07b3439cd9aacc67e428c461ba1ebb0e5
 polish-font,assets/fonts/PolishSansSC.ttf,Noto derivative,OFL-1.1 derivative,https://github.com/google/fonts/tree/main/ofl/notosanssc,c242b1757f2660472f54c117dbab27dc4439a3f07cae77e8eae29625c913e571
 guide-font,assets/fonts/GuideSansSC.ttf,Noto derivative,OFL-1.1 derivative,https://github.com/google/fonts/tree/main/ofl/notosanssc,ab87d05489024ef8e8a18fc34eb197a601119817028b762a638c7b4df3fe4bd4
-item-card,scenes/items/card.scn,Project original,project-original,,8dd1bd8dc1fce2e01cecbaf262bd669947ed1a978bc3f2d5139617e1698f6a1c
-item-control,scenes/items/control.scn,Project original,project-original,,80e2f177a7848ea3ffa40418a1b8df34ecb003970dacbb2fdb8c8ba8832b8d6b
-item-core,scenes/items/core.scn,Project original,project-original,,fd9d502a71b66adbf7ce9363509c0e6f8064db7a459d89eff54f7711669a9e25
-item-decoy,scenes/items/decoy.scn,Project original,project-original,,d8d3c708010bb81c07fb0f4c86ad28cecafb0ef84ae8f18266196f3c60d3a27f
-item-download,scenes/items/download.scn,Project original,project-original,,5d9b69d6a585ef12116aadd3dcd9ee326e553d4546bf5859b5df9626426fe096
-item-intel,scenes/items/intel.scn,Project original,project-original,,9bbaac3c0c2092c516287fe4dbaea057d6b7177d480f2b27b66b9ebabf023b75
-item-jammer,scenes/items/jammer.scn,Project original,project-original,,1a923ee31a6a115bf6d4a9b801b645bdcf12a6a8481ca5a145c141aa34a12eb5
-item-override,scenes/items/override.scn,Project original,project-original,,12c263e3ff3243cad57f163e14ba10f7a344bf48d20784dee1cf190a4bb40ca9
-item-pick,scenes/items/pick.scn,Project original,project-original,,7f2c48af0173c21572dc9e4deb938f3599c3b41cad70612e6aed4efc99474894
-item-power,scenes/items/power.scn,Project original,project-original,,7042dd7390f48012e5d3402e66a6e2b6a3228301db5a41fc30637d1bd1b49bb1
-item-smoke,scenes/items/smoke.scn,Project original,project-original,,873f6105b8f394387508f4adf35d2f5c8bfa1332206f0f82046214442945eba0
+item-card,scenes/items/card.scn,Project original,project-original,,e0cfcbe55bb59f6be8ea82942e3e4a012a0dd118e789914c04b4688c4560a4db
+item-control,scenes/items/control.scn,Project original,project-original,,9a47b6a548a2d5bb6aec665681da9ea24a7e56c4e2626d7418981db143e70631
+item-core,scenes/items/core.scn,Project original,project-original,,4f92caf6e1a6e725717800890e81c58c8f310a88b95680ab1292c09986737871
+item-decoy,scenes/items/decoy.scn,Project original,project-original,,a1cf06b0f272139aedff43388fbccdb61a270fcf22de63dbcdefef5ee1479764
+item-download,scenes/items/download.scn,Project original,project-original,,24ff75400e17dc80486f647403e921956cf8dbca50d01e4b1e025fc34fa089c9
+item-intel,scenes/items/intel.scn,Project original,project-original,,e8c2cf48dd494285058dfd831e96886e04c21f5f3924ce5c1065ead0204e927b
+item-jammer,scenes/items/jammer.scn,Project original,project-original,,f881f1e0d04639adfc1f80f1dc1c6984a984875def55a09ff1566c523497d0d4
+item-override,scenes/items/override.scn,Project original,project-original,,99713c70fa0a153adbdbefbe8930a88c6e3f1683a56d0d64f3129eab21ba00c3
+item-pick,scenes/items/pick.scn,Project original,project-original,,3b494d02fb4866daf8ca7a58e1e70eddd4b40d0f648d7be10e65c999e8032398
+item-power,scenes/items/power.scn,Project original,project-original,,6a9e176cda197cddf16a767857cf4497535a8422d450a876ade9f2de8c7c3f93
+item-smoke,scenes/items/smoke.scn,Project original,project-original,,3a0e5d289f18ac8fb879a7eef34f19908661597c1918a8bba5a61caa7c972268
 task-breach,assets/audio/tasks/breach.wav,Project original,project-original,,12ba0690d5d39ba7558a8d52097f4af6eda13ba84a268e00defeff23cdc605a1
 task-captured,assets/audio/tasks/captured.wav,Project original,project-original,,c8ba83f3279b8fe088252ea443e0d7d95b1f838cfd438e4df8e206ea9a316cd4
 task-card,assets/audio/tasks/card.wav,Project original,project-original,,9bacd1cec7aafa97fba1648c9fdca59e06b0607147696dbcb820a597177ce8ed
@@ -55,14 +55,14 @@ task-override,assets/audio/tasks/override.wav,Project original,project-original,
 task-pick,assets/audio/tasks/pick.wav,Project original,project-original,,33f4c7f13660b08bcd82084ecfe3535fc119fd3104b7aabd68e8279c11e76a5f
 task-power,assets/audio/tasks/power.wav,Project original,project-original,,54cd3dcf18e594d6056e5ef6930e4e0046ef0faedbaa978f9b66a7b08d765966
 item-font,assets/fonts/ItemSansSC.ttf,Noto derivative,OFL-1.1 derivative,https://github.com/google/fonts/tree/main/ofl/notosanssc,1660b3ed4bb638a969c905671681fe72d94dfc0bc4537026f17bad4587e6e49a
-equipment-thumbnail-decoy-model,assets/ui/items/decoy-model.png,Project original,project-original,,c98b1dd069f5ec174ec2dc270896239009f9d8a2484a2d2588e03d99d987478c
-equipment-thumbnail-decoy,assets/ui/items/decoy.png,Project original,project-original,,e9991b654cd20daeba27660f0e58f9dcaf2de0ccb8fd5dbc9d8840e9234db800
-equipment-thumbnail-jammer-model,assets/ui/items/jammer-model.png,Project original,project-original,,6d3731b04a6c976e2cc2441ac0434b58f3a662214f2258389ac8c24bae40e9de
-equipment-thumbnail-jammer,assets/ui/items/jammer.png,Project original,project-original,,926156d4a76c99038b890907b003bb76994a88ab1f26910f0dbbf0ab5372ef9e
-equipment-thumbnail-pick-model,assets/ui/items/pick-model.png,Project original,project-original,,c3859df4d9f77a2fa94c0d0f6384d1030e059b5ff3dfed26ef8ec94be96dda9e
-equipment-thumbnail-pick,assets/ui/items/pick.png,Project original,project-original,,5093ab9e3c9d1dc73c68d33fc1ad8bec21b147cc0a25d17a2a0aa65fe1be3d94
-equipment-thumbnail-smoke-model,assets/ui/items/smoke-model.png,Project original,project-original,,0164e4c70e7018caba452bdd7e5608701fc42ea4ce209f582794fb47ef02bf0f
-equipment-thumbnail-smoke,assets/ui/items/smoke.png,Project original,project-original,,f457a9c834382dffd75d1b6735cf937089bbe94dc6572c446db3dcfc21320f33
+equipment-thumbnail-decoy-model,assets/ui/items/decoy-model.png,Project original,project-original,,c42dba4da79062ba312889643b87c05aa1a36ec657a7c55a3065c561ffcdf23d
+equipment-thumbnail-decoy,assets/ui/items/decoy.png,Project original,project-original,,3cc6488b4360aa1371d6a7f1e414fd244d546c0837d1666b38a4edf1988bc593
+equipment-thumbnail-jammer-model,assets/ui/items/jammer-model.png,Project original,project-original,,71602c74ccaf0bfe7a3078d05dce899c3f0d9b8d6e1e1233a8711400317b8640
+equipment-thumbnail-jammer,assets/ui/items/jammer.png,Project original,project-original,,ff8a5bdfddeed106416ef18a89efe80607d948529eccc06deb3f2718eab24fb0
+equipment-thumbnail-pick-model,assets/ui/items/pick-model.png,Project original,project-original,,9c71dabc64d676a308c77c774a6bf5d6b5b68b871f5c71e2ef5abe41dee83f05
+equipment-thumbnail-pick,assets/ui/items/pick.png,Project original,project-original,,6ff76a4356dfbb6705e08305b8583af2e0bd88daaa14f5888657725894fcecc2
+equipment-thumbnail-smoke-model,assets/ui/items/smoke-model.png,Project original,project-original,,033b13b374f9f4a0ed6bf0615840b5ebd973e18f3fc02f61934e4a8c6d92157e
+equipment-thumbnail-smoke,assets/ui/items/smoke.png,Project original,project-original,,e64c5ab4ff8b09b458fcdc9f5282408c0846190d66858109f6371cd47ae70232
 operation-card,assets/audio/operations/card.wav,Project original,project-original,,a589cdfb2337198ba95cf045fa2f9f272bbfe1fddb461615927596e73bb7df35
 operation-control,assets/audio/operations/control.wav,Project original,project-original,,af78ba7666ac1f967c1839400805db8b4ba7271a235b3181bddedc77ad89168c
 operation-core,assets/audio/operations/core.wav,Project original,project-original,,aed4a5766d932505970faf5280893f8d1b48f56777aa48f2e32ffd89a7c4492f
@@ -87,4 +87,4 @@ tension-mix-exposed,assets/audio/tension_mix/exposed.wav,Project original,projec
 tension-mix-heartbeat,assets/audio/tension_mix/heartbeat.wav,Project original,project-original,,e746ed2ef4366f8c893acba5bc16ab6dc17dfbc30a403c5cd4ded14607360c9b
 tension-mix-recovery,assets/audio/tension_mix/recovery.ogg,Project original,project-original,,fdfbcba686d8f183dfdc40c86ee5b983ae6cbe336e7859f301e1e07a91014d0c
 tension-mix-suspicion,assets/audio/tension_mix/suspicion.ogg,Project original,project-original,,27a79894144242fef6345214e625e7aa6d7dadacbf09dc66208d6d97b65a7cf6
-
+workwear-weave,assets/materials/workwear-weave.png,Project original,project-original,,654703fc36826e10731ac30ae35818f34542540a6d7cc4dfc21c2fba96416552

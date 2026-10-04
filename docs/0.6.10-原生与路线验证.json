@@ -1,0 +1,28 @@
+{
+  "version": "0.6.10",
+  "native": {
+    "checks": 243,
+    "failures": 0
+  },
+  "legacy": {
+    "checks": 49,
+    "failures": 0
+  },
+  "objective_routes": {
+    "passed_stages": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "hazards": "frozen",
+    "consumable_charges": 0,
+    "scope": "Objective, physical route and exit fixture; not live-stealth success rate."
+  },
+  "native_exit_warnings": []
+}

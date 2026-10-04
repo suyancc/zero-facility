@@ -10,6 +10,7 @@ var active_operation:String=""
 const FX:=preload("res://scripts/gadget_fx.gd")
 var reduced_fx:bool=false
 var room_labels:Array[Label3D]=[]
+var floor_labels:Array[Label3D]=[]
 const Guidance:=preload("res://scripts/task_guidance.gd")
 const FLIGHT_TIME:float=0.55
 var tracked_goal:String="auto"
@@ -311,21 +312,23 @@ func smoke_ray_length(origin:Vector3,direction:Vector3,length:float)->float:
 	return length
 
 func update_labels(overview:bool)->void:
+	var tense:bool=pursuit_count>0 or nearest_risk>0.35
 	for child in player.get_children():
 		if child is Label3D:child.visible=overview or not playing or protection>0
 	for label in room_labels:label.visible=overview
+	for label in floor_labels:label.visible=not overview
 	for node in item_nodes+intel_nodes:
 		for child in node.get_children():
-			if child is Label3D:child.visible=(overview or node.position.distance_to(player.position)<5.0) and not (node==core_visual and player.carrying)
+			if child is Label3D:child.visible=(overview or (not tense and node.position.distance_to(player.position)<5.0)) and not (node==core_visual and player.carrying)
 	for door in doors:door.label.visible=overview or door.at.distance_to(player.position)<5.0
 	for device in guards+security_cameras:
-		device.intent.visible=overview or device.position.distance_to(player.position)<5.5 or device.confidence>0.05 or device.jammed>0
+		device.intent.visible=overview or device.confidence>0.05 or device.jammed>0
 		var badge:Node=device.get_node_or_null("InterferenceFeedback")
 		if badge!=null:badge.reduced=reduced_fx
 	var active:Vector3=target_position()
 	for node in item_nodes+intel_nodes:
 		if node==core_visual and player.carrying:continue
-		if node.position.distance_to(active)<0.15:
+		if node.position.distance_to(active)<0.15 and (overview or not tense):
 			for child in node.get_children():
 				if child is Label3D:child.show()
 

@@ -39,6 +39,7 @@ var rim_material: StandardMaterial3D
 var redraw: float = 0.0
 var anim_clock: float = 0.0
 var detected: bool = false
+var previous_visual_position:=Vector3.ZERO
 
 func configure(data: Dictionary) -> void:
 	nav=data.get("nav",{})
@@ -55,34 +56,9 @@ func configure(data: Dictionary) -> void:
 	forward = dir
 
 func _ready() -> void:
-	visual = Node3D.new()
-	add_child(visual)
-	var dark := Visual.material(Color("173d50"),0.25)
-	var shell := Visual.material(Color("b9c4c4"),0.12)
-	var blue := Visual.material(Color("3b4c58"),0.22)
-	eye_material=Visual.material(Color("ffcd77"),0,true)
-	Visual.rounded(visual,Vector3(0.66,0.55,0.53),Vector3(0,0.63,0),blue,0.13)
-	Visual.rounded(visual,Vector3(0.85,0.56,0.63),Vector3(0,1.16,-0.025),shell,0.15)
-	Visual.rounded(visual,Vector3(0.68,0.30,0.08),Vector3(0,1.16,-0.345),dark,0.025)
-	for side in [-1,1]:
-		Visual.rounded(visual,Vector3(0.105,0.145,0.045),Vector3(side*0.16,1.18,-0.396),eye_material,0.018)
-		Visual.rounded(visual,Vector3(0.19,0.34,0.21),Vector3(side*0.43,0.65,0),shell,0.07)
-		var wheel:=Visual.cylinder(visual,0.22,0.13,Vector3(side*0.31,0.22,0),dark)
-		wheel.rotation.z=PI/2
-		var hub:=Visual.cylinder(visual,0.10,0.145,Vector3(side*0.32,0.22,0),shell)
-		hub.rotation.z=PI/2
-	Visual.box(visual,Vector3(0.24,0.15,0.03),Vector3(0,0.65,-0.285),shell)
-	Visual.cylinder(visual,0.027,0.2,Vector3(0.22,1.51,0),dark)
-	Visual.cylinder(visual,0.073,0.085,Vector3(0.22,1.63,0),eye_material)
-	# Armored inspection chassis: hazard band, sensor bezel and service fasteners.
-	var orange:=Visual.material(Color("da8241"))
-	for side in [-1,1]:
-		Visual.box(visual,Vector3(0.045,0.22,0.026),Vector3(side*0.27,1.15,-0.35),orange)
-		Visual.box(visual,Vector3(0.23,0.055,0.24),Vector3(side*0.43,0.84,0),dark)
-		Visual.cylinder(visual,0.063,0.065,Vector3(side*0.38,1.47,0.05),dark)
-	Visual.box(visual,Vector3(0.20,0.075,0.05),Vector3(0,0.73,-0.315),orange)
-	Visual.box(visual,Vector3(0.22,0.03,0.055),Vector3(0,0.50,-0.32),dark)
-	preload("res://scripts/industrial_batch.gd").bake(visual)
+	eye_material=Visual.material(Color("64bace"),0,true)
+	visual=Node3D.new();visual.set_script(preload("res://scripts/patrol_body.gd"));add_child(visual);visual.construct(eye_material)
+	previous_visual_position=position
 	cone = MeshInstance3D.new()
 	rim = MeshInstance3D.new()
 	add_child(cone)
@@ -215,10 +191,11 @@ func step(delta:float,moving:bool)->void:
 	if jammed>0:show_jammed_visual();return
 	intent.font_size=32
 	if moving:anim_clock+=delta
-	visual.position.y=sin(anim_clock*7.0)*0.025
+	if visual.has_method("animate"):visual.animate(delta,position.distance_to(previous_visual_position))
+	previous_visual_position=position
 	visual.rotation.y=heading
 	visual.rotation.z=sin(anim_clock*3.5)*0.028
-	var color:=Color("e2b778")
+	var color:=Color("64bace")
 	var names:Array[String]=["巡逻",investigation_reason,"追捕！","搜索盲区","返回巡逻"]
 	var label_text:String=names[mode]
 	var detecting:bool=confidence>0.01 or mode==Mode.CHASE
@@ -226,7 +203,7 @@ func step(delta:float,moving:bool)->void:
 	if detecting:color=Color("ff434b")
 	elif mode==Mode.SEARCH or mode==Mode.INVESTIGATE:color=Color("f9ca6b")
 	elif mode==Mode.RETURN:color=Color("74b9ce")
-	if confidence>0 and mode!=Mode.CHASE:label_text="确认目标 %d%%"%int(confidence*100)
+	if confidence>0 and mode!=Mode.CHASE:label_text="确认 %d%%"%int(confidence*100)
 	if intent.text!=label_text:intent.text=label_text
 	intent.modulate=color
 	eye_material.albedo_color=color;eye_material.emission=color

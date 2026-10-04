@@ -8,10 +8,18 @@ func setup(spec:Dictionary)->void:
 func _ready()->void:
 	super._ready()
 	visual.queue_free();visual=Node3D.new();add_child(visual)
-	var steel:=Visual.material(Color("637e8b"),0.4)
-	Visual.cylinder(visual,0.065,1.85,Vector3(0,0.92,0),steel)
-	Visual.rounded(visual,Vector3(0.48,0.3,0.55),Vector3(0,1.75,0),steel,0.05)
-	Visual.box(visual,Vector3(0.29,0.13,0.04),Vector3(0,1.75,-0.29),eye_material)
+	var steel:=Visual.material(Color("a2acab"),0.4)
+	var dark:=Visual.material(Color("25343e"),0.3)
+	Visual.cylinder(visual,0.16,0.10,Vector3(0,0.05,0),dark)
+	Visual.cylinder(visual,0.055,1.61,Vector3(0,0.82,0),dark)
+	Visual.box(visual,Vector3(0.08,0.10,0.37),Vector3(0,1.66,0.10),steel)
+	Visual.rounded(visual,Vector3(0.38,0.26,0.48),Vector3(0,1.75,-0.08),steel,0.055)
+	Visual.box(visual,Vector3(0.40,0.035,0.56),Vector3(0,1.895,-0.12),dark)
+	var bezel:=Visual.cylinder(visual,0.10,0.075,Vector3(0,1.75,-0.34),dark);bezel.rotation.x=PI/2
+	var lens:=Visual.cylinder(visual,0.075,0.025,Vector3(0,1.75,-0.392),eye_material);lens.rotation.x=PI/2
+	for side in [-1,1]:
+		Visual.box(visual,Vector3(0.016,0.10,0.19),Vector3(side*0.198,1.75,-0.07),dark)
+	preload("res://scripts/industrial_batch.gd").bake(visual)
 	intent.position.y=2.14;intent.text="监控"
 func update_ai(delta:float,parcel:Node3D,observable:bool)->void:
 	report_cooldown=maxf(0,report_cooldown-delta)

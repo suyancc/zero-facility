@@ -17,6 +17,7 @@ static func build(level:Node3D,data:Dictionary)->void:
 		for x in range(7):
 			var mark:=V.box(decor,Vector3(0.13,0.012,0.30),room.at+Vector3(x*0.29-0.85,0.045,-3.35),stripe);mark.rotation.y=-0.5
 		var sign:=V.label(level,"%02d  %s"%[index+1,room.name],room.at+Vector3(-2.4,0.058,-2.4),Color("7e939c"))
+		level.floor_labels.append(sign)
 		sign.billboard=BaseMaterial3D.BILLBOARD_DISABLED;sign.no_depth_test=false;sign.rotation.x=-PI/2;sign.pixel_size=0.021;sign.outline_size=0;sign.font_size=44
 	for cell in data.walls:
 		var at:Vector3=Gen.world(cell)
@@ -37,3 +38,4 @@ static func build(level:Node3D,data:Dictionary)->void:
 		V.box(decor,Vector3(2.4,0.08,0.32),Vector3(x,2.5,-12.9),dark)
 		V.box(decor,Vector3(2.15,0.025,0.22),Vector3(x,2.445,-12.9),light)
 	preload("res://scripts/industrial_batch.gd").bake(decor)
+

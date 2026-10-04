@@ -1,0 +1,455 @@
+{
+  "errors": [],
+  "captured_state": "warning",
+  "snapshot": {
+    "aim_valid": true,
+    "alerts": 0,
+    "arc_points": 25,
+    "attempt": 1,
+    "blocked": [
+      [
+        9,
+        0
+      ],
+      [
+        9,
+        1
+      ],
+      [
+        9,
+        2
+      ],
+      [
+        9,
+        4
+      ],
+      [
+        9,
+        5
+      ],
+      [
+        9,
+        6
+      ],
+      [
+        9,
+        7
+      ],
+      [
+        9,
+        8
+      ],
+      [
+        9,
+        9
+      ],
+      [
+        9,
+        10
+      ],
+      [
+        9,
+        12
+      ],
+      [
+        9,
+        13
+      ],
+      [
+        9,
+        14
+      ],
+      [
+        0,
+        7
+      ],
+      [
+        1,
+        7
+      ],
+      [
+        2,
+        7
+      ],
+      [
+        3,
+        7
+      ],
+      [
+        5,
+        7
+      ],
+      [
+        6,
+        7
+      ],
+      [
+        7,
+        7
+      ],
+      [
+        8,
+        7
+      ],
+      [
+        10,
+        7
+      ],
+      [
+        11,
+        7
+      ],
+      [
+        12,
+        7
+      ],
+      [
+        13,
+        7
+      ],
+      [
+        15,
+        7
+      ],
+      [
+        16,
+        7
+      ],
+      [
+        17,
+        7
+      ],
+      [
+        18,
+        7
+      ],
+      [
+        9,
+        11
+      ],
+      [
+        16,
+        13
+      ],
+      [
+        4,
+        13
+      ],
+      [
+        12,
+        14
+      ],
+      [
+        13,
+        0
+      ],
+      [
+        4,
+        0
+      ],
+      [
+        6,
+        14
+      ],
+      [
+        18,
+        11
+      ],
+      [
+        17,
+        13
+      ],
+      [
+        17,
+        12
+      ],
+      [
+        13,
+        1
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        11,
+        1
+      ],
+      [
+        12,
+        1
+      ],
+      [
+        17,
+        11
+      ],
+      [
+        6,
+        1
+      ],
+      [
+        4,
+        14
+      ],
+      [
+        12,
+        0
+      ],
+      [
+        7,
+        4
+      ],
+      [
+        16,
+        10
+      ],
+      [
+        2,
+        9
+      ],
+      [
+        2,
+        12
+      ],
+      [
+        7,
+        9
+      ],
+      [
+        16,
+        9
+      ],
+      [
+        14,
+        10
+      ],
+      [
+        13,
+        10
+      ],
+      [
+        4,
+        10
+      ],
+      [
+        16,
+        4
+      ],
+      [
+        3,
+        12
+      ],
+      [
+        6,
+        10
+      ],
+      [
+        15,
+        12
+      ],
+      [
+        13,
+        5
+      ],
+      [
+        11,
+        5
+      ]
+    ],
+    "brief": "主目标位于仓储区 · 本局出口在东侧\n取得门禁卡或操作解封台，再开门撤离。\n可选：装备撬锁可直破出口；控制器打开维修捷径。\n撤离：完成任务 → 长按 E 开门 → 穿过出口。",
+    "carrying": false,
+    "catalog_centers": [
+      [
+        118,
+        487
+      ],
+      [
+        236,
+        487
+      ],
+      [
+        354,
+        487
+      ],
+      [
+        472,
+        487
+      ]
+    ],
+    "charges": {
+      "pick": 2,
+      "smoke": 2
+    },
+    "control_used": false,
+    "decoys": 0,
+    "detection_count": 1,
+    "download": 0,
+    "download_audio": false,
+    "download_taken": false,
+    "draw_calls": 1285,
+    "edge_enabled": true,
+    "edge_visible": true,
+    "escapes": 0,
+    "exit_open": false,
+    "forward_axis": [
+      -0.485642910003662,
+      -0.874157309532166
+    ],
+    "found": {
+      "card": 0,
+      "power": 0,
+      "terminal": 0
+    },
+    "fps": 49,
+    "goal": [
+      11.6999998092651,
+      -2.59999990463257
+    ],
+    "guards": [
+      {
+        "cone_alpha": 0.159999996423721,
+        "confidence": 0.00217948717948716,
+        "forward": [
+          0.601729571819305,
+          -0.798699915409088
+        ],
+        "mode": "调查",
+        "position": [
+          -1.30079102516174,
+          -5.20529937744141
+        ],
+        "range": 3.7
+      },
+      {
+        "cone_alpha": 0.159999996423721,
+        "confidence": 0,
+        "forward": [
+          -0.0107338121160865,
+          -0.999942362308502
+        ],
+        "mode": "调查",
+        "position": [
+          4.30186748504639,
+          -5.19999980926514
+        ],
+        "range": 3.7
+      }
+    ],
+    "heartbeat_count": 0,
+    "heartbeat_volume": 0.75,
+    "intel": 0,
+    "interaction_progress": 0,
+    "inventory_centers": [
+      [
+        78,
+        252
+      ],
+      [
+        78,
+        368
+      ]
+    ],
+    "items": [
+      {
+        "at": [
+          -3.90000009536743,
+          7.80000019073486
+        ],
+        "kind": "card"
+      },
+      {
+        "at": [
+          2.59999990463257,
+          2.59999990463257
+        ],
+        "kind": "override"
+      },
+      {
+        "at": [
+          3.90000009536743,
+          -6.5
+        ],
+        "kind": "control"
+      }
+    ],
+    "jam_hits": 0,
+    "loadout": [
+      "smoke",
+      "pick"
+    ],
+    "maintenance_open": false,
+    "mission": "突破封锁",
+    "music_duck": 0,
+    "music_playing": true,
+    "music_volume": 0.8,
+    "music_weights": {
+      "chase": 0,
+      "recovery": 0,
+      "suspicion": 0.0325579381277356
+    },
+    "muted": false,
+    "needed": {
+      "card": 1
+    },
+    "objective": "突破封锁 · 门禁卡 / 手动解封 / 撬锁任选",
+    "operation_audio": "",
+    "operation_playing": false,
+    "pose": "walk",
+    "position": [
+      -0.0722772106528282,
+      -4.82415246963501
+    ],
+    "preview_kind": "smoke",
+    "preview_slot": 0,
+    "preview_visible": false,
+    "projectiles": 0,
+    "ready_heading": "本局目标 · 多路突破",
+    "right_axis": [
+      0.874157309532166,
+      -0.485642910003662
+    ],
+    "risk": 0.00217948717948716,
+    "selected_slot": 0,
+    "settings_button_center": [
+      1133,
+      47.5
+    ],
+    "settings_close_center": [
+      433,
+      121.5
+    ],
+    "settings_visible": false,
+    "showcase_enabled": false,
+    "smoke_count": 0,
+    "stage": 1,
+    "stamina": 43.183333333333,
+    "state": 1,
+    "task_audio": "",
+    "task_paused": false,
+    "task_playing": false,
+    "task_queue": [],
+    "tension_bpm": 86.0165031212713,
+    "tension_intensity": 0.121462168504111,
+    "tension_mode": "calm",
+    "tension_phase": 0.365819593892447,
+    "time": 2.68333333333333,
+    "tracking": "card",
+    "tracking_name": "门禁卡方案",
+    "tracking_point": [
+      -3.90000009536743,
+      7.80000019073486
+    ],
+    "variant": 0,
+    "variant_title": "多路突破",
+    "velocity": [
+      3.54864835739136,
+      0.785328388214111
+    ],
+    "version": "0.6.10",
+    "viewport_size": [
+      1280,
+      800
+    ]
+  },
+  "success": true
+}

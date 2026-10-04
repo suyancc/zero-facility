@@ -10,7 +10,7 @@ static func build(data:Dictionary)->Node3D:
 	var floor_mat:=V.material(Color("253945"),0.2)
 	var metal:=V.material(Color("172832"),0.3)
 	var seam:=V.material(Color("3a505b"))
-	var cyan:=V.material(Color("42aab8"),0,true)
+	var cyan:=V.material(Color("547d85"),0,true)
 	V.box(root,Vector3(25,0.58,19.8),Vector3(0,-0.32,0),floor_mat,true,1)
 	V.box(root,Vector3(25.3,0.3,20.1),Vector3(0,-0.75,0),metal)
 	for x in range(-9,10):V.box(root,Vector3(0.018,0.014,19.6),Vector3(x*1.3,0.005,0),seam)
@@ -24,7 +24,7 @@ static func build(data:Dictionary)->Node3D:
 	for x in [-8,8]:
 		for z in [-6,6]:
 			var light:=OmniLight3D.new();root.add_child(light);light.position=Vector3(x,3.8,z)
-			light.omni_range=9;light.light_energy=1.4;light.light_color=Color("80b8cd") if x<0 else Color("d0ae85")
+			light.omni_range=9;light.light_energy=1.4;light.light_color=(Color("91c5de") if x<0 else Color("739fcf")) if z<0 else (Color("edbb78") if x<0 else Color("da8e85"))
 	for spec in data.cover:_cover(root,Gen.world(spec.cell),spec.kind)
 	var player:CharacterBody3D=load("res://scenes/characters/escape_player.tscn").instantiate()
 	root.add_child(player);player.position=data.start
@@ -48,32 +48,7 @@ static func _cover(root:Node3D,at:Vector3,kind:int)->void:
 	var body:=V.box(root,Vector3(1.12,h,1.12),at+Vector3.UP*h*0.5,dark,true,4)
 	body.get_child(0).hide()
 	var art:=Node3D.new();body.add_child(art);art.position.y=-h*0.5
-	V.box(art,Vector3(1.12,0.18,1.12),Vector3(0,0.09,0),dark)
-	match kind:
-		0:
-			V.rounded(art,Vector3(1.1,0.69,1.1),Vector3(0,0.4,0),amber,0.08)
-			for x in [-0.35,0.35]:V.box(art,Vector3(0.07,0.71,1.12),Vector3(x,0.4,0),steel)
-		1:
-			V.cylinder(art,0.53,1.60,Vector3(0,0.94,0),steel)
-			for y in [0.28,1.1,1.66]:V.cylinder(art,0.55,0.085,Vector3(0,y,0),dark)
-			V.cylinder(art,0.18,0.14,Vector3(0,1.8,0),amber)
-		2:
-			V.rounded(art,Vector3(1.09,1.85,1.09),Vector3(0,1.0,0),dark,0.07)
-			V.box(art,Vector3(0.85,1.62,0.04),Vector3(0,1.0,0.558),steel)
-			for y in [0.5,0.78,1.06,1.34,1.62]:
-				V.box(art,Vector3(0.68,0.13,0.025),Vector3(0,y,0.59),dark)
-				V.box(art,Vector3(0.045,0.045,0.02),Vector3(0.24,y,0.61),cyan)
-		3:
-			for x in [-0.48,0.48]:
-				for z in [-0.48,0.48]:V.box(art,Vector3(0.12,1.7,0.12),Vector3(x,0.9,z),steel)
-			for y in [0.2,0.85,1.52]:
-				V.box(art,Vector3(1.1,0.09,1.1),Vector3(0,y,0),steel)
-				V.rounded(art,Vector3(0.85,0.45,0.9),Vector3(0,y+0.25,0),amber,0.05)
-		4:
-			V.box(art,Vector3(1.1,0.65,1.1),Vector3(0,0.40,0),dark)
-			for z in [-0.28,0.28]:
-				var pipe:=V.cylinder(art,0.23,1.05,Vector3(0,0.98,z),steel);pipe.rotation.z=PI/2
-			V.box(art,Vector3(0.36,0.12,0.24),Vector3(0,0.81,0.40),cyan)
+	preload("res://scripts/facility_assets.gd").furniture(art,kind,at)
 static func _item(root:Node3D,at:Vector3,kind:String,title:String)->Node3D:
 	var node:=Node3D.new();root.add_child(node);node.position=at
 	var color:=Color("b68bff") if kind=="intel" else Color("80dfde") if kind=="power" else Color("f0c484")
@@ -118,19 +93,25 @@ static func workshop(root:Node3D) -> void:
 		V.box(life,Vector3(0.28,4.0,0.45),Vector3(x,0.6,-13.5),blue)
 		V.box(life,Vector3(3.9,1.1,0.09),Vector3(x+0.3,1.35,-13.55),V.material(Color("4d9eaf"),0,true))
 	V.box(life,Vector3(32,0.20,0.28),Vector3(0,2.25,-13.2),cream)
-	# Conveyor and travelling boxes are background-only, with no invisible colliders.
-	V.box(life,Vector3(10.4,0.3,1.15),Vector3(0,-0.36,-11.7),blue)
-	for x in range(-10,11):
-		var roller:=V.cylinder(life,0.11,1.12,Vector3(x*0.48,-0.13,-11.7),cream)
-		roller.rotation.x=PI/2
-	for i in range(5):
-		var package:=V.asset(life,"box-small",Vector3(i*2.0-4.8,0,-11.7),0.65)
-		life.belt_boxes.append(package)
-	for x in [-15.1,15.1]:
-		for z in [-4.0,0.0,4.0]:
-			V.box(life,Vector3(1.4,0.18,1.3),Vector3(x,-0.95,z),amber)
-			V.asset(life,"box-small",Vector3(x,-0.86,z),1.2)
-			V.asset(life,"box-small",Vector3(x+0.12,0.05,z),0.85)
+	# Replace the old parcel-factory belt with stationary service equipment.
+	var modules:=Node3D.new();modules.name="ServiceGantry";life.add_child(modules)
+	var Assets:=preload("res://scripts/facility_assets.gd");var palette:=Assets.palette()
+	for x in [-10,-5,0,5,10]:
+		V.box(modules,Vector3(0.23,3.8,0.25),Vector3(x,0.9,-12.1),blue)
+		V.box(modules,Vector3(4.6,0.18,1.1),Vector3(x,2.82,-12.1),cream)
+		for end in [-2.1,2.1]:V.box(modules,Vector3(0.07,0.7,0.07),Vector3(x+end,3.2,-11.65),amber)
+		V.box(modules,Vector3(4.6,0.06,0.06),Vector3(x,3.55,-11.65),amber)
+		Assets.crate(modules,Vector3(x,-0.45,-11.9),Vector3(1.6,1.3,1.1),palette)
+	# Background inspection stairs; purely decorative, outside navigable floor.
+	for step in range(13):
+		var at:=Vector3(8.0+step*0.32,-0.80+step*0.30,-11.8)
+		V.box(modules,Vector3(0.34,0.09,1.10),at,cream)
+		if step%3==0:
+			for side in [-1,1]:V.box(modules,Vector3(0.045,0.82,0.045),at+Vector3(0,0.41,side*0.52),amber)
+	for side in [-1,1]:
+		var rail:=V.box(modules,Vector3(5.28,0.045,0.045),Vector3(9.92,1.80,-11.8+side*0.52),amber);rail.rotation.z=atan2(3.6,3.84)
+	preload("res://scripts/industrial_batch.gd").bake(modules)
+	Assets.signatures(root)
 	for z in [-10.7,10.7]:
 		for x in range(-9,10,2):
 			V.box(life,Vector3(0.9,0.01,0.08),Vector3(x,-1.18,z),cream)

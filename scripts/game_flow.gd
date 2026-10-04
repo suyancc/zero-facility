@@ -191,6 +191,7 @@ func _process(delta:float)->void:
 	if not is_instance_valid(level):return
 	hud.update_readout(level.elapsed,level.interact_progress/maxf(level.interact_duration,0.01),level.nearest_risk,level.protection,state)
 	hud.set_mission(level.mission_status())
+	level.player.interacting=state==State.PLAYING and level.interact_progress>0
 	hud.update_escape(level.player.stamina,level.decoys_left,level.player.sneaking,level.player.running,level.pursuit_count,level.intel_count,level.interact_hint)
 	if tactical_mode:
 		hud.update_inventory(level.loadout,level.charges,level.selected_slot,level.gear_cooldown,state==State.READY)

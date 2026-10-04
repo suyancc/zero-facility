@@ -1,5 +1,7 @@
 extends RefCounted
 const V:=preload("res://scripts/visual_factory.gd")
+const G:=preload("res://scripts/surface_geometry.gd")
+const Assets:=preload("res://scripts/facility_assets.gd")
 const KINDS:Array[String]=["smoke","jammer","pick","decoy","card","intel","power","core","download","control","override"]
 const COLORS:Dictionary={"smoke":"7cdbcb","jammer":"78baff","pick":"ffbc72","decoy":"ffd36e","card":"f2ce79","intel":"bd96ff","power":"71e5dd","core":"78ecc3","download":"77b9ff","control":"90ddbf","override":"ef9f72"}
 static var scenes:Dictionary={}
@@ -28,7 +30,7 @@ static func build(kind:String)->Node3D:
 			var body:=part(root,"PressureCanister")
 			V.cylinder(body,0.185,0.53,Vector3(0,0.33,0),steel)
 			for y in [0.09,0.56]:V.cylinder(body,0.198,0.065,Vector3(0,y,0),dark)
-			V.cylinder(body,0.188,0.18,Vector3(0,0.34,0),accent)
+			V.cylinder(body,0.188,0.18,Vector3(0,0.34,0),gold)
 			for z in [-0.19,0.19]:V.box(body,Vector3(0.085,0.13,0.015),Vector3(0,0.34,z),dark)
 			var safety:=part(root,"LeverAndPullRing")
 			V.cylinder(safety,0.115,0.09,Vector3(0,0.64,0),dark)
@@ -40,7 +42,7 @@ static func build(kind:String)->Node3D:
 			for x in [-0.25,0.25]:V.rounded(body,Vector3(0.10,0.50,0.31),Vector3(x,0.35,0),rubber,0.025)
 			var screen:=part(root,"StatusScreen")
 			V.box(screen,Vector3(0.35,0.21,0.025),Vector3(0,0.50,0.15),accent)
-			for i in range(3):V.box(screen,Vector3(0.05,0.04+i*0.04,0.013),Vector3(-0.09+i*0.09,0.46+i*0.02,0.17),dark)
+			for i in range(9):V.box(screen,Vector3(0.018,0.025+absf(sin(i*1.3))*0.105,0.013),Vector3(-0.12+i*0.03,0.50,0.17),dark)
 			for x in [-0.13,0.13]:
 				V.cylinder(root,0.026,0.34,Vector3(x,0.85,0),steel)
 				V.cylinder(root,0.043,0.07,Vector3(x,1.04,0),dark)
@@ -51,17 +53,18 @@ static func build(kind:String)->Node3D:
 			V.rounded(case,Vector3(0.66,0.58,0.08),Vector3(0,0.41,-0.16),rubber,0.025)
 			for i in range(3):
 				var tool:=part(root,"PickTool%d"%i);tool.position.x=(i-1)*0.19
-				V.rounded(tool,Vector3(0.105,0.22,0.065),Vector3(0,0.28,0.07),accent,0.022)
+				V.rounded(tool,Vector3(0.105,0.22,0.065),Vector3(0,0.28,0.07),gold,0.022)
 				V.box(tool,Vector3(0.026,0.39-i*0.045,0.026),Vector3(0,0.57-i*0.025,0.07),steel)
 				var tip:=V.box(tool,Vector3(0.09,0.022,0.026),Vector3(0.025,0.76-i*0.047,0.07),steel);tip.rotation.z=0.25*i
 			V.box(root,Vector3(0.26,0.045,0.025),Vector3(0,0.16,0.205),gold)
 		"decoy":
 			var shell:=part(root,"ResonatorShell")
-			V.rounded(shell,Vector3(0.52,0.48,0.32),Vector3(0,0.30,0),dark,0.10)
+			G.ellipsoid(shell,Vector3(0,0.31,0),Vector3(0.27,0.26,0.27),steel)
+			var face:=V.cylinder(shell,0.178,0.035,Vector3(0,0.32,0.229),dark);face.rotation.x=PI/2
 			var speaker:=part(root,"SpeakerGrille")
 			for i in range(3):
-				var grille:=ring(speaker,0.075+i*0.04,0.011,Vector3(0,0.32,0.18),steel if i<2 else accent);grille.rotation.x=PI/2
-			for x in [-0.18,0.18]:V.box(root,Vector3(0.05,0.23,0.035),Vector3(x,0.31,0.19),rubber)
+				var grille:=ring(speaker,0.075+i*0.04,0.011,Vector3(0,0.32,0.259),steel if i<2 else accent);grille.rotation.x=PI/2
+			for x in [-0.18,0.18]:V.box(root,Vector3(0.05,0.23,0.035),Vector3(x,0.31,0.216),rubber)
 			V.cylinder(root,0.09,0.07,Vector3(0,0.57,0),accent)
 			V.cylinder(root,0.018,0.20,Vector3(0.19,0.66,0),steel)
 		"card":
@@ -107,13 +110,13 @@ static func build(kind:String)->Node3D:
 			for x in [-0.18,-0.09,0,0.09,0.18]:V.box(station,Vector3(0.06,0.025,0.16),Vector3(x,0.695,0.15),dark)
 		"control":
 			var cabinet:=part(root,"CircuitBreakerCabinet")
-			V.rounded(cabinet,Vector3(0.56,0.94,0.30),Vector3(0,0.52,0),dark,0.045)
-			V.box(cabinet,Vector3(0.45,0.78,0.035),Vector3(0,0.55,0.17),steel)
-			for x in [-0.14,0,0.14]:V.box(cabinet,Vector3(0.07,0.09,0.025),Vector3(x,0.83,0.20),accent)
+			V.rounded(cabinet,Vector3(0.56,0.99,0.35),Vector3(0,0.54,0),dark,0.045)
+			var p:=Assets.palette()
+			for y in [0.43,0.80]:Assets.screen(cabinet,Vector3(-0.025,y,0.19),Vector2(0.36,0.25),p)
 			var breaker:=part(root,"IsolationLever")
-			for x in [-0.15,0.15]:V.box(breaker,Vector3(0.04,0.3,0.06),Vector3(x,0.50,0.23),dark)
-			V.box(breaker,Vector3(0.36,0.065,0.07),Vector3(0,0.56,0.27),gold)
-			for y in [0.21,0.27]:V.box(root,Vector3(0.32,0.022,0.014),Vector3(0,y,0.20),dark)
+			for y in [0.39,0.81]:V.box(breaker,Vector3(0.09,0.045,0.10),Vector3(0.28,y,0.19),steel)
+			V.box(breaker,Vector3(0.055,0.43,0.065),Vector3(0.30,0.60,0.24),gold)
+			for y in [0.16,0.21]:V.box(root,Vector3(0.32,0.022,0.014),Vector3(0,y,0.20),steel)
 		"override":
 			var console:=part(root,"ManualReleasePedestal")
 			V.box(console,Vector3(0.52,0.12,0.44),Vector3(0,0.08,0),dark)
@@ -123,4 +126,51 @@ static func build(kind:String)->Node3D:
 			for i in range(3):
 				var spoke:=V.box(valve,Vector3(0.44,0.035,0.035),Vector3(0,0.86,0.16),gold);spoke.rotation.z=i*PI/3
 			var handle:=V.cylinder(valve,0.04,0.18,Vector3(0.19,0.98,0.24),dark);handle.rotation.x=PI/2
+	var detail:=part(root,"ManufacturedDetail")
+	match kind:
+		"smoke":
+			for i in range(8):
+				var a:float=i*TAU/8
+				V.box(detail,Vector3(0.025,0.045,0.025),Vector3(cos(a)*0.185,0.54,sin(a)*0.185),steel)
+			for y in [0.25,0.43]:V.cylinder(detail,0.19,0.013,Vector3(0,y,0),dark)
+			V.box(detail,Vector3(0.11,0.075,0.014),Vector3(0,0.34,0.197),ivory)
+		"jammer":
+			for x in [-0.26,0.26]:
+				for y in [0.15,0.62]:
+					V.box(detail,Vector3(0.095,0.12,0.325),Vector3(x,y,0),gold)
+			for x in [-0.17,0.17]:V.box(detail,Vector3(0.045,0.09,0.055),Vector3(x,0.72,0),steel)
+			V.box(detail,Vector3(0.36,0.04,0.055),Vector3(0,0.77,0),steel)
+		"pick":
+			for x in [-0.29,0.29]:
+				V.box(detail,Vector3(0.07,0.15,0.05),Vector3(x,0.09,0.195),gold)
+				V.cylinder(detail,0.035,0.10,Vector3(x,0.18,-0.15),steel)
+			for x in [-0.19,0,0.19]:
+				for y in [0.22,0.27,0.32]:V.box(detail,Vector3(0.115,0.012,0.07),Vector3(x,y,0.07),dark)
+		"decoy":
+			for x in [-0.08,-0.04,0,0.04,0.08]:V.box(detail,Vector3(0.012,0.15,0.01),Vector3(x,0.32,0.266),steel)
+			for side in [-1,1]:V.rounded(detail,Vector3(0.08,0.13,0.11),Vector3(side*0.23,0.38,0),gold,0.015)
+		"card":
+			for i in range(6):V.box(detail,Vector3(0.014,0.045+(i%2)*0.035,0.007),Vector3(-0.08+i*0.019,0.31,0.031),dark)
+		"intel":
+			V.rounded(detail,Vector3(0.17,0.25,0.05),Vector3(0.10,0.46,-0.02),steel,0.01)
+			for y in [0.39,0.45,0.51]:V.box(detail,Vector3(0.12,0.013,0.012),Vector3(0.10,y,0.04),ivory)
+		"power","core":
+			for i in range(4):
+				var a:float=i*TAU/4
+				for y in [0.12,0.75]:V.box(detail,Vector3(0.09,0.09,0.09),Vector3(cos(a)*0.17,y,sin(a)*0.17),gold)
+			V.box(detail,Vector3(0.12,0.15,0.025),Vector3(0,0.42,0.20 if kind=="core" else 0.15),dark)
+		"download":
+			for x in [-0.31,0.31]:
+				for y in [0.74,1.09]:V.box(detail,Vector3(0.065,0.08,0.17),Vector3(x,y,-0.045),gold)
+			for y in [0.23,0.29,0.35]:V.box(detail,Vector3(0.16,0.027,0.025),Vector3(0,y,0.018),dark)
+		"control":
+			for x in [-0.24,0.24]:
+				for y in [0.16,1.01]:V.box(detail,Vector3(0.06,0.07,0.04),Vector3(x,y,0.19),ivory)
+		"override":
+			V.box(detail,Vector3(0.34,0.20,0.035),Vector3(0,0.36,0.075),dark)
+			for x in [-0.12,-0.04,0.04,0.12]:V.box(detail,Vector3(0.025,0.12,0.009),Vector3(x,0.36,0.10),gold)
+	# Merge each editable assembly separately; keep kind metadata and semantic part names.
+	for assembly in root.get_children():
+		if assembly is Node3D and not assembly is MeshInstance3D:preload("res://scripts/industrial_batch.gd").bake(assembly)
 	return root
+

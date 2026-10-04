@@ -5,7 +5,7 @@ const Cam:=preload("res://scripts/tactical_camera.gd")
 static func build(root:Node3D,d:Dictionary)->void:
 	var steel:=V.material(Color("405866"),0.3)
 	var dark:=V.material(Color("182d3a"),0.2)
-	var cyan:=V.material(Color("52c3cf"),0,true)
+	var cyan:=V.material(Color("66848b"),0,false)
 	for room in d.rooms:
 		V.box(root,Vector3(10.2,0.016,7.2),room.at+Vector3(0,0.018,0),V.material(room.color))
 		root.room_labels.append(V.label(root,room.name,room.at+Vector3(0,0.08,-2.9),Color("99b3be")))
@@ -17,6 +17,13 @@ static func build(root:Node3D,d:Dictionary)->void:
 	for spec in d.doors:
 		var node:=Node3D.new();root.add_child(node);node.position=spec.at
 		var body:=V.box(node,Vector3(0.27,1.72,1.25),Vector3(0,0.86,0),steel,true,4)
+		for side in [-1,1]:
+			V.box(node,Vector3(0.43,1.9,0.11),Vector3(0,0.95,side*0.70),steel)
+			V.box(node,Vector3(0.45,0.31,0.12),Vector3(0,0.33,side*0.70),dark)
+		V.box(node,Vector3(0.43,0.15,1.53),Vector3(0,1.93,0),steel)
+		for side in [-1,1]:
+			V.box(body,Vector3(0.025,1.45,0.53),Vector3(side*0.15,0,0),dark)
+			V.box(body,Vector3(0.025,0.05,0.41),Vector3(side*0.17,0.42,0),cyan)
 		var label:=V.label(node,"维修门 · 卡 / 撬锁",Vector3(0,2,0),Color("ffc087"))
 		root.doors.append({"node":node,"body":body,"label":label,"at":spec.at,"cell":spec.cell,"open":false})
 	var cameras:=Node3D.new();cameras.name="SecurityCameras";root.add_child(cameras)
