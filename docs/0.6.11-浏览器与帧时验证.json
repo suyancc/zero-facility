@@ -1,0 +1,67 @@
+{
+  "checks": [
+    "Ready character, four gear cards and second slot work at three desktop sizes",
+    "Starting disables character showcase; pause and retry restore expected layouts",
+    "Paired calm gameplay frame timings collected with music enabled"
+  ],
+  "errors": [],
+  "performance": [
+    {
+      "n": 284,
+      "mean_ms": 21.18978873264621,
+      "median_ms": 24.899999999997817,
+      "p95_ms": 33.20000000000073,
+      "max_ms": 33.400000000001455,
+      "version": "0.6.10",
+      "alerts": 0,
+      "risk": 0,
+      "fps": 49,
+      "draw_calls": 1158,
+      "pose_cpu_us": null,
+      "motion": {
+        "n": 257,
+        "mean_ms": 23.400778210395043,
+        "p95_ms": 33.39999999999782,
+        "pose_cpu_us": null,
+        "risk": 0,
+        "state": 1
+      }
+    },
+    {
+      "n": 213,
+      "mean_ms": 28.258215962329373,
+      "median_ms": 25.100000000002183,
+      "p95_ms": 41.599999999998545,
+      "max_ms": 41.79999999999927,
+      "version": "0.6.11",
+      "alerts": 0,
+      "risk": 0,
+      "fps": 34,
+      "draw_calls": 998,
+      "pose_cpu_us": 26.1859434182857,
+      "motion": {
+        "n": 201,
+        "mean_ms": 29.872636816039012,
+        "p95_ms": 41.599999999998545,
+        "pose_cpu_us": 113.305254011911,
+        "risk": 0,
+        "state": 1
+      }
+    }
+  ],
+  "sizes": [
+    [
+      1280,
+      800
+    ],
+    [
+      1600,
+      900
+    ],
+    [
+      1024,
+      768
+    ]
+  ],
+  "success": true
+}

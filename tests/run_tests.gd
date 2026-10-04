@@ -1,2 +1,2 @@
-extends "res://tests/v610_assets_tests.gd"
+extends "res://tests/v611_human_tests.gd"
 

@@ -263,6 +263,7 @@ func snapshot()->Dictionary:
 		result["inventory_centers"]=inventory_centers
 		result["viewport_size"]=[get_viewport().get_visible_rect().size.x,get_viewport().get_visible_rect().size.y]
 		result["showcase_enabled"]=hud.chrome.showcase.active
+		result["human_pose_cpu_mean_usec"]=level.player.rig.pose_cpu_mean_usec
 		var settings_at:Vector2=hud.settings_button.get_global_rect().get_center()
 		var close_at:Vector2=hud.settings_close.get_global_rect().get_center()
 		result["settings_button_center"]=[settings_at.x,settings_at.y]

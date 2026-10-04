@@ -21,7 +21,7 @@ func extra_checks(game:Node3D)->void:
 	check(guard.visual.phase==phase,"stationary robot never continues locomotion phase")
 	check(not game.level.security_cameras[0].visual.has_method("animate"),"camera replaces patrol body and never animates humanoid limbs")
 	var player=game.level.player
-	check(player.head.scale.y<0.8,"worker head uses adult proportions rather than oversized block silhouette")
+	check(player.rig.skeleton.get_bone_count()>=50 and player.rig.bone_at("head").y>1.3 and player.rig.bone_at("head").y<1.65,"human head retains adult anatomical height on an actual skinned skeleton")
 	player.carrying=false;player.interacting=true;player._process(0.1)
 	check(player.forearms[0].rotation.x>0.9 and player.upper_arms[0].rotation.x>0.4,"held interaction has a distinct hand operation pose")
 	player.interacting=false

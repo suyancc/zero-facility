@@ -102,3 +102,10 @@ assets/audio/tension_mix：基于本项目原创0.6.6源音频重混，补充原
 ## 0.6.10 角色与设施资产
 连续截面人物网格、关节式无武器巡逻机器人、四区设备组合、11 类道具结构改进、品牌矢量标记均为项目原创程序几何。`assets/materials/workwear-weave.png` 为本项目生成的细织纹理；装备缩略图重新由实际 Godot 场景渲染。没有新增第三方模型或字体，没有上传用户的六张参考图。原有 Kenney CC0 与改名字体 SIL OFL 许可继续保留；不另外擅自给原项目源码添加许可。
 
+
+## 0.6.11 真人主角与持续声音
+- `assets/characters/maintenance_human.glb`：MakeHuman CC0 人体拓扑、骨架、权重及系统资源，经本项目修改。具体资产清单、作者与官方来源见 `assets/licenses/makehuman/SOURCES.md`，CC0 全文同时附带。MPFB 代码本身 GPL，不与 CC0 导出资产混同；未打包该插件源码。
+- 人物使用真实蒙皮骨骼与双骨脚底 IK；运行时动作由 `human_rig.gd` 制作，运行时 GLB 不包含造型阶段 Walk_preview 动作，人体形态已烘焙为网格。
+- `assets/audio/operations/*.wav` 与 `assets/audio/tension_mix/calm.ogg` 为本次原创合成，生成器 `tools/compose_stealth_audio_v611.py`。不含第三方录音。旧生成器若重跑，应最后运行新生成器以免覆盖新声轨。
+- 其他机器人、道具、四区设施和字体沿用 0.6.10，不新增未授权素材。
+

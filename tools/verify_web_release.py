@@ -24,7 +24,7 @@ if '--stage' in sys.argv:
     shutil.copytree(export,WEB,ignore=shutil.ignore_patterns('*.gz','*.br','*.import','*.uid','parcel.svg'))
     (WEB/'.nojekyll').write_text('',encoding='utf-8')
     (WEB/'.gdignore').write_text('',encoding='utf-8')
-    report={'game_version':'0.6.10','engine_version':'4.7.2.stable','source_files':sources(),
+    report={'game_version':'0.6.11','engine_version':'4.7.2.stable','source_files':sources(),
             'web_files':{p.relative_to(WEB).as_posix():sha(p) for p in sorted(WEB.rglob('*')) if p.is_file()}}
     (WEB/'release-manifest.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
 manifest=json.loads((WEB/'release-manifest.json').read_text(encoding='utf-8'))

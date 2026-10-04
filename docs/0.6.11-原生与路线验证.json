@@ -1,0 +1,13 @@
+{
+  "native_checks": 307,
+  "legacy_checks": 49,
+  "failures": 0,
+  "routes": {
+    "won": 9,
+    "count": 9,
+    "hazards": "frozen",
+    "consumables": 0,
+    "not_live_stealth_success_rate": true
+  },
+  "max_cpu_skinned_sole_error_m": 0.00891428254545
+}

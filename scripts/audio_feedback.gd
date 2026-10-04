@@ -105,7 +105,7 @@ func _stop_active(player:AudioStreamPlayer)->void:
 	if player.playing:player.stop()
 func mix_state(delta:float,state:int,risk:float) -> void:
 	var gain:=linear_to_db(maxf(master,0.00001))
-	if operation_player!=null:_set_gain(operation_player,-17+gain)
+	if operation_player!=null:_set_gain(operation_player,-14+gain)
 	if task_player!=null:_set_gain(task_player,-7+gain)
 	if download_player!=null:_set_gain(download_player,-17+gain)
 	_set_gain(ambient,(-40.0 if state==2 else -31.0)+gain)
@@ -183,7 +183,7 @@ func set_download_active(active:bool)->void:
 	else:download_player.stop()
 func set_task_paused(value:bool)->void:
 	task_paused=value
-	if operation_player!=null:operation_player.stream_paused=value
+	if operation_player!=null:_set_paused(operation_player,value)
 	if task_player!=null:task_player.stream_paused=value
 	if download_player!=null:download_player.stream_paused=value
 	if not value and task_player!=null and not task_player.playing:_next_task()
@@ -203,16 +203,17 @@ func _setup_operation_audio()->void:
 		var wav:AudioStreamWAV=load("res://assets/audio/operations/"+kind+".wav").duplicate()
 		wav.loop_mode=AudioStreamWAV.LOOP_FORWARD;wav.loop_begin=0;wav.loop_end=int(wav.get_length()*wav.mix_rate)
 		operation_cache[kind]=wav
-func set_operation(kind:String,progress:float)->void:
+func set_operation(kind:String,_progress:float)->void:
 	if operation_player==null:return
 	var sound_kind:String=OPERATION_TYPES.get(kind,"")
 	if sound_kind=="" or not unlocked or AudioServer.is_bus_mute(0):
-		operation_player.stop();operation_kind="";return
+		_stop_active(operation_player);operation_kind="";return
 	if operation_kind!=kind or not operation_player.playing:
 		operation_kind=kind;operation_player.stream=operation_cache[sound_kind]
-		operation_player.volume_db=-17+linear_to_db(maxf(master,0.00001));operation_player.play()
-	operation_player.pitch_scale=1.0+clampf(progress,0,1)*0.10
-	operation_player.stream_paused=task_paused
+		operation_player.volume_db=-14+linear_to_db(maxf(master,0.00001));operation_player.pitch_scale=1.0;operation_player.play()
+	# Keep the loop continuous: repeated stream_paused writes restart WebAudio sources.
+	# Progress is represented by the distinct source pattern and UI, not per-frame pitch writes.
+	_set_paused(operation_player,task_paused)
 
 var tension_layers:Dictionary={}
 var heartbeat_player:AudioStreamPlayer

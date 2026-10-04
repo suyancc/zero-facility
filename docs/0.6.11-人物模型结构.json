@@ -1,0 +1,43 @@
+{
+  "bytes": 6558884,
+  "joints": 53,
+  "animations": 0,
+  "meshes": [
+    {
+      "mesh": "base.001",
+      "vertices": 8660,
+      "triangles": 15816,
+      "morphs": 0
+    },
+    {
+      "mesh": "eyebrow001",
+      "vertices": 124,
+      "triangles": 192,
+      "morphs": 0
+    },
+    {
+      "mesh": "low-poly",
+      "vertices": 96,
+      "triangles": 172,
+      "morphs": 0
+    },
+    {
+      "mesh": "male_casualsuit02",
+      "vertices": 14435,
+      "triangles": 16480,
+      "morphs": 0
+    },
+    {
+      "mesh": "shoes01",
+      "vertices": 1846,
+      "triangles": 3320,
+      "morphs": 0
+    },
+    {
+      "mesh": "short04",
+      "vertices": 983,
+      "triangles": 1050,
+      "morphs": 0
+    }
+  ]
+}

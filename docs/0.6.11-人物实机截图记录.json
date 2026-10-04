@@ -1,0 +1,455 @@
+{
+  "errors": [],
+  "snapshot": {
+    "aim_valid": true,
+    "alerts": 0,
+    "arc_points": 25,
+    "attempt": 1,
+    "blocked": [
+      [
+        9,
+        0
+      ],
+      [
+        9,
+        1
+      ],
+      [
+        9,
+        2
+      ],
+      [
+        9,
+        4
+      ],
+      [
+        9,
+        5
+      ],
+      [
+        9,
+        6
+      ],
+      [
+        9,
+        7
+      ],
+      [
+        9,
+        8
+      ],
+      [
+        9,
+        9
+      ],
+      [
+        9,
+        10
+      ],
+      [
+        9,
+        12
+      ],
+      [
+        9,
+        13
+      ],
+      [
+        9,
+        14
+      ],
+      [
+        0,
+        7
+      ],
+      [
+        1,
+        7
+      ],
+      [
+        2,
+        7
+      ],
+      [
+        3,
+        7
+      ],
+      [
+        5,
+        7
+      ],
+      [
+        6,
+        7
+      ],
+      [
+        7,
+        7
+      ],
+      [
+        8,
+        7
+      ],
+      [
+        10,
+        7
+      ],
+      [
+        11,
+        7
+      ],
+      [
+        12,
+        7
+      ],
+      [
+        13,
+        7
+      ],
+      [
+        15,
+        7
+      ],
+      [
+        16,
+        7
+      ],
+      [
+        17,
+        7
+      ],
+      [
+        18,
+        7
+      ],
+      [
+        9,
+        11
+      ],
+      [
+        16,
+        13
+      ],
+      [
+        4,
+        13
+      ],
+      [
+        12,
+        14
+      ],
+      [
+        13,
+        0
+      ],
+      [
+        4,
+        0
+      ],
+      [
+        6,
+        14
+      ],
+      [
+        18,
+        11
+      ],
+      [
+        17,
+        13
+      ],
+      [
+        17,
+        12
+      ],
+      [
+        13,
+        1
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        11,
+        1
+      ],
+      [
+        12,
+        1
+      ],
+      [
+        17,
+        11
+      ],
+      [
+        6,
+        1
+      ],
+      [
+        4,
+        14
+      ],
+      [
+        12,
+        0
+      ],
+      [
+        7,
+        4
+      ],
+      [
+        16,
+        10
+      ],
+      [
+        2,
+        9
+      ],
+      [
+        2,
+        12
+      ],
+      [
+        7,
+        9
+      ],
+      [
+        16,
+        9
+      ],
+      [
+        14,
+        10
+      ],
+      [
+        13,
+        10
+      ],
+      [
+        4,
+        10
+      ],
+      [
+        16,
+        4
+      ],
+      [
+        3,
+        12
+      ],
+      [
+        6,
+        10
+      ],
+      [
+        15,
+        12
+      ],
+      [
+        13,
+        5
+      ],
+      [
+        11,
+        5
+      ]
+    ],
+    "brief": "\u4e3b\u76ee\u6807\u4f4d\u4e8e\u4ed3\u50a8\u533a \u00b7 \u672c\u5c40\u51fa\u53e3\u5728\u4e1c\u4fa7\n\u53d6\u5f97\u95e8\u7981\u5361\u6216\u64cd\u4f5c\u89e3\u5c01\u53f0\uff0c\u518d\u5f00\u95e8\u64a4\u79bb\u3002\n\u53ef\u9009\uff1a\u88c5\u5907\u64ac\u9501\u53ef\u76f4\u7834\u51fa\u53e3\uff1b\u63a7\u5236\u5668\u6253\u5f00\u7ef4\u4fee\u6377\u5f84\u3002\n\u64a4\u79bb\uff1a\u5b8c\u6210\u4efb\u52a1 \u2192 \u957f\u6309 E \u5f00\u95e8 \u2192 \u7a7f\u8fc7\u51fa\u53e3\u3002",
+    "carrying": false,
+    "catalog_centers": [
+      [
+        118,
+        487
+      ],
+      [
+        236,
+        487
+      ],
+      [
+        354,
+        487
+      ],
+      [
+        472,
+        487
+      ]
+    ],
+    "charges": {
+      "pick": 2,
+      "smoke": 2
+    },
+    "control_used": false,
+    "decoys": 0,
+    "detection_count": 0,
+    "download": 0,
+    "download_audio": false,
+    "download_taken": false,
+    "draw_calls": 1352,
+    "edge_enabled": true,
+    "edge_visible": false,
+    "escapes": 0,
+    "exit_open": false,
+    "forward_axis": [
+      -0.485642910003662,
+      -0.874157309532166
+    ],
+    "found": {
+      "card": 0,
+      "power": 0,
+      "terminal": 0
+    },
+    "fps": 33,
+    "goal": [
+      11.6999998092651,
+      -2.59999990463257
+    ],
+    "guards": [
+      {
+        "cone_alpha": 0.159999996423721,
+        "confidence": 0,
+        "forward": [
+          1.18146390448715e-08,
+          1
+        ],
+        "mode": "\u5de1\u903b",
+        "position": [
+          -1.29999995231628,
+          -2.12001323699951
+        ],
+        "range": 3.7
+      },
+      {
+        "cone_alpha": 0.159999996423721,
+        "confidence": 0,
+        "forward": [
+          1,
+          -1.18146390448715e-08
+        ],
+        "mode": "\u5de1\u903b",
+        "position": [
+          5.67998647689819,
+          -5.19999980926514
+        ],
+        "range": 3.7
+      }
+    ],
+    "heartbeat_count": 0,
+    "heartbeat_volume": 0.75,
+    "human_pose_cpu_mean_usec": 31.2855353020003,
+    "intel": 0,
+    "interaction_progress": 0,
+    "inventory_centers": [
+      [
+        78,
+        252
+      ],
+      [
+        78,
+        368
+      ]
+    ],
+    "items": [
+      {
+        "at": [
+          -3.90000009536743,
+          7.80000019073486
+        ],
+        "kind": "card"
+      },
+      {
+        "at": [
+          2.59999990463257,
+          2.59999990463257
+        ],
+        "kind": "override"
+      },
+      {
+        "at": [
+          3.90000009536743,
+          -6.5
+        ],
+        "kind": "control"
+      }
+    ],
+    "jam_hits": 0,
+    "loadout": [
+      "smoke",
+      "pick"
+    ],
+    "maintenance_open": false,
+    "mission": "\u7a81\u7834\u5c01\u9501",
+    "music_duck": 0,
+    "music_playing": true,
+    "music_volume": 0.8,
+    "music_weights": {
+      "chase": 0,
+      "recovery": 0,
+      "suspicion": 0
+    },
+    "muted": false,
+    "needed": {
+      "card": 1
+    },
+    "objective": "\u7a81\u7834\u5c01\u9501 \u00b7 \u95e8\u7981\u5361 / \u624b\u52a8\u89e3\u5c01 / \u64ac\u9501\u4efb\u9009",
+    "operation_audio": "",
+    "operation_playing": false,
+    "pose": "idle",
+    "position": [
+      -7.94432163238525,
+      -9.20070743560791
+    ],
+    "preview_kind": "smoke",
+    "preview_slot": 0,
+    "preview_visible": false,
+    "projectiles": 0,
+    "ready_heading": "\u672c\u5c40\u76ee\u6807 \u00b7 \u591a\u8def\u7a81\u7834",
+    "right_axis": [
+      0.874157309532166,
+      -0.485642910003662
+    ],
+    "risk": 0,
+    "selected_slot": 0,
+    "settings_button_center": [
+      1275,
+      47.5
+    ],
+    "settings_close_center": [
+      504,
+      121.5
+    ],
+    "settings_visible": false,
+    "showcase_enabled": false,
+    "smoke_count": 0,
+    "stage": 1,
+    "stamina": 100,
+    "state": 1,
+    "task_audio": "",
+    "task_paused": false,
+    "task_playing": false,
+    "task_queue": [],
+    "tension_bpm": 78,
+    "tension_intensity": 0,
+    "tension_mode": "calm",
+    "tension_phase": 0,
+    "time": 3.73333333333332,
+    "tracking": "card",
+    "tracking_name": "\u95e8\u7981\u5361\u65b9\u6848",
+    "tracking_point": [
+      -3.90000009536743,
+      7.80000019073486
+    ],
+    "variant": 0,
+    "variant_title": "\u591a\u8def\u7a81\u7834",
+    "velocity": [
+      0,
+      0
+    ],
+    "version": "0.6.11",
+    "viewport_size": [
+      1422,
+      800
+    ]
+  },
+  "success": true
+}

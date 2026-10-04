@@ -39,12 +39,14 @@ func run()->void:
 	check(game.state==game.State.READY and game.level.player is CharacterBody3D,"character body replaces rigid parcel")
 	var p:CharacterBody3D=game.level.player
 	var limbs:bool=true
-	for name in ["LeftUpperArm","LeftForearm","LeftHand","RightHand","LeftThigh","LeftShin","LeftFoot","RightFoot"]:limbs=limbs and p.find_child(name,true,false)!=null
-	check(limbs,"independent arms forearms hands thighs shins and feet exist")
-	check(p.find_child("LeftHand",true,false).get_child_count()>=6,"hand includes palm four fingers and thumb")
+	for name in ["upperarm_l","lowerarm_l","hand_l","hand_r","thigh_l","calf_l","foot_l","foot_r"]:limbs=limbs and p.rig.skeleton.find_bone(name)>=0
+	check(limbs,"independent skinned arms forearms hands thighs shins and feet exist")
+	var fingers:bool=true
+	for name in ["hand_l","thumb_01_l","index_01_l","middle_01_l","ring_01_l","pinky_01_l"]:fingers=fingers and p.rig.skeleton.find_bone(name)>=0
+	check(fingers,"skinned hand includes palm four fingers and thumb")
 	p.set_active(true);p.velocity=Vector3(2,0,0);p.running=false;p.sneaking=false;p._process(0.15)
-	check(p.pose=="walk" and absf(p.thighs[0].rotation.x-p.thighs[1].rotation.x)>0.1,"walk uses alternating leg joints")
-	var sole:float=minf(p.feet[0].to_global(Vector3(0,-0.09,0)).y,p.feet[1].to_global(Vector3(0,-0.09,0)).y)-p.global_position.y
+	check(p.pose=="walk" and absf(p.rig.bone_at("foot_l").z-p.rig.bone_at("foot_r").z)>0.05,"walk uses alternating leg joints")
+	var sole:float=minf(p.rig.sole_heights.x,p.rig.sole_heights.y)
 	check(absf(sole)<0.025,"walk plants at least one independent shoe near ground")
 	p.running=true;p._process(0.2)
 	check(p.pose=="run" and p.forearms[0].rotation.x > 0.8,"run changes arm bend and gait")

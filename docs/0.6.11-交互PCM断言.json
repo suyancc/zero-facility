@@ -1,0 +1,255 @@
+{
+  "label": "fixed",
+  "operations": [
+    {
+      "kind": "door",
+      "onset": {
+        "rms_dbfs": -29.541836982713043,
+        "peak_dbfs": -18.941352534672582,
+        "context": "running",
+        "samples": 28672
+      },
+      "middle": {
+        "rms_dbfs": -28.265514424205094,
+        "peak_dbfs": -18.107861486187236,
+        "context": "running",
+        "samples": 159744
+      },
+      "source_starts": 1,
+      "cancel": {
+        "rms_dbfs": -240,
+        "peak_dbfs": -240,
+        "context": "running",
+        "samples": 32768
+      }
+    },
+    {
+      "kind": "card",
+      "onset": {
+        "rms_dbfs": -29.446686100243976,
+        "peak_dbfs": -18.941352534672582,
+        "context": "running",
+        "samples": 28672
+      },
+      "middle": {
+        "rms_dbfs": -28.28277489533667,
+        "peak_dbfs": -18.107861486187236,
+        "context": "running",
+        "samples": 159744
+      },
+      "source_starts": 1,
+      "cancel": {
+        "rms_dbfs": -240,
+        "peak_dbfs": -240,
+        "context": "running",
+        "samples": 32768
+      }
+    },
+    {
+      "kind": "intel",
+      "onset": {
+        "rms_dbfs": -29.286588071004523,
+        "peak_dbfs": -18.59918926580718,
+        "context": "running",
+        "samples": 28672
+      },
+      "middle": {
+        "rms_dbfs": -28.390777874327462,
+        "peak_dbfs": -18.087911815443448,
+        "context": "running",
+        "samples": 155648
+      },
+      "source_starts": 1,
+      "cancel": {
+        "rms_dbfs": -240,
+        "peak_dbfs": -240,
+        "context": "running",
+        "samples": 32768
+      }
+    },
+    {
+      "kind": "download",
+      "onset": {
+        "rms_dbfs": -30.250855527597768,
+        "peak_dbfs": -19.186962216791354,
+        "context": "running",
+        "samples": 28672
+      },
+      "middle": {
+        "rms_dbfs": -28.27327418661563,
+        "peak_dbfs": -18.196125090189653,
+        "context": "running",
+        "samples": 159744
+      },
+      "source_starts": 1,
+      "cancel": {
+        "rms_dbfs": -240,
+        "peak_dbfs": -240,
+        "context": "running",
+        "samples": 32768
+      }
+    },
+    {
+      "kind": "control",
+      "onset": {
+        "rms_dbfs": -33.96173110651149,
+        "peak_dbfs": -21.0706795596793,
+        "context": "running",
+        "samples": 28672
+      },
+      "middle": {
+        "rms_dbfs": -33.10623718211372,
+        "peak_dbfs": -18.01543252053297,
+        "context": "running",
+        "samples": 159744
+      },
+      "source_starts": 1,
+      "cancel": {
+        "rms_dbfs": -240,
+        "peak_dbfs": -240,
+        "context": "running",
+        "samples": 32768
+      }
+    },
+    {
+      "kind": "override",
+      "onset": {
+        "rms_dbfs": -33.84080167653823,
+        "peak_dbfs": -20.445366558017813,
+        "context": "running",
+        "samples": 28672
+      },
+      "middle": {
+        "rms_dbfs": -31.805401210652047,
+        "peak_dbfs": -18.0685876214742,
+        "context": "running",
+        "samples": 159744
+      },
+      "source_starts": 1,
+      "cancel": {
+        "rms_dbfs": -240,
+        "peak_dbfs": -240,
+        "context": "running",
+        "samples": 32768
+      }
+    },
+    {
+      "kind": "pick",
+      "onset": {
+        "rms_dbfs": -34.09849586028167,
+        "peak_dbfs": -18.339541939543285,
+        "context": "running",
+        "samples": 28672
+      },
+      "middle": {
+        "rms_dbfs": -31.99778227900682,
+        "peak_dbfs": -18.339541939543285,
+        "context": "running",
+        "samples": 159744
+      },
+      "source_starts": 1,
+      "cancel": {
+        "rms_dbfs": -240,
+        "peak_dbfs": -240,
+        "context": "running",
+        "samples": 32768
+      }
+    },
+    {
+      "kind": "breach",
+      "onset": {
+        "rms_dbfs": -33.871760103554436,
+        "peak_dbfs": -18.339541939543285,
+        "context": "running",
+        "samples": 28672
+      },
+      "middle": {
+        "rms_dbfs": -32.00683960327416,
+        "peak_dbfs": -18.339541939543285,
+        "context": "running",
+        "samples": 159744
+      },
+      "source_starts": 1,
+      "cancel": {
+        "rms_dbfs": -240,
+        "peak_dbfs": -240,
+        "context": "running",
+        "samples": 32768
+      }
+    },
+    {
+      "kind": "core",
+      "onset": {
+        "rms_dbfs": -29.073099267256843,
+        "peak_dbfs": -19.627327077358846,
+        "context": "running",
+        "samples": 28672
+      },
+      "middle": {
+        "rms_dbfs": -28.429052127563224,
+        "peak_dbfs": -18.935864826384687,
+        "context": "running",
+        "samples": 159744
+      },
+      "source_starts": 1,
+      "cancel": {
+        "rms_dbfs": -240,
+        "peak_dbfs": -240,
+        "context": "running",
+        "samples": 32768
+      }
+    },
+    {
+      "kind": "deliver",
+      "onset": {
+        "rms_dbfs": -29.525273495246932,
+        "peak_dbfs": -19.610211077408287,
+        "context": "running",
+        "samples": 28672
+      },
+      "middle": {
+        "rms_dbfs": -28.329388575417905,
+        "peak_dbfs": -18.83488171732067,
+        "context": "running",
+        "samples": 159744
+      },
+      "source_starts": 1,
+      "cancel": {
+        "rms_dbfs": -240,
+        "peak_dbfs": -240,
+        "context": "running",
+        "samples": 32768
+      }
+    },
+    {
+      "kind": "exit",
+      "onset": {
+        "rms_dbfs": -33.507213606400256,
+        "peak_dbfs": -20.445366558017813,
+        "context": "running",
+        "samples": 28672
+      },
+      "middle": {
+        "rms_dbfs": -31.83639083415866,
+        "peak_dbfs": -18.0685876214742,
+        "context": "running",
+        "samples": 159744
+      },
+      "source_starts": 1,
+      "cancel": {
+        "rms_dbfs": -240,
+        "peak_dbfs": -240,
+        "context": "running",
+        "samples": 32768
+      }
+    }
+  ],
+  "errors": [],
+  "pause": {
+    "rms_dbfs": -240,
+    "peak_dbfs": -240,
+    "context": "running",
+    "samples": 40960
+  },
+  "checks_passed": 57
+}

@@ -18,7 +18,7 @@ pipe-large-bend,assets/models/factory/pipe-large-bend.glb,Kenney,CC0,https://ken
 robot-arm-a,assets/models/factory/robot-arm-a.glb,Kenney,CC0,https://kenney.nl/assets/factory-kit,ad3f766791adadd1cfb5ccc27d2b2ac8787848282f2a15b3c407f350dc281b68
 structure-wall,assets/models/factory/structure-wall.glb,Kenney,CC0,https://kenney.nl/assets/factory-kit,3bdcb31d693b4e97a9fa198e9de1a47bfd14e829520da08ceaacadbdb258582c
 parcel-mark,assets/ui/parcel-mark.svg,Project original,project-original,,ba829d92d5b520df421fb07f772f41737dfa5fae898539a802ed7f3d95f471bf
-escape-character,scenes/characters/maintenance_worker.scn,Project original,project-original,,c62f5bf3e14605845884ff1d71d63bfeaac3c88b0084e4ce6908b9918259bcd5
+escape-character,scenes/characters/maintenance_worker.scn,Project original,project-original,,478e3e6777ad7c04da2346de34a9ee04183a4343e49d27cc3509b49873bf4d3c
 escape-music,assets/audio/escape-pulse.ogg,Project original,project-original,,3aa1426786bc1d0b18a21ad2e247740cdd54060f8663f15c38e9e83ce14401b7
 escape-font,assets/fonts/EscapeSansSC.ttf,Noto derivative,OFL-1.1 derivative,,8ef03e0022c31d3fbefe78edce716ffcaa37c60f8ef97da3951872b579aa7386
 escape-icon,assets/ui/escape-mark.svg,Project original,project-original,,775fc0ce518ee5abf6e9b79cc65af2d17ba68bc7d70dabc8c1580843b66c3248
@@ -63,14 +63,14 @@ equipment-thumbnail-pick-model,assets/ui/items/pick-model.png,Project original,p
 equipment-thumbnail-pick,assets/ui/items/pick.png,Project original,project-original,,6ff76a4356dfbb6705e08305b8583af2e0bd88daaa14f5888657725894fcecc2
 equipment-thumbnail-smoke-model,assets/ui/items/smoke-model.png,Project original,project-original,,033b13b374f9f4a0ed6bf0615840b5ebd973e18f3fc02f61934e4a8c6d92157e
 equipment-thumbnail-smoke,assets/ui/items/smoke.png,Project original,project-original,,e64c5ab4ff8b09b458fcdc9f5282408c0846190d66858109f6371cd47ae70232
-operation-card,assets/audio/operations/card.wav,Project original,project-original,,a589cdfb2337198ba95cf045fa2f9f272bbfe1fddb461615927596e73bb7df35
-operation-control,assets/audio/operations/control.wav,Project original,project-original,,af78ba7666ac1f967c1839400805db8b4ba7271a235b3181bddedc77ad89168c
-operation-core,assets/audio/operations/core.wav,Project original,project-original,,aed4a5766d932505970faf5280893f8d1b48f56777aa48f2e32ffd89a7c4492f
-operation-deliver,assets/audio/operations/deliver.wav,Project original,project-original,,dd444e06d206d511e03ff5d67982d38cd3f38dceef33dd5bdb2022a96f827626
-operation-download,assets/audio/operations/download.wav,Project original,project-original,,4f07b0d0d599591d9a2caf968964d5b26a7ef120806799d5a6566355620f5913
-operation-intel,assets/audio/operations/intel.wav,Project original,project-original,,e0df585b6268c007b16ccbdf9798cc4631d251dde93137d0cce50bd89f390d23
-operation-override,assets/audio/operations/override.wav,Project original,project-original,,f37e653d56ba7309ec2f2f5464ed4d6e34ccae5f1fa1294cfb39c2b5e03e7850
-operation-pick,assets/audio/operations/pick.wav,Project original,project-original,,117a9acd1d383dc2703e7cd5db8c4522890f2a8730d1ae0bb82ea4a454065ce0
+operation-card,assets/audio/operations/card.wav,Project original,project-original,,24b94bbf9f32945cd79b1f8dd3f89637638eb0d7f066486554f6c31e5d84e4aa
+operation-control,assets/audio/operations/control.wav,Project original,project-original,,48dd7687fd49a216b1e33eb7b8b9a0967e8bb53e9e8737540aee008fc48b26cb
+operation-core,assets/audio/operations/core.wav,Project original,project-original,,414150888acba12f474a02e785c0a26ce3bb05fdc3c2ec86a929eb1e9cc6dbfd
+operation-deliver,assets/audio/operations/deliver.wav,Project original,project-original,,a0e14c9ef6c2a98c61b3e49ada081d14e81f3a0f5da5f184bba74fd55c679145
+operation-download,assets/audio/operations/download.wav,Project original,project-original,,aa80337a67c95e35f71aa70d50392380069befada9608bd8985839145ff7c717
+operation-intel,assets/audio/operations/intel.wav,Project original,project-original,,9de1e8c6e7c457bfc5bef76db4fc673e0b79bb279a89775dbb32388d3d49bffa
+operation-override,assets/audio/operations/override.wav,Project original,project-original,,fbc577fe55a5254da09a4cfff6f778bb6e28d3295035a8c1b0b4361aa4421698
+operation-pick,assets/audio/operations/pick.wav,Project original,project-original,,421bde5a5f4d21ebd1ad1ad4c3845f7afb91b49ddfdd537fde3c474b99cc011f
 operation-MissionSansSC,assets/fonts/MissionSansSC.ttf,Noto derivative,OFL-1.1 derivative,https://github.com/google/fonts/tree/main/ofl/notosanssc,16e8e114730bf844721ec42abb0e23b7e29960c31da6c7400e6cff44bab2529b
 operation-MissionTaskSansSC,assets/fonts/MissionTaskSansSC.ttf,Noto derivative,OFL-1.1 derivative,https://github.com/google/fonts/tree/main/ofl/notosanssc,78ed204f5f8bb386bdff9b6f517d42fa2c1641085aa95ab8b6a4b06f35d17979
 tension-calm,assets/audio/tension/calm.ogg,Project original,project-original,,4cd312d2e6399c2feefa62be3aeed2e8d784b76adc2a4524628db79f90442f95
@@ -80,7 +80,7 @@ tension-heartbeat,assets/audio/tension/heartbeat.wav,Project original,project-or
 tension-recovery,assets/audio/tension/recovery.ogg,Project original,project-original,,1c558f7f37be0945b9080d708d63d43db0380b0720cf44994146fb42b764093d
 tension-suspicion,assets/audio/tension/suspicion.ogg,Project original,project-original,,0ed4f3877df4bcaca372fe0b7067fb03c7b54fc7bea3074dff38d4bb92e6b4e6
 tension-TensionSansSC,assets/fonts/TensionSansSC.ttf,Noto derivative,OFL-1.1 derivative,https://github.com/google/fonts/tree/main/ofl/notosanssc,12002eeecd8d8fcdc710e6a0e95efacbc6d951e6ef2d592f42c60b1cabea66cd
-tension-mix-calm,assets/audio/tension_mix/calm.ogg,Project original,project-original,,7b52a69bb68a84d1386367193b1be5db704d1169e8d4cd3ee792af4da11563ef
+tension-mix-calm,assets/audio/tension_mix/calm.ogg,Project original,project-original,,b2eb735c972804ee885f88f0e52ef691b7be1c514ac96270c53dcf06e0f6e106
 tension-mix-chase,assets/audio/tension_mix/chase.ogg,Project original,project-original,,e636d3dc27842bfe4bd85bbdea3178f3ed205f762c0404a0d1e299ea7e26a6bb
 tension-mix-detected,assets/audio/tension_mix/detected.wav,Project original,project-original,,2d88ec77e04b93dd8281fe007e87a9453984f2876bd775dd4d534d336e935400
 tension-mix-exposed,assets/audio/tension_mix/exposed.wav,Project original,project-original,,17a8f5ac7d6243d0b51555973975e6656d182fd00951b0bfdefe4f3ae3e38cef
@@ -88,3 +88,5 @@ tension-mix-heartbeat,assets/audio/tension_mix/heartbeat.wav,Project original,pr
 tension-mix-recovery,assets/audio/tension_mix/recovery.ogg,Project original,project-original,,fdfbcba686d8f183dfdc40c86ee5b983ae6cbe336e7859f301e1e07a91014d0c
 tension-mix-suspicion,assets/audio/tension_mix/suspicion.ogg,Project original,project-original,,27a79894144242fef6345214e625e7aa6d7dadacbf09dc66208d6d97b65a7cf6
 workwear-weave,assets/materials/workwear-weave.png,Project original,project-original,,654703fc36826e10731ac30ae35818f34542540a6d7cc4dfc21c2fba96416552
+maintenance_human,assets/characters/maintenance_human.glb,MakeHuman Community; modified for Zero Facility,CC0,https://static.makehumancommunity.org/assets/assetpacks/makehuman_system_assets.html,91b1d06d46e75ba76a4b47142aa1f3a19d3c5da1f77c4068256b093105fe311c
+

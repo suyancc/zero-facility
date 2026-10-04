@@ -1,6 +1,5 @@
 extends CharacterBody3D
 const V:=preload("res://scripts/visual_factory.gd")
-const G:=preload("res://scripts/surface_geometry.gd")
 signal lost(reason:String)
 signal footstep(loudness:float)
 signal impacted(strength:float)
@@ -31,97 +30,15 @@ func _ready()->void:
 	add_to_group("players")
 	floor_snap_length=0.20
 	floor_stop_on_slope=true
-	if ResourceLoader.exists("res://scenes/characters/maintenance_worker.scn"):
-		rig=load("res://scenes/characters/maintenance_worker.scn").instantiate()
-		add_child(rig)
-		torso=rig.get_node("TorsoPivot");head=torso.get_node("Head")
-		for prefix in ["Left","Right"]:
-			upper_arms.append(torso.get_node(prefix+"UpperArm"))
-			forearms.append(upper_arms[-1].get_node(prefix+"Forearm"))
-			thighs.append(rig.get_node(prefix+"Thigh"))
-			shins.append(thighs[-1].get_node(prefix+"Shin"))
-			feet.append(shins[-1].get_node(prefix+"Foot"))
-	else:_build_model()
+	rig=Node3D.new();rig.set_script(preload("res://scripts/human_rig.gd"));add_child(rig)
+	torso=rig.get_node("TorsoPivot");head=torso.get_node("Head")
+	for prefix in ["Left","Right"]:
+		upper_arms.append(torso.get_node(prefix+"UpperArm"))
+		forearms.append(upper_arms[-1].get_node(prefix+"Forearm"))
+		thighs.append(rig.get_node(prefix+"Thigh"))
+		shins.append(thighs[-1].get_node(prefix+"Shin"))
+		feet.append(shins[-1].get_node(prefix+"Foot"))
 	_accessories()
-func pivot(parent:Node3D,node_name:String,at:Vector3)->Node3D:
-	var p:=Node3D.new();p.name=node_name;parent.add_child(p);p.position=at;return p
-func _build_model()->void:
-	rig=pivot(self,"CharacterRig",Vector3.ZERO)
-	var suit:=V.material(Color("b4b6b0"),0.0);suit.roughness=0.92
-	var pants:=V.material(Color("41484c"),0.0);pants.roughness=0.94
-	suit.albedo_texture=load("res://assets/materials/workwear-weave.png");pants.albedo_texture=suit.albedo_texture
-	var dark:=V.material(Color("182632"),0.15)
-	var armor:=V.material(Color("3c4850"),0.25)
-	var trim:=V.material(Color("e59143"))
-	var visor:=V.material(Color("64d8ef"),0.2,true)
-	torso=pivot(rig,"TorsoPivot",Vector3(0,0.90,0));torso.scale.x=0.90
-	G.loft(torso,[Vector3(0,0.15,0.115),Vector3(0.06,0.17,0.125),Vector3(0.17,0.19,0.14),Vector3(0.31,0.215,0.14),Vector3(0.40,0.235,0.115),Vector3(0.46,0.125,0.08),Vector3(0.48,0.075,0.07)],Vector3.ZERO,suit,0.025)
-	V.rounded(torso,Vector3(0.14,0.11,0.035),Vector3(-0.08,0.30,-0.16),armor,0.012)
-	V.box(torso,Vector3(0.07,0.07,0.012),Vector3(-0.11,0.32,-0.187),trim)
-	V.rounded(torso,Vector3(0.37,0.40,0.19),Vector3(0,0.21,0.20),dark,0.055)
-	V.box(torso,Vector3(0.045,0.29,0.02),Vector3(0,0.22,0.303),visor)
-	V.rounded(rig,Vector3(0.40,0.20,0.29),Vector3(0,0.86,0),dark,0.05)
-	head=pivot(torso,"Head",Vector3(0,0.62,-0.015));head.scale=Vector3(0.80,0.66,0.82)
-	var skin:=V.material(Color("bf967c"))
-	var hair:=V.material(Color("151b21"))
-	G.loft(head,[Vector3(-0.18,0.052,0.06),Vector3(-0.13,0.087,0.092),Vector3(-0.055,0.121,0.113),Vector3(0.04,0.133,0.112),Vector3(0.13,0.121,0.105),Vector3(0.175,0.065,0.06),Vector3(0.18,0.005,0.005)],Vector3.ZERO,skin)
-	G.loft(head,[Vector3(0.025,0.132,0.11),Vector3(0.11,0.144,0.13),Vector3(0.185,0.115,0.109),Vector3(0.215,0.04,0.04),Vector3(0.22,0.001,0.001)],Vector3(0,0,0.015),hair,0.09)
-	for i in range(7):
-		var x:float=(i-3)*0.034
-		var lock:=G.loft(head,[Vector3(-0.09,0.004,0.005),Vector3(0.015,0.027,0.028),Vector3(0.085,0.03,0.022),Vector3(0.10,0.002,0.002)],Vector3(x,0.11,-0.09),hair,0.06,8);lock.rotation.z=-0.30+i*0.07
-	G.ellipsoid(head,Vector3(0,-0.03,-0.116),Vector3(0.023,0.045,0.037),skin)
-	for side in [-1,1]:
-		G.ellipsoid(head,Vector3(side*0.131,-0.03,0),Vector3(0.025,0.045,0.025),skin)
-		G.ellipsoid(head,Vector3(side*0.058,-0.003,-0.107),Vector3(0.030,0.012,0.01),V.material(Color("c9cac0")))
-		G.ellipsoid(head,Vector3(side*0.054,-0.003,-0.117),Vector3(0.011,0.012,0.004),hair)
-		var brow:=V.rounded(head,Vector3(0.051,0.012,0.008),Vector3(side*0.057,0.025,-0.113),hair,0.003);brow.rotation.z=side*0.13
-	V.rounded(head,Vector3(0.045,0.009,0.008),Vector3(0,-0.099,-0.10),V.material(Color("865c50")),0.003)
-	V.cylinder(torso,0.075,0.12,Vector3(0,0.48,0),skin)
-	# Work harness, terminal, waist pouches, backpack shell and orange handles.
-	for side in [-1,1]:
-		V.box(torso,Vector3(0.046,0.42,0.035),Vector3(side*0.17,0.26,-0.165),dark)
-		V.box(torso,Vector3(0.022,0.36,0.013),Vector3(side*0.17,0.27,-0.187),trim)
-		V.box(torso,Vector3(0.075,0.045,0.04),Vector3(side*0.17,0.38,-0.19),armor)
-		V.box(rig,Vector3(0.12,0.16,0.12),Vector3(side*0.215,0.84,0),dark)
-		V.box(torso,Vector3(0.045,0.33,0.025),Vector3(side*0.14,0.24,0.311),trim)
-	V.box(torso,Vector3(0.1,0.145,0.05),Vector3(0.10,0.28,-0.222),dark)
-	V.box(torso,Vector3(0.066,0.095,0.012),Vector3(0.10,0.29,-0.254),visor)
-	V.box(rig,Vector3(0.43,0.057,0.315),Vector3(0,0.90,0),dark)
-	V.box(rig,Vector3(0.08,0.054,0.04),Vector3(0,0.90,-0.174),armor)
-	for x in [-0.16,-0.11]:
-		V.cylinder(rig,0.014,0.19,Vector3(x,0.72,-0.19),armor)
-		V.box(rig,Vector3(0.037,0.075,0.04),Vector3(x,0.79,-0.19),trim)
-	for side in [-1,1]:
-		var prefix:String="Left" if side<0 else "Right"
-		var arm:=pivot(torso,prefix+"UpperArm",Vector3(side*0.295,0.40,0))
-		upper_arms.append(arm)
-		G.loft(arm,[Vector3(-0.27,0.061,0.068),Vector3(-0.22,0.075,0.082),Vector3(-0.15,0.079,0.088),Vector3(-0.06,0.09,0.10),Vector3(0.02,0.08,0.09),Vector3(0.055,0.01,0.01)],Vector3.ZERO,suit,0.045)
-		V.rounded(arm,Vector3(0.05,0.13,0.14),Vector3(side*0.082,-0.035,0),armor,0.018)
-		var elbow:=pivot(arm,prefix+"Forearm",Vector3(0,-0.27,0))
-		forearms.append(elbow)
-		G.loft(elbow,[Vector3(-0.235,0.052,0.051),Vector3(-0.16,0.06,0.064),Vector3(-0.09,0.073,0.07),Vector3(0,0.067,0.07)],Vector3.ZERO,suit,0.04)
-		V.box(elbow,Vector3(0.16,0.065,0.18),Vector3(0,-0.18,0),dark)
-		V.box(elbow,Vector3(0.09,0.05,0.024),Vector3(0,-0.18,-0.10),trim)
-		var hand:=pivot(elbow,prefix+"Hand",Vector3(0,-0.255,-0.015))
-		V.rounded(hand,Vector3(0.13,0.10,0.075),Vector3.ZERO,dark,0.025)
-		for finger in range(4):
-			V.rounded(hand,Vector3(0.024,0.07,0.045),Vector3((finger-1.5)*0.03,-0.065,-0.005),dark,0.009)
-		V.rounded(hand,Vector3(0.045,0.075,0.05),Vector3(-side*0.079,-0.013,0),dark,0.014)
-		var hip:=pivot(rig,prefix+"Thigh",Vector3(side*0.125,0.80,0))
-		thighs.append(hip)
-		G.loft(hip,[Vector3(-0.36,0.067,0.076),Vector3(-0.30,0.071,0.082),Vector3(-0.23,0.087,0.09),Vector3(-0.12,0.092,0.108),Vector3(0,0.092,0.106)],Vector3.ZERO,pants,0.065)
-		V.rounded(hip,Vector3(0.045,0.14,0.12),Vector3(side*0.082,-0.18,0),pants,0.012)
-		var knee:=pivot(hip,prefix+"Shin",Vector3(0,-0.36,0))
-		shins.append(knee)
-		G.loft(knee,[Vector3(-0.33,0.063,0.07),Vector3(-0.25,0.075,0.084),Vector3(-0.17,0.083,0.078),Vector3(-0.08,0.073,0.08),Vector3(0,0.069,0.072)],Vector3.ZERO,pants,0.08)
-		V.rounded(knee,Vector3(0.19,0.13,0.08),Vector3(0,0,-0.09),armor,0.035)
-		var foot:=pivot(knee,prefix+"Foot",Vector3(0,-0.35,-0.055))
-		feet.append(foot)
-		V.rounded(foot,Vector3(0.21,0.13,0.34),Vector3(0,-0.025,-0.035),dark,0.04)
-		V.box(foot,Vector3(0.215,0.028,0.35),Vector3(0,-0.092,-0.035),armor)
-		for y in [0.015,0.038,0.061,0.084]:V.box(foot,Vector3(0.125,0.010,0.019),Vector3(0,y,-0.09),trim)
-		V.rounded(foot,Vector3(0.205,0.055,0.16),Vector3(0,0.005,-0.13),armor,0.02)
-
 func _accessories()->void:
 	V.label(self,"你",Vector3(0,1.97,0),Color("83e5ff"))
 	var lamp:=OmniLight3D.new()
@@ -187,6 +104,8 @@ func _process(delta:float)->void:
 		upper_arms[0].rotation.z=1.6;upper_arms[1].rotation.z=-1.6
 	elif outcome=="escaped":
 		upper_arms[0].rotation.z=2.2;upper_arms[1].rotation.z=-2.2
+	rig.position.y=0
+	rig.apply_pose(gait,speed,running,sneaking,carrying,interacting,outcome,anim_clock)
 	var step_index:int=int(gait/PI)
 	if moving and step_index!=last_step:
 		last_step=step_index
